@@ -154,9 +154,9 @@ export default function Contact() {
                 className="w-full px-4 py-2 rounded-lg bg-[#0A0A0A] text-white border border-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400"
               >
                 <option value="">Sélectionnez un service</option>
-                <option value="Transfert Aéroport">Transfert Aéroport</option>
-                <option value="Mise à disposition">Mise à disposition</option>
-                <option value="Longue distance">Longue distance</option>
+                <option value="Transfert Aéroport">Mise à disposition</option>
+                <option value="Mise à disposition">Longue distance</option>
+                <option value="Longue distance">Autre demande</option>
               </select>
             </div>
 
