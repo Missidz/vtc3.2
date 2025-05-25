@@ -6,27 +6,33 @@ export default function TransfertAeroport() {
   const aeroports = [
     {
       nom: "Paris Charles de Gaulle (CDG)",
-      description: "Aéroport international principal de Paris"
+      description: "Aéroport international principal de Paris",
+      image: "/CDG.png"
     },
     {
       nom: "Paris Orly (ORY)",
-      description: "Aéroport secondaire de Paris"
+      description: "Aéroport secondaire de Paris",
+      image: "/ORY.jpeg"
     },
     {
       nom: "Lyon Saint-Exupéry (LYS)",
-      description: "Principal aéroport de la région Rhône-Alpes"
+      description: "Principal aéroport de la région Rhône-Alpes",
+      image: "/LYS.jpg"
     },
     {
       nom: "Nice Côte d'Azur (NCE)",
-      description: "Aéroport principal de la Côte d'Azur"
+      description: "Aéroport principal de la Côte d'Azur",
+      image: "/NCE.jpg"
     },
     {
       nom: "Marseille Provence (MRS)",
-      description: "Principal aéroport de la région PACA"
+      description: "Principal aéroport de la région PACA",
+      image: "/MRS.webp"
     },
     {
       nom: "Bordeaux-Mérignac (BOD)",
-      description: "Principal aéroport de la région Nouvelle-Aquitaine"
+      description: "Principal aéroport de la région Nouvelle-Aquitaine",
+      image: "/BOD.jpg"
     }
   ];
 
@@ -59,9 +65,9 @@ export default function TransfertAeroport() {
             >
               <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-20 h-20 bg-blue-900/40 rounded-full blur-xl opacity-80 group-hover:scale-110 transition-transform" />
               <img
-                src="/vtc_comfort_icon.svg"
+                src={aeroport.image}
                 alt={aeroport.nom}
-                className="rounded-full w-24 h-24 mb-4 border-4 border-blue-400 shadow-lg bg-white"
+                className="rounded-full w-24 h-24 mb-4 border-4 border-blue-400 shadow-lg bg-white object-cover"
               />
               <h2 className="text-2xl font-bold text-blue-200 mb-2">{aeroport.nom}</h2>
               <p className="text-gray-300 text-base text-center">

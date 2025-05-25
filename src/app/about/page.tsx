@@ -19,41 +19,40 @@ export default function About() {
           </span>
           , alliant :
         </p>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 mt-4 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl">
           <div className="group relative flex flex-col items-center bg-gradient-to-b from-black/80 to-gray-900/90 rounded-3xl shadow-2xl p-8 hover:scale-105 transition-transform duration-300">
             <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-20 h-20 bg-blue-900/40 rounded-full blur-xl opacity-80 group-hover:scale-110 transition-transform" />
-            <img
-              src="/vtc_comfort_icon.svg"
-              alt="Confort"
-              className="rounded-full w-24 h-24 mb-4 border-4 border-blue-400 shadow-lg bg-white"
-            />
+            <div className="w-24 h-24 mx-auto mb-6 bg-blue-900/20 rounded-full flex items-center justify-center">
+              <svg className="w-12 h-12 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+              </svg>
+            </div>
             <h2 className="text-2xl font-bold text-blue-200 mb-2">Confort</h2>
             <p className="text-gray-300 text-base text-center">
               Véhicule spacieux, intérieur raffiné et équipements premium.
             </p>
           </div>
+
           <div className="group relative flex flex-col items-center bg-gradient-to-b from-black/80 to-gray-900/90 rounded-3xl shadow-2xl p-8 hover:scale-105 transition-transform duration-300">
             <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-20 h-20 bg-yellow-900/40 rounded-full blur-xl opacity-80 group-hover:scale-110 transition-transform" />
-            <img
-              src="/vtc_punctuality_icon.svg"
-              alt="Ponctualité"
-              className="rounded-full w-24 h-24 mb-4 border-4 border-yellow-400 shadow-lg bg-white"
-            />
-            <h2 className="text-2xl font-bold text-yellow-200 mb-2">
-              Ponctualité
-            </h2>
+            <div className="w-24 h-24 mx-auto mb-6 bg-yellow-900/20 rounded-full flex items-center justify-center">
+              <svg className="w-12 h-12 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h2 className="text-2xl font-bold text-yellow-200 mb-2">Ponctualité</h2>
             <p className="text-gray-300 text-base text-center">
-              Respect strict des horaires, anticipation des trajets et
-              réactivité.
+              Respect strict des horaires, anticipation des trajets et réactivité.
             </p>
           </div>
+
           <div className="group relative flex flex-col items-center bg-gradient-to-b from-black/80 to-gray-900/90 rounded-3xl shadow-2xl p-8 hover:scale-105 transition-transform duration-300">
             <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-20 h-20 bg-green-900/40 rounded-full blur-xl opacity-80 group-hover:scale-110 transition-transform" />
-            <img
-              src="/vtc_security_icon.svg"
-              alt="Sécurité"
-              className="rounded-full w-24 h-24 mb-4 border-4 border-green-400 shadow-lg bg-white"
-            />
+            <div className="w-24 h-24 mx-auto mb-6 bg-green-900/20 rounded-full flex items-center justify-center">
+              <svg className="w-12 h-12 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
             <h2 className="text-2xl font-bold text-green-200 mb-2">Sécurité</h2>
             <p className="text-gray-300 text-base text-center">
               Conduite prudente, discrétion et respect de la confidentialité.
@@ -69,7 +68,7 @@ export default function About() {
             </summary>
             <div className="mt-2 text-gray-300 text-base">
               Déplacements professionnels, personnels, transferts aéroport ou
-              événements spéciaux : je m’adapte à tous vos besoins pour un
+              événements spéciaux : je m'adapte à tous vos besoins pour un
               service sur mesure.
             </div>
           </details>
@@ -88,7 +87,7 @@ export default function About() {
               Comment réserver votre VTC ?
             </summary>
             <div className="mt-2 text-gray-300 text-base">
-              Contactez-moi directement pour réserver et profitez d’un service
+              Contactez-moi directement pour réserver et profitez d'un service
               fiable, élégant et personnalisé, adapté à vos attentes.
             </div>
           </details>
