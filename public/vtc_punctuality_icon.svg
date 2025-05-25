@@ -1,0 +1,61 @@
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Horloge de ponctualité -->
+  <defs>
+    <linearGradient id="clockGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F7F7F7;stop-opacity:1" />
+    </linearGradient>
+    <filter id="clockShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Cercle principal de l'horloge -->
+  <circle cx="40" cy="40" r="28" 
+          fill="url(#clockGradient)" 
+          stroke="#000000" 
+          stroke-width="3" 
+          filter="url(#clockShadow)"/>
+  
+  <!-- Cadran intérieur -->
+  <circle cx="40" cy="40" r="24" 
+          fill="white" 
+          stroke="#000000" 
+          stroke-width="1"/>
+  
+  <!-- Marqueurs d'heures -->
+  <circle cx="40" cy="20" r="2" fill="#000000"/>
+  <circle cx="56" cy="40" r="2" fill="#000000"/>
+  <circle cx="40" cy="60" r="2" fill="#000000"/>
+  <circle cx="24" cy="40" r="2" fill="#000000"/>
+  
+  <!-- Petits marqueurs -->
+  <circle cx="50" cy="25" r="1" fill="#000000" opacity="0.5"/>
+  <circle cx="50" cy="55" r="1" fill="#000000" opacity="0.5"/>
+  <circle cx="30" cy="25" r="1" fill="#000000" opacity="0.5"/>
+  <circle cx="30" cy="55" r="1" fill="#000000" opacity="0.5"/>
+  
+  <!-- Aiguilles -->
+  <!-- Aiguille des heures (10h) -->
+  <line x1="40" y1="40" x2="35" y2="28" 
+        stroke="#000000" 
+        stroke-width="3" 
+        stroke-linecap="round"/>
+  
+  <!-- Aiguille des minutes (12h) -->
+  <line x1="40" y1="40" x2="40" y2="22" 
+        stroke="#000000" 
+        stroke-width="2" 
+        stroke-linecap="round"/>
+  
+  <!-- Centre de l'horloge -->
+  <circle cx="40" cy="40" r="3" fill="#D4AF37"/>
+  
+  <!-- Indicateur de précision -->
+  <path d="M40 8 L42 4 L40 2 L38 4 Z" fill="#D4AF37"/>
+  <circle cx="40" cy="6" r="1" fill="#D4AF37"/>
+  
+  <!-- Étoiles de ponctualité -->
+  <path d="M65 15 L66 17 L68 17 L66.5 18.5 L67 20.5 L65 19.5 L63 20.5 L63.5 18.5 L62 17 L64 17 Z" fill="#D4AF37"/>
+  <path d="M15 65 L16 67 L18 67 L16.5 68.5 L17 70.5 L15 69.5 L13 70.5 L13.5 68.5 L12 67 L14 67 Z" fill="#D4AF37"/>
+</svg>

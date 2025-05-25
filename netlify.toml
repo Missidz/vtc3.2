@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build"
+  publish = "myvct37/out"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
