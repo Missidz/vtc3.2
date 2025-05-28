@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Slider from 'react-slick';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -93,7 +95,13 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Service 1 */}
-            <div className="group relative bg-gradient-to-b from-black/80 to-gray-900/90 rounded-3xl p-8 shadow-2xl hover:scale-105 transition-transform duration-300">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="group relative bg-gradient-to-b from-black/80 to-gray-900/90 rounded-3xl p-8 shadow-2xl hover:scale-105 transition-transform duration-300"
+            >
               <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-20 h-20 bg-yellow-900/40 rounded-full blur-xl opacity-80 group-hover:scale-110 transition-transform" />
               <div className="text-center">
                 <div className="w-24 h-24 mx-auto mb-6 bg-yellow-900/20 rounded-full flex items-center justify-center">
@@ -109,10 +117,16 @@ export default function Home() {
                   En savoir plus
                 </Link>
               </div>
-            </div>
+            </motion.div>
 
             {/* Service 2 */}
-            <div className="group relative bg-gradient-to-b from-black/80 to-gray-900/90 rounded-3xl p-8 shadow-2xl hover:scale-105 transition-transform duration-300">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="group relative bg-gradient-to-b from-black/80 to-gray-900/90 rounded-3xl p-8 shadow-2xl hover:scale-105 transition-transform duration-300"
+            >
               <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-20 h-20 bg-yellow-900/40 rounded-full blur-xl opacity-80 group-hover:scale-110 transition-transform" />
               <div className="text-center">
                 <div className="w-24 h-24 mx-auto mb-6 bg-yellow-900/20 rounded-full flex items-center justify-center">
@@ -128,10 +142,16 @@ export default function Home() {
                   Réserver
                 </Link>
               </div>
-            </div>
+            </motion.div>
 
             {/* Service 3 */}
-            <div className="group relative bg-gradient-to-b from-black/80 to-gray-900/90 rounded-3xl p-8 shadow-2xl hover:scale-105 transition-transform duration-300">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="group relative bg-gradient-to-b from-black/80 to-gray-900/90 rounded-3xl p-8 shadow-2xl hover:scale-105 transition-transform duration-300"
+            >
               <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-20 h-20 bg-yellow-900/40 rounded-full blur-xl opacity-80 group-hover:scale-110 transition-transform" />
               <div className="text-center">
                 <div className="w-24 h-24 mx-auto mb-6 bg-yellow-900/20 rounded-full flex items-center justify-center">
@@ -148,7 +168,7 @@ export default function Home() {
                   Réserver
                 </Link>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
