@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '',
     '/about',
     '/contact',
-    '/tarifs',
+    '/services',
     '/transfert-aeroport',
     '/contact-aeroport',
   ].map((route) => ({

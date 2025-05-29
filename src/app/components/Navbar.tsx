@@ -107,7 +107,7 @@ export default function Navbar() {
           {/* Menu desktop */}
           <div className="hidden sm:flex items-center space-x-4">
             <Link
-              href="/tarifs"
+              href="/services"
               className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium"
             >
               Nos Services
@@ -132,7 +132,7 @@ export default function Navbar() {
           <div className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
               <Link
-                href="/tarifs"
+                href="/services"
                 className="text-white hover:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
               >
                 Nos Services
