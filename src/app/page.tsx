@@ -45,8 +45,8 @@ export default function Home() {
   return (
     <>
       <LocalBusinessJsonLd
-        name="Mon VTC 37"
-        description="Service de transport VTC professionnel de qualité en Touraine. Transferts aéroport, gares, événements. Chauffeur privé disponible 24/7."
+        name="VTC Tours 37"
+        description="VTC Tours 37, votre service de transport premium en Touraine. Transferts aéroport, gares, événements. Chauffeur privé disponible 24/7."
         address={{
           streetAddress: "Votre adresse",
           addressLocality: "Tours",

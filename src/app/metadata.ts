@@ -11,7 +11,7 @@ export const defaultMetadata: Metadata = {
     type: 'website',
     locale: 'fr_FR',
     url: baseUrl,
-    siteName: 'Mon VTC 37',
+    siteName: 'VTC Tours 37',
   },
   twitter: {
     card: 'summary_large_image',
@@ -32,51 +32,51 @@ export const defaultMetadata: Metadata = {
 
 export const pagesMetadata: Record<string, Metadata> = {
   '/': {
-    title: 'Mon VTC 37 - Service de Transport Professionnel en Touraine',
-    description: 'Service de transport VTC professionnel de qualité en Touraine. Transferts aéroport, gares, événements. Chauffeur privé disponible 24/7.',
+    title: 'VTC Tours 37 - Service de Transport Premium en Touraine',
+    description: 'VTC Tours 37, votre service de transport premium en Touraine. Transferts aéroport, gares, événements. Chauffeur privé disponible 24/7 pour tous vos déplacements.',
     openGraph: {
-      title: 'Mon VTC 37 - Service de Transport Professionnel en Touraine',
-      description: 'Service de transport VTC professionnel de qualité en Touraine. Transferts aéroport, gares, événements.',
+      title: 'VTC Tours 37 - Service de Transport Premium en Touraine',
+      description: 'VTC Tours 37, votre service de transport premium en Touraine. Transferts aéroport, gares, événements.',
     },
   },
   '/about': {
-    title: 'À propos - Mon VTC 37',
-    description: 'Découvrez Mon VTC 37, votre service de transport professionnel en Touraine. Qualité, fiabilité et confort pour tous vos déplacements.',
+    title: 'À propos - VTC Tours 37',
+    description: 'Découvrez VTC Tours 37, votre service de transport premium en Touraine. Qualité, fiabilité et confort pour tous vos déplacements.',
     openGraph: {
-      title: 'À propos - Mon VTC 37',
-      description: 'Découvrez Mon VTC 37, votre service de transport professionnel en Touraine.',
+      title: 'À propos - VTC Tours 37',
+      description: 'Découvrez VTC Tours 37, votre service de transport premium en Touraine.',
     },
   },
   '/contact': {
-    title: 'Contact - Mon VTC 37',
-    description: 'Contactez Mon VTC 37 pour vos besoins de transport. Service client disponible 24/7 pour répondre à toutes vos demandes.',
+    title: 'Contact - VTC Tours 37',
+    description: 'Contactez VTC Tours 37 pour vos besoins de transport. Service client disponible 24/7 pour répondre à toutes vos demandes.',
     openGraph: {
-      title: 'Contact - Mon VTC 37',
-      description: 'Contactez Mon VTC 37 pour vos besoins de transport.',
+      title: 'Contact - VTC Tours 37',
+      description: 'Contactez VTC Tours 37 pour vos besoins de transport.',
     },
   },
-  '/tarifs': {
-    title: 'Tarifs - Mon VTC 37',
-    description: 'Consultez nos tarifs pour tous nos services de transport VTC. Des prix transparents et compétitifs pour tous vos déplacements.',
+  '/services': {
+    title: 'Services - VTC Tours 37',
+    description: 'Découvrez nos services de transport VTC à Tours et en Touraine. Transferts aéroport, gares, événements. Chauffeur privé disponible 24/7.',
     openGraph: {
-      title: 'Tarifs - Mon VTC 37',
-      description: 'Consultez nos tarifs pour tous nos services de transport VTC.',
+      title: 'Services - VTC Tours 37',
+      description: 'Découvrez nos services de transport VTC à Tours et en Touraine.',
     },
   },
   '/transfert-aeroport': {
-    title: 'Transfert Aéroport - Mon VTC 37',
-    description: 'Service de transfert professionnel vers et depuis les aéroports. Confort et ponctualité garantis pour vos déplacements aériens.',
+    title: 'Transfert Aéroport - VTC Tours 37',
+    description: 'Service de transfert professionnel vers et depuis les aéroports depuis Tours. Confort et ponctualité garantis pour vos déplacements aériens.',
     openGraph: {
-      title: 'Transfert Aéroport - Mon VTC 37',
-      description: 'Service de transfert professionnel vers et depuis les aéroports.',
+      title: 'Transfert Aéroport - VTC Tours 37',
+      description: 'Service de transfert professionnel vers et depuis les aéroports depuis Tours.',
     },
   },
   '/contact-aeroport': {
-    title: 'Contact Aéroport - Mon VTC 37',
-    description: 'Réservez votre transfert aéroport avec Mon VTC 37. Service disponible 24/7 pour tous vos déplacements aériens.',
+    title: 'Contact Aéroport - VTC Tours 37',
+    description: 'Réservez votre transfert aéroport avec VTC Tours 37. Service disponible 24/7 pour tous vos déplacements aériens depuis Tours.',
     openGraph: {
-      title: 'Contact Aéroport - Mon VTC 37',
-      description: 'Réservez votre transfert aéroport avec Mon VTC 37.',
+      title: 'Contact Aéroport - VTC Tours 37',
+      description: 'Réservez votre transfert aéroport avec VTC Tours 37.',
     },
   },
 }; 

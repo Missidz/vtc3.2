@@ -12,8 +12,9 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   ...defaultMetadata,
-  title: "Mon VTC 37",
-  description: "Service de transport professionnel de qualité pour tous vos déplacements",
+  title: "VTC Tours 37 - Service de Transport Premium en Touraine",
+  description: "VTC Tours 37, votre service de transport premium en Touraine. Transferts aéroport, gares, événements. Chauffeur privé disponible 24/7 pour tous vos déplacements.",
+  keywords: "VTC Tours 37, VTC Touraine, transport premium Tours, chauffeur privé 37, transfert aéroport Tours, VTC professionnel 37",
   icons: {
     icon: '/logo.png',
     apple: '/logo.png',

@@ -20,7 +20,7 @@ export default function Services() {
           transition={{ duration: 0.5 }}
           className="xl:text-5xl text-4xl font-extrabold text-white mb-6 drop-shadow-lg"
         >
-          Nos Services
+          VTC Tours 37 - Nos Services
         </motion.h1>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
@@ -31,7 +31,7 @@ export default function Services() {
         >
           Découvrez nos{" "}
           <span className="font-bold text-yellow-400">
-            services de transport premium
+            services de transport VTC à Tours et en Touraine
           </span>
           , adaptés à tous vos besoins :
         </motion.p>
