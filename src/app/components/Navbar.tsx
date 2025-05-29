@@ -135,7 +135,7 @@ export default function Navbar() {
                 href="/tarifs"
                 className="text-white hover:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
               >
-                Nos Tarifs
+                Nos Services
               </Link>
               <Link
                 href="/contact"
