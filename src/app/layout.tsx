@@ -6,14 +6,17 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Inter } from 'next/font/google';
 import { Analytics } from "@vercel/analytics/next";
+import { defaultMetadata } from './metadata';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  ...defaultMetadata,
   title: "Mon VTC 37",
   description: "Service de transport professionnel de qualité pour tous vos déplacements",
   icons: {
     icon: '/logo.png',
+    apple: '/logo.png',
   },
 };
 
