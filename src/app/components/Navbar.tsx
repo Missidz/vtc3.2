@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -113,6 +114,12 @@ export default function Navbar() {
               Nos Services
             </Link>
             <Link
+              href="/tarifs"
+              className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium"
+            >
+              Nos Tarifs
+            </Link>
+            <Link
               href="/contact"
               className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium"
             >
@@ -130,26 +137,68 @@ export default function Navbar() {
         {/* Menu mobile */}
         {isMenuOpen && (
           <div className="sm:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link
-                href="/services"
-                className="text-white hover:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
+            <motion.div
+              className="px-2 pt-2 pb-3 space-y-1"
+              initial="closed"
+              animate="open"
+              variants={{
+                open: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+                closed: { transition: { staggerChildren: 0.05, staggerDirection: -1 } },
+              }}
+            >
+              <motion.div
+                variants={{
+                  closed: { opacity: 0, y: 20 },
+                  open: { opacity: 1, y: 0, transition: { duration: 0.35 } },
+                }}
               >
-                Nos Services
-              </Link>
-              <Link
-                href="/contact"
-                className="text-white hover:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
+                <Link
+                  href="/services"
+                  className="text-white hover:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  Nos Services
+                </Link>
+              </motion.div>
+              <motion.div
+                variants={{
+                  closed: { opacity: 0, y: 20 },
+                  open: { opacity: 1, y: 0, transition: { duration: 0.35 } },
+                }}
               >
-                Contact
-              </Link>
-              <Link
-                href="/about"
-                className="text-white hover:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
+                <Link
+                  href="/tarifs"
+                  className="text-white hover:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  Nos Tarifs
+                </Link>
+              </motion.div>
+              <motion.div
+                variants={{
+                  closed: { opacity: 0, y: 20 },
+                  open: { opacity: 1, y: 0, transition: { duration: 0.35 } },
+                }}
               >
-                À propos
-              </Link>
-            </div>
+                <Link
+                  href="/contact"
+                  className="text-white hover:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  Contact
+                </Link>
+              </motion.div>
+              <motion.div
+                variants={{
+                  closed: { opacity: 0, y: 20 },
+                  open: { opacity: 1, y: 0, transition: { duration: 0.35 } },
+                }}
+              >
+                <Link
+                  href="/about"
+                  className="text-white hover:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  À propos
+                </Link>
+              </motion.div>
+            </motion.div>
           </div>
         )}
       </div>

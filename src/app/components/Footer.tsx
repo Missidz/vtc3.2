@@ -30,8 +30,13 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Liens rapides</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/tarifs" className="hover:text-yellow-400 transition-colors">
+                <Link href="/services" className="hover:text-yellow-400 transition-colors">
                   Nos Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/tarifs" className="hover:text-yellow-400 transition-colors">
+                  Nos Tarifs
                 </Link>
               </li>
               <li>
