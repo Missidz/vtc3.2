@@ -26,7 +26,7 @@ export default function Home() {
       image: '/slide1.jpg',
       title: 'Service VTC Premium',
       description: 'Voyagez avec style et confort',
-      link: '/contact'
+      link: '/services'
     },
     {
       image: '/slide2.jpg',
@@ -48,7 +48,7 @@ export default function Home() {
         name="VTC Tours 37"
         description="VTC Tours 37, votre service de transport premium en Touraine. Transferts aéroport, gares, événements. Chauffeur privé disponible 24/7."
         address={{
-          streetAddress: "Votre adresse",
+          streetAddress: "Tours",
           addressLocality: "Tours",
           postalCode: "37000",
           addressCountry: "FR"
@@ -57,8 +57,8 @@ export default function Home() {
           latitude: "47.3900",
           longitude: "0.6892"
         }}
-        telephone="+33600000000"
-        email="contact@monvtc37.fr"
+        telephone="+33666144197"
+        email="yanisse.monvtc37@gmail.com"
         url="https://monvtc37.fr"
         priceRange="€€"
         openingHours={[
