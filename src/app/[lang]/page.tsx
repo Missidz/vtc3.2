@@ -8,11 +8,12 @@ import JsonLd from '../components/JsonLd';
 import { faqSchema } from '@/i18n/schema';
 import Commitment from '../components/Commitment';
 import Faq from '../components/Faq';
+import QuickContact from '../components/QuickContact';
 import FinalCta from '../components/FinalCta';
 import Reveal from '../components/Reveal';
 import ServiceGrid from '../components/ServiceGrid';
 import Visual from '../components/Visual';
-import { ArrowIcon, WhatsAppIcon } from '../components/Icons';
+import { ArrowIcon, PhoneIcon } from '../components/Icons';
 import { images } from '../components/images';
 import { ButtonLink, Container, Eyebrow, SectionHeader } from '../components/ui';
 import { href } from '@/i18n/routes';
@@ -35,7 +36,7 @@ export default async function Home({ params }: Props) {
       <JsonLd data={faqSchema(dict.faq.items)} />
 
       {/* Hero */}
-      <section className="relative flex min-h-[100svh] items-end overflow-hidden pb-20 pt-32 md:items-center md:pb-0">
+      <section className="relative flex min-h-[100svh] items-end overflow-hidden pb-32 pt-32 md:items-center md:pb-24">
         {images.hero && (
           <Image src={images.hero} alt={hero.imageAlt} fill priority sizes="100vw" className="object-cover opacity-70" />
         )}
@@ -51,8 +52,8 @@ export default async function Home({ params }: Props) {
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-ivory/80">{hero.subtitle}</p>
             <div className="mt-12 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href={href(lang, 'contact')}>{dict.common.book}</ButtonLink>
-              <ButtonLink href={site.whatsappHref} variant="outline" external>
-                <WhatsAppIcon /> {dict.common.whatsapp}
+              <ButtonLink href={site.phoneHref} variant="outline">
+                <PhoneIcon /> {site.phone}
               </ButtonLink>
             </div>
             <ul className="mt-14 flex flex-col gap-3 text-[0.7rem] font-medium uppercase tracking-[0.2em] text-ivory-muted sm:flex-row sm:gap-8">
@@ -66,6 +67,9 @@ export default async function Home({ params }: Props) {
           </div>
         </Container>
       </section>
+
+      {/* Contact rapide : téléphone, WhatsApp, transport PMR */}
+      <QuickContact lang={lang} dict={dict} />
 
       {/* Piliers */}
       <section className="border-y border-ink-line bg-ink-2">

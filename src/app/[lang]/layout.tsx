@@ -4,6 +4,7 @@ import '../globals.css';
 import { display, sans } from '../fonts';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import MobileActionBar from '../components/MobileActionBar';
 import { locales } from '@/i18n/config';
 import { getDictionary } from '@/i18n/get-dictionary';
 import { resolveLang } from '@/i18n/server';
@@ -38,11 +39,12 @@ export default async function LangLayout({ children, params }: { children: React
 
   return (
     <html lang={lang} className={`${display.variable} ${sans.variable}`}>
-      <body className="flex min-h-screen flex-col">
+      <body className="flex min-h-screen flex-col pb-16 md:pb-0">
         <JsonLd data={businessSchema(lang, dict)} />
         <Navbar lang={lang} nav={dict.nav} />
         <main className="flex-grow">{children}</main>
         <Footer lang={lang} dict={dict} />
+        <MobileActionBar lang={lang} labels={dict.mobileBar} />
         <Analytics />
       </body>
     </html>
