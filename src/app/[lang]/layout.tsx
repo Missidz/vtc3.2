@@ -23,12 +23,14 @@ export const metadata: Metadata = {
   formatDetection: { telephone: false },
   // Code de vérification Google Search Console (variable d'environnement sur Vercel)
   verification: { google: process.env.GOOGLE_SITE_VERIFICATION },
+  // ?v=2 : force les navigateurs à recharger l'icône (ils gardent longtemps l'ancien favicon en cache)
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
+      { url: '/favicon.ico?v=2', sizes: 'any' },
+      { url: '/icon-512.png?v=2', type: 'image/png', sizes: '512x512' },
     ],
-    apple: '/apple-touch-icon.png',
+    shortcut: '/favicon.ico?v=2',
+    apple: '/apple-touch-icon.png?v=2',
   },
   robots: {
     index: true,

@@ -13,7 +13,7 @@ import FinalCta from '../components/FinalCta';
 import Reveal from '../components/Reveal';
 import ServiceGrid from '../components/ServiceGrid';
 import Visual from '../components/Visual';
-import { ArrowIcon, PhoneIcon } from '../components/Icons';
+import { ArrowIcon, PhoneIcon, WhatsAppIcon, WheelchairIcon } from '../components/Icons';
 import { images } from '../components/images';
 import { ButtonLink, Container, Eyebrow, SectionHeader } from '../components/ui';
 import { href } from '@/i18n/routes';
@@ -50,10 +50,15 @@ export default async function Home({ params }: Props) {
               {hero.title}
             </p>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-ivory/80">{hero.subtitle}</p>
-            <div className="mt-12 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href={href(lang, 'contact')}>{dict.common.book}</ButtonLink>
-              <ButtonLink href={site.phoneHref} variant="outline">
+            <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <ButtonLink href={site.phoneHref}>
                 <PhoneIcon /> {site.phone}
+              </ButtonLink>
+              <ButtonLink href={site.whatsappHref} variant="outline" external>
+                <WhatsAppIcon /> {dict.common.whatsapp}
+              </ButtonLink>
+              <ButtonLink href={`${href(lang, 'contact')}?service=pmr`} variant="accent">
+                <WheelchairIcon /> {dict.nav.pmr}
               </ButtonLink>
             </div>
             <ul className="mt-14 flex flex-col gap-3 text-[0.7rem] font-medium uppercase tracking-[0.2em] text-ivory-muted sm:flex-row sm:gap-8">
