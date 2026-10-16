@@ -4,6 +4,9 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { LOCALE_COOKIE, locales, type Locale } from '@/i18n/config';
 import { findPage, pages } from '@/i18n/routes';
+import { FlagFr, FlagUk } from './Flags';
+
+const flags = { fr: { Flag: FlagFr, name: 'Français' }, en: { Flag: FlagUk, name: 'English' } };
 
 export default function LanguageSwitcher({ lang, label }: { lang: Locale; label: string }) {
   const pathname = usePathname() ?? `/${lang}`;
@@ -16,22 +19,28 @@ export default function LanguageSwitcher({ lang, label }: { lang: Locale; label:
   };
 
   return (
-    <nav aria-label={label} className="flex items-center gap-2 text-[0.7rem] font-medium uppercase tracking-[0.2em]">
-      {locales.map((l, i) => (
-        <span key={l} className="flex items-center gap-2">
-          {i > 0 && <span className="text-ivory/25" aria-hidden>|</span>}
+    <nav aria-label={label} className="flex items-center gap-2">
+      {locales.map((l) => {
+        const { Flag, name } = flags[l];
+        const active = l === lang;
+        return (
           <Link
+            key={l}
             href={hrefFor(l)}
             hrefLang={l}
             lang={l}
             onClick={() => remember(l)}
-            aria-current={l === lang ? 'true' : undefined}
-            className={l === lang ? 'text-gold' : 'text-ivory-muted transition-colors hover:text-ivory'}
+            aria-current={active ? 'true' : undefined}
+            aria-label={name}
+            title={name}
+            className={`block h-7 w-7 overflow-hidden rounded-full ring-1 ring-offset-2 ring-offset-ink transition duration-300 ${
+              active ? 'ring-gold' : 'opacity-50 ring-ivory/20 hover:opacity-100 hover:ring-ivory/60'
+            }`}
           >
-            {l}
+            <Flag className="h-full w-full" />
           </Link>
-        </span>
-      ))}
+        );
+      })}
     </nav>
   );
 }
