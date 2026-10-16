@@ -1,207 +1,136 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import Image from "next/image";
-import { useState } from "react";
-import { motion } from "framer-motion";
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import type { Locale } from '@/i18n/config';
+import type { Dictionary } from '@/i18n/get-dictionary';
+import { site } from '@/i18n/site';
+import LanguageSwitcher from './LanguageSwitcher';
+import { PhoneIcon, WhatsAppIcon } from './Icons';
 
-export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+type Props = { lang: Locale; nav: Dictionary['nav'] };
+
+export default function Navbar({ lang, nav }: Props) {
+  const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => setOpen(false), [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : '';
+  }, [open]);
+
+  const links = [
+    { href: `/${lang}/services`, label: nav.services },
+    { href: `/${lang}/vehicule`, label: nav.vehicle },
+    { href: `/${lang}/tarifs`, label: nav.rates },
+    { href: `/${lang}/about`, label: nav.about },
+    { href: `/${lang}/contact`, label: nav.contact },
+  ];
+  const isActive = (href: string) => pathname === href || pathname?.startsWith(`${href}/`);
 
   return (
-    <nav className="bg-black shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex">
-            <div className="flex-shrink-0 flex items-center">
-              <Link href="/">
-                <Image
-                  src="/logo.png"
-                  alt="VTC37 Logo"
-                  width={120}
-                  height={48}
-                  style={{ objectFit: "contain" }}
-                  priority
-                />
-              </Link>
-            </div>
-          </div>
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-premium ${
+        scrolled || open ? 'border-b border-ink-line bg-ink/90 backdrop-blur-md' : 'border-b border-transparent bg-transparent'
+      }`}
+    >
+      <div className="container mx-auto flex h-20 items-center justify-between px-6 lg:px-12">
+        <Link href={`/${lang}`} aria-label={`${site.name} · ${nav.home}`} className="shrink-0">
+          <Image src="/logo-mark.png" alt={site.name} width={924} height={221} priority className="h-8 w-auto md:h-9" />
+        </Link>
 
-          {/* Liens toujours visibles sur mobile */}
-          <div className="flex items-center space-x-1 sm:space-x-2 -ml-4">
-            <a
-              href="https://wa.me/33666144197"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-green-400 px-1 sm:px-2 py-2 rounded-md text-xs font-medium flex items-center"
+        <nav className="hidden items-center gap-10 lg:flex" aria-label="Navigation">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`relative text-[0.72rem] font-medium uppercase tracking-[0.2em] transition-colors duration-300 after:absolute after:-bottom-2 after:left-0 after:h-px after:bg-gold after:transition-all after:duration-500 after:ease-premium ${
+                isActive(link.href) ? 'text-ivory after:w-full' : 'text-ivory-muted after:w-0 hover:text-ivory hover:after:w-full'
+              }`}
             >
-              <svg
-                className="w-5 h-5 mr-1"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-              </svg>
-              <span className="hidden sm:inline">WhatsApp</span>
-            </a>
-            <a
-              href="https://snapchat.com/add/monvtc37"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-yellow-400 px-1 sm:px-2 py-2 rounded-md text-xs font-medium flex items-center"
-            >
-              <Image
-                src="/snapchat_logo.png"
-                alt="Snapchat"
-                width={20}
-                height={20}
-                className="mr-1"
-              />
-              <span className="hidden sm:inline">Snapchat</span>
-            </a>
-            <a
-              href="tel:0666144197"
-              className="text-white hover:text-blue-400 px-1 sm:px-2 py-2 rounded-md text-xs font-medium flex items-center"
-            >
-              <svg
-                className="w-5 h-5 mr-1"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1zM19 12h2c0-4.9-4-8.9-9-8.9v2c3.9 0 7 3.1 7 6.9zm-4 0h2c0-2.8-2.2-5-5-5v2c1.7 0 3 1.3 3 3z" />
-              </svg>
-              06 66 14 41 97
-            </a>
+              {link.label}
+            </Link>
+          ))}
+        </nav>
 
-            {/* Menu hamburger pour mobile */}
-            <div className="flex items-center sm:hidden">
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-white hover:text-gray-300 focus:outline-none"
-              >
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  {isMenuOpen ? (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  ) : (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
-                  )}
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          {/* Menu desktop */}
-          <div className="hidden sm:flex items-center space-x-4">
-            <Link
-              href="/services"
-              className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium"
-            >
-              Nos Services
-            </Link>
-            <Link
-              href="/tarifs"
-              className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium"
-            >
-              Nos Tarifs
-            </Link>
-            <Link
-              href="/contact"
-              className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium"
-            >
-              Contact
-            </Link>
-            <Link
-              href="/about"
-              className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium"
-            >
-              À propos
-            </Link>
-          </div>
+        <div className="flex items-center gap-5">
+          <LanguageSwitcher lang={lang} label={nav.language} />
+          <a href={site.phoneHref} className="hidden items-center gap-2 text-sm text-ivory-muted transition-colors hover:text-ivory xl:flex">
+            <PhoneIcon /> {site.phone}
+          </a>
+          <Link
+            href={`/${lang}/contact`}
+            className="hidden bg-gold px-6 py-3 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-ink transition-colors duration-500 hover:bg-gold-light sm:inline-block"
+          >
+            {nav.book}
+          </Link>
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-label={open ? nav.close : nav.menu}
+            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
+          >
+            <span className={`h-px w-6 bg-ivory transition-transform duration-300 ${open ? 'translate-y-[3.5px] rotate-45' : ''}`} />
+            <span className={`h-px w-6 bg-ivory transition-transform duration-300 ${open ? '-translate-y-[3.5px] -rotate-45' : ''}`} />
+          </button>
         </div>
-
-        {/* Menu mobile */}
-        {isMenuOpen && (
-          <div className="sm:hidden">
-            <motion.div
-              className="px-2 pt-2 pb-3 space-y-1"
-              initial="closed"
-              animate="open"
-              variants={{
-                open: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
-                closed: { transition: { staggerChildren: 0.05, staggerDirection: -1 } },
-              }}
-            >
-              <motion.div
-                variants={{
-                  closed: { opacity: 0, y: 20 },
-                  open: { opacity: 1, y: 0, transition: { duration: 0.35 } },
-                }}
-              >
-                <Link
-                  href="/services"
-                  className="text-white hover:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  Nos Services
-                </Link>
-              </motion.div>
-              <motion.div
-                variants={{
-                  closed: { opacity: 0, y: 20 },
-                  open: { opacity: 1, y: 0, transition: { duration: 0.35 } },
-                }}
-              >
-                <Link
-                  href="/tarifs"
-                  className="text-white hover:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  Nos Tarifs
-                </Link>
-              </motion.div>
-              <motion.div
-                variants={{
-                  closed: { opacity: 0, y: 20 },
-                  open: { opacity: 1, y: 0, transition: { duration: 0.35 } },
-                }}
-              >
-                <Link
-                  href="/contact"
-                  className="text-white hover:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  Contact
-                </Link>
-              </motion.div>
-              <motion.div
-                variants={{
-                  closed: { opacity: 0, y: 20 },
-                  open: { opacity: 1, y: 0, transition: { duration: 0.35 } },
-                }}
-              >
-                <Link
-                  href="/about"
-                  className="text-white hover:text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  À propos
-                </Link>
-              </motion.div>
-            </motion.div>
-          </div>
-        )}
       </div>
-    </nav>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="h-[calc(100dvh-5rem)] overflow-y-auto bg-ink lg:hidden"
+          >
+            <nav className="container mx-auto flex flex-col px-6 py-10" aria-label="Navigation">
+              {links.map((link, i) => (
+                <motion.div
+                  key={link.href}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.05 * i, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <Link
+                    href={link.href}
+                    className={`block border-b border-ink-line py-5 font-display text-3xl ${isActive(link.href) ? 'text-gold' : 'text-ivory'}`}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              ))}
+              <div className="mt-10 grid gap-3">
+                <Link href={`/${lang}/contact`} className="bg-gold py-4 text-center text-xs font-semibold uppercase tracking-[0.2em] text-ink">
+                  {nav.book}
+                </Link>
+                <div className="grid grid-cols-2 gap-3">
+                  <a href={site.phoneHref} className="flex items-center justify-center gap-2 border border-ink-line py-4 text-sm text-ivory">
+                    <PhoneIcon /> {site.phone}
+                  </a>
+                  <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 border border-ink-line py-4 text-sm text-ivory">
+                    <WhatsAppIcon /> WhatsApp
+                  </a>
+                </div>
+              </div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   );
 }

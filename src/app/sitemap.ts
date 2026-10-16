@@ -1,22 +1,14 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from 'next';
+import { locales } from '@/i18n/config';
+import { routes, site } from '@/i18n/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://monvtc37.fr'
-  
-  // Routes statiques
-  const routes = [
-    '',
-    '/about',
-    '/contact',
-    '/services',
-    '/transfert-aeroport',
-    '/contact-aeroport',
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: route === '' ? 1 : 0.8,
-  }))
-
-  return routes
-} 
+  return routes.flatMap((route) =>
+    locales.map((lang) => ({
+      url: `${site.url}/${lang}${route}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: route === '' ? 1 : 0.8,
+    })),
+  );
+}
