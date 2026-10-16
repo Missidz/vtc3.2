@@ -57,7 +57,7 @@ export function ButtonLink({
   external?: boolean;
   className?: string;
 }) {
-  const classes = `inline-flex items-center justify-center gap-3 px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] transition-colors duration-500 ease-premium ${buttonStyles[variant]} ${className}`;
+  const classes = `inline-flex items-center justify-center gap-3 whitespace-nowrap px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] transition-colors duration-500 ease-premium ${buttonStyles[variant]} ${className}`;
   if (external || href.startsWith('tel:')) {
     return (
       <a href={href} className={classes} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>

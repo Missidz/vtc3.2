@@ -16,10 +16,10 @@ const areaServed = [
 export function businessSchema(lang: Locale, dict: Dictionary) {
   const { services } = dict;
   const offered: [PageKey, { title: string; text: string }][] = [
+    ['pmr', services.pmr],
+    ['tourism', services.tourism],
     ['contact', services.disposal],
     ['contact', services.longDistance],
-    ['tourism', services.tourism],
-    ['health', services.health],
   ];
 
   return {

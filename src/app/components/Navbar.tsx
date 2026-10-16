@@ -9,7 +9,7 @@ import type { Locale } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/get-dictionary';
 import { site } from '@/i18n/site';
 import LanguageSwitcher from './LanguageSwitcher';
-import { PhoneIcon, WhatsAppIcon } from './Icons';
+import { PhoneIcon, WhatsAppIcon, WheelchairIcon } from './Icons';
 import { href } from '@/i18n/routes';
 
 type Props = { lang: Locale; nav: Dictionary['nav'] };
@@ -33,11 +33,12 @@ export default function Navbar({ lang, nav }: Props) {
   }, [open]);
 
   const links = [
+    { href: href(lang, 'contact'), label: nav.contact },
+    { href: href(lang, 'pmr'), label: nav.pmrShort, featured: true },
+    { href: href(lang, 'tourism'), label: nav.tourism },
     { href: href(lang, 'services'), label: nav.services },
-    { href: href(lang, 'vehicle'), label: nav.vehicle },
     { href: href(lang, 'rates'), label: nav.rates },
     { href: href(lang, 'about'), label: nav.about },
-    { href: href(lang, 'contact'), label: nav.contact },
   ];
   const isActive = (href: string) => pathname === href || pathname?.startsWith(`${href}/`);
 
@@ -48,32 +49,48 @@ export default function Navbar({ lang, nav }: Props) {
       }`}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-6 lg:px-12">
-        <Link href={href(lang, 'home')} aria-label={`${site.name} · ${nav.home}`} className="shrink-0">
+        <Link href={href(lang, 'home')} aria-label={`${site.name} · ${nav.home}`} className="mr-8 shrink-0">
           <Image src="/logo-mark.png" alt={site.name} width={924} height={221} priority className="h-8 w-auto md:h-9" />
         </Link>
 
-        <nav className="hidden items-center gap-10 lg:flex" aria-label="Navigation">
-          {links.map((link) => (
+        <nav className="hidden items-center gap-7 xl:flex" aria-label="Navigation">
+          {links.map((link) =>
+            link.featured ? (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`flex items-center gap-2 whitespace-nowrap border px-3 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.15em] transition-colors duration-300 ${
+                  isActive(link.href) ? 'border-gold bg-gold text-ink' : 'border-gold/70 text-gold hover:bg-gold hover:text-ink'
+                }`}
+              >
+                <WheelchairIcon /> {link.label}
+              </Link>
+            ) : (
             <Link
               key={link.href}
               href={link.href}
-              className={`relative text-[0.72rem] font-medium uppercase tracking-[0.2em] transition-colors duration-300 after:absolute after:-bottom-2 after:left-0 after:h-px after:bg-gold after:transition-all after:duration-500 after:ease-premium ${
+              className={`relative whitespace-nowrap text-[0.72rem] font-medium uppercase tracking-[0.2em] transition-colors duration-300 after:absolute after:-bottom-2 after:left-0 after:h-px after:bg-gold after:transition-all after:duration-500 after:ease-premium ${
                 isActive(link.href) ? 'text-ivory after:w-full' : 'text-ivory-muted after:w-0 hover:text-ivory hover:after:w-full'
               }`}
             >
               {link.label}
             </Link>
-          ))}
+            ),
+          )}
         </nav>
 
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-4">
           <LanguageSwitcher lang={lang} label={nav.language} />
-          <a href={site.phoneHref} className="hidden items-center gap-2 text-sm text-ivory-muted transition-colors hover:text-ivory xl:flex">
-            <PhoneIcon /> {site.phone}
+          <a
+            href={site.phoneHref}
+            aria-label={site.phone}
+            className="flex items-center gap-2 whitespace-nowrap border border-ink-line px-3 py-3 text-sm font-semibold text-ivory transition-colors hover:border-gold hover:text-gold sm:px-4"
+          >
+            <PhoneIcon className="h-4 w-4 text-gold" /> <span className="hidden sm:inline xl:hidden 2xl:inline">{site.phone}</span>
           </a>
           <Link
             href={href(lang, 'contact')}
-            className="hidden bg-gold px-6 py-3 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-ink transition-colors duration-500 hover:bg-gold-light sm:inline-block"
+            className="hidden whitespace-nowrap bg-gold px-6 py-3 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-ink transition-colors duration-500 hover:bg-gold-light lg:inline-block"
           >
             {nav.book}
           </Link>
@@ -82,7 +99,7 @@ export default function Navbar({ lang, nav }: Props) {
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-label={open ? nav.close : nav.menu}
-            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
+            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 xl:hidden"
           >
             <span className={`h-px w-6 bg-ivory transition-transform duration-300 ${open ? 'translate-y-[3.5px] rotate-45' : ''}`} />
             <span className={`h-px w-6 bg-ivory transition-transform duration-300 ${open ? '-translate-y-[3.5px] -rotate-45' : ''}`} />
@@ -97,7 +114,7 @@ export default function Navbar({ lang, nav }: Props) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="h-[calc(100dvh-5rem)] overflow-y-auto bg-ink lg:hidden"
+            className="h-[calc(100dvh-5rem)] overflow-y-auto bg-ink xl:hidden"
           >
             <nav className="container mx-auto flex flex-col px-6 py-10" aria-label="Navigation">
               {links.map((link, i) => (
@@ -109,8 +126,11 @@ export default function Navbar({ lang, nav }: Props) {
                 >
                   <Link
                     href={link.href}
-                    className={`block border-b border-ink-line py-5 font-display text-3xl ${isActive(link.href) ? 'text-gold' : 'text-ivory'}`}
+                    className={`flex items-center gap-3 border-b border-ink-line py-5 font-display text-3xl ${
+                      isActive(link.href) || link.featured ? 'text-gold' : 'text-ivory'
+                    }`}
                   >
+                    {link.featured && <WheelchairIcon className="h-6 w-6" />}
                     {link.label}
                   </Link>
                 </motion.div>

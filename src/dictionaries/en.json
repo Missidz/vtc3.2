@@ -14,10 +14,10 @@
       "description": "Chenonceau, Amboise, Chambord, Vouvray and Chinon wine cellars: explore the Loire Valley with an English-speaking private driver from Tours. Tailor-made tours.",
       "h1": "Loire Valley château & wine tours with a private driver"
     },
-    "health": {
-      "title": "Medical Appointment Transport in Tours, France",
-      "description": "A caring driver for your medical appointments in Tours and Indre-et-Loire: help getting in, waiting, return trip. Folding wheelchair required.",
-      "h1": "Medical appointment transport in Tours, France"
+    "pmr": {
+      "title": "Reduced Mobility & Disability Transport in Tours, France",
+      "description": "Transport for people with reduced mobility or disabilities in Tours: help getting in, medical appointments, outings. Folding wheelchair required.",
+      "h1": "Reduced mobility & disability transport in Tours"
     },
     "vehicle": {
       "title": "BYD SEAL: 100% Electric Chauffeur Car in Tours",
@@ -50,7 +50,10 @@
     "book": "Book",
     "menu": "Open menu",
     "close": "Close menu",
-    "language": "Language"
+    "language": "Language",
+    "pmr": "Reduced mobility transport",
+    "pmrShort": "Mobility transport",
+    "tourism": "Sightseeing"
   },
   "common": {
     "learnMore": "Discover",
@@ -69,6 +72,28 @@
       "Always a solution"
     ],
     "imageAlt": "Private driver at the wheel at sunset, chauffeur service in Tours, France"
+  },
+  "quick": {
+    "call": {
+      "title": "Call me",
+      "text": "Immediate answer, 24/7.",
+      "cta": "Call"
+    },
+    "whatsapp": {
+      "title": "WhatsApp",
+      "text": "Send your request and I'll reply quickly.",
+      "cta": "Message on WhatsApp"
+    },
+    "pmr": {
+      "title": "Reduced mobility transport",
+      "text": "Rides adapted for people with reduced mobility. Folding wheelchair required.",
+      "cta": "Make a request"
+    }
+  },
+  "mobileBar": {
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "pmr": "Mobility"
   },
   "pillars": [
     {
@@ -94,6 +119,15 @@
     "intro": "From business meetings to a getaway among the vineyards, every journey is prepared with the same care."
   },
   "services": {
+    "pmr": {
+      "title": "Reduced mobility & disability transport",
+      "text": "For people with reduced mobility, disabilities, older or unwell passengers: adapted rides, with patience and care.",
+      "badge": "Folding wheelchair required"
+    },
+    "tourism": {
+      "title": "Loire Valley tours",
+      "text": "Loire châteaux, sightseeing tours and wine cellar visits, at your own pace."
+    },
     "disposal": {
       "title": "Hourly hire",
       "text": "A private driver by the hour or by the day for your meetings, events and evenings out."
@@ -101,15 +135,6 @@
     "longDistance": {
       "title": "Long distance",
       "text": "Rides anywhere in France, to stations or city centres, in grand-touring comfort."
-    },
-    "tourism": {
-      "title": "Loire Valley tours",
-      "text": "Loire châteaux, sightseeing tours and wine cellar visits, at your own pace."
-    },
-    "health": {
-      "title": "Medical assistance rides",
-      "text": "Rides to your medical appointments with a caring and patient driver.",
-      "badge": "Folding wheelchair required"
     }
   },
   "tourism": {
@@ -144,10 +169,18 @@
     ],
     "cta": "Request a tour quote"
   },
-  "health": {
-    "eyebrow": "Medical assistance",
-    "title": "Rides with care and kindness",
-    "intro": "Consultations, tests, treatment sessions or hospital discharge: I accompany you patiently and attentively, from your door to the entrance of the facility.",
+  "pmr": {
+    "eyebrow": "Reduced mobility & disability transport",
+    "title": "Getting around with peace of mind",
+    "intro": "Medical appointments, errands, visiting loved ones or outings: I accompany people with reduced mobility or disabilities patiently and attentively, from your door to your destination.",
+    "audienceTitle": "Who is it for?",
+    "audience": [
+      "People with reduced mobility",
+      "People with disabilities",
+      "Older passengers",
+      "People who are unwell or recovering",
+      "Hospital discharges and medical appointments"
+    ],
     "requirementTitle": "Mandatory requirement",
     "requirement": "Folding wheelchair required",
     "requirementText": "The wheelchair must fold to fit in the boot. The passenger must be able to transfer to the car seat, alone or with light assistance.",
@@ -160,7 +193,7 @@
       "A companion is welcome on board"
     ],
     "disclaimer": "Non-medical transport service, not covered by French national health insurance. For reimbursed medical transport, please contact an ambulance, VSL or approved taxi.",
-    "cta": "Arrange a ride"
+    "cta": "Request a mobility ride"
   },
   "vehicle": {
     "eyebrow": "The car",
@@ -246,8 +279,8 @@
         "a": "Yes: half day, full day or tailor-made. I wait during every visit and drive you home safely after tastings."
       },
       {
-        "q": "Do you assist people with reduced mobility?",
-        "a": "Yes, provided the wheelchair is foldable and the passenger can transfer to the seat. This service is non-medical and not covered by French health insurance."
+        "q": "Do you offer reduced mobility and disability transport?",
+        "a": "Yes, it is a priority service: people with reduced mobility, disabilities, older or unwell passengers. The wheelchair must be foldable and the passenger must be able to transfer to the seat. This service is non-medical and not covered by French health insurance."
       },
       {
         "q": "Which payment methods do you accept?",
@@ -310,17 +343,17 @@
       "servicePlaceholder": "Select a service",
       "date": "Preferred date and time",
       "message": "Your request (addresses, number of passengers, luggage…)",
-      "healthConsent": "I understand that a folding wheelchair is required and that this service is non-medical and not covered by French health insurance.",
       "submit": "Send request",
       "sending": "Sending…",
       "success": "Thank you, your request has been sent. I'll get back to you very shortly.",
-      "error": "Something went wrong. Please try again or call me directly."
+      "error": "Something went wrong. Please try again or call me directly.",
+      "pmrConsent": "I understand that a folding wheelchair is required and that this service is non-medical and not covered by French health insurance."
     },
     "serviceOptions": {
+      "pmr": "Reduced mobility / disability transport",
+      "tourism": "Loire Valley tour (châteaux, wine cellars)",
       "disposal": "Hourly hire",
       "longDistance": "Long distance",
-      "tourism": "Loire Valley tour (châteaux, wine cellars)",
-      "health": "Medical assistance ride",
       "other": "Other request"
     }
   },

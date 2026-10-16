@@ -12,10 +12,10 @@ export const pages = {
     fr: '/services/visite-chateaux-de-la-loire-caves-a-vin',
     en: '/services/loire-valley-chateau-wine-tours',
   },
-  health: {
-    internal: '/services/accompagnement-sante',
-    fr: '/services/accompagnement-personnes-malades',
-    en: '/services/medical-appointment-transport',
+  pmr: {
+    internal: '/transport-pmr',
+    fr: '/transport-pmr-handicap',
+    en: '/reduced-mobility-disability-transport',
   },
   vehicle: { internal: '/vehicule', fr: '/vehicule-byd-seal', en: '/byd-seal-electric-car' },
   rates: { internal: '/tarifs', fr: '/tarifs', en: '/rates' },
