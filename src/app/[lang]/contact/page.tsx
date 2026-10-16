@@ -3,6 +3,8 @@ import { Suspense } from 'react';
 import { getDictionary } from '@/i18n/get-dictionary';
 import { pageMetadata } from '@/i18n/metadata';
 import { resolveLang } from '@/i18n/server';
+import { breadcrumbSchema } from '@/i18n/schema';
+import JsonLd from '../../components/JsonLd';
 import { site } from '@/i18n/site';
 import ContactForm from '../../components/ContactForm';
 import Reveal from '../../components/Reveal';
@@ -13,7 +15,7 @@ type Props = { params: { lang: string } };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const lang = resolveLang(params.lang);
-  return pageMetadata(lang, '/contact', (await getDictionary(lang)).meta.contact);
+  return pageMetadata(lang, 'contact', (await getDictionary(lang)).meta.contact);
 }
 
 export default async function Contact({ params }: Props) {
@@ -28,7 +30,10 @@ export default async function Contact({ params }: Props) {
 
   return (
     <>
-      <PageHeader eyebrow={contact.eyebrow} title={contact.title} intro={contact.intro} />
+      <JsonLd
+        data={breadcrumbSchema(lang, dict.nav.home, [{ key: 'contact', name: dict.nav.contact }])}
+      />
+      <PageHeader h1={dict.meta.contact.h1} title={contact.title} intro={contact.intro} />
       <section className="py-24 md:py-32">
         <Container className="grid gap-20 lg:grid-cols-[1.5fr_1fr]">
           <Reveal>

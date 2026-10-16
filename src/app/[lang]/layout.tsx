@@ -8,6 +8,8 @@ import { locales } from '@/i18n/config';
 import { getDictionary } from '@/i18n/get-dictionary';
 import { resolveLang } from '@/i18n/server';
 import { site } from '@/i18n/site';
+import { businessSchema } from '@/i18n/schema';
+import JsonLd from '../components/JsonLd';
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -15,8 +17,12 @@ export function generateStaticParams() {
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  icons: { icon: '/logo.png', apple: '/logo.png' },
-  twitter: { card: 'summary_large_image', site: '@monvtc37' },
+  title: { default: site.name, template: `%s | ${site.name}` },
+  applicationName: site.name,
+  formatDetection: { telephone: false },
+  // Code de vérification Google Search Console (variable d'environnement sur Vercel)
+  verification: { google: process.env.GOOGLE_SITE_VERIFICATION },
+  icons: { apple: '/icon-512.png' },
   robots: {
     index: true,
     follow: true,
@@ -33,6 +39,7 @@ export default async function LangLayout({ children, params }: { children: React
   return (
     <html lang={lang} className={`${display.variable} ${sans.variable}`}>
       <body className="flex min-h-screen flex-col">
+        <JsonLd data={businessSchema(lang, dict)} />
         <Navbar lang={lang} nav={dict.nav} />
         <main className="flex-grow">{children}</main>
         <Footer lang={lang} dict={dict} />

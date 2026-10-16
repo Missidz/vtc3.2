@@ -3,16 +3,17 @@ import type { Locale } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/get-dictionary';
 import Reveal from './Reveal';
 import { ArrowIcon, WheelchairIcon } from './Icons';
+import { href } from '@/i18n/routes';
 
 type Props = { lang: Locale; dict: Dictionary };
 
 export default function ServiceGrid({ lang, dict }: Props) {
   const { services, common } = dict;
   const items = [
-    { ...services.disposal, href: `/${lang}/contact?service=disposal` },
-    { ...services.longDistance, href: `/${lang}/contact?service=longDistance` },
-    { ...services.tourism, href: `/${lang}/services/tourisme` },
-    { ...services.health, href: `/${lang}/services/accompagnement-sante` },
+    { ...services.disposal, href: `${href(lang, 'contact')}?service=disposal` },
+    { ...services.longDistance, href: `${href(lang, 'contact')}?service=longDistance` },
+    { ...services.tourism, href: href(lang, 'tourism') },
+    { ...services.health, href: href(lang, 'health') },
   ];
 
   return (

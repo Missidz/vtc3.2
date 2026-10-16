@@ -2,18 +2,21 @@ import type { Metadata } from 'next';
 import { getDictionary } from '@/i18n/get-dictionary';
 import { pageMetadata } from '@/i18n/metadata';
 import { resolveLang } from '@/i18n/server';
+import { breadcrumbSchema } from '@/i18n/schema';
+import JsonLd from '../../components/JsonLd';
 import FinalCta from '../../components/FinalCta';
 import Reveal from '../../components/Reveal';
 import Visual from '../../components/Visual';
 import { CheckIcon } from '../../components/Icons';
 import { images } from '../../components/images';
 import { ButtonLink, Container, Eyebrow } from '../../components/ui';
+import { href } from '@/i18n/routes';
 
 type Props = { params: { lang: string } };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const lang = resolveLang(params.lang);
-  return pageMetadata(lang, '/vehicule', (await getDictionary(lang)).meta.vehicle);
+  return pageMetadata(lang, 'vehicle', (await getDictionary(lang)).meta.vehicle);
 }
 
 export default async function Vehicle({ params }: Props) {
@@ -23,11 +26,14 @@ export default async function Vehicle({ params }: Props) {
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema(lang, dict.nav.home, [{ key: 'vehicle', name: dict.nav.vehicle }])}
+      />
       <section className="pb-16 pt-40 md:pt-48">
         <Container>
           <Reveal className="max-w-3xl">
-            <Eyebrow>{vehicle.eyebrow}</Eyebrow>
-            <h1 className="mt-6 font-display text-6xl font-medium leading-none text-ivory md:text-8xl">{vehicle.title}</h1>
+            <Eyebrow as="h1">{dict.meta.vehicle.h1}</Eyebrow>
+            <p className="mt-6 font-display text-6xl font-medium leading-none text-ivory md:text-8xl">{vehicle.title}</p>
             <p className="mt-6 text-sm uppercase tracking-[0.2em] text-gold">{vehicle.tagline}</p>
           </Reveal>
           <Reveal delay={0.15} className="mt-16">
@@ -58,7 +64,7 @@ export default async function Vehicle({ params }: Props) {
                 </li>
               ))}
             </ul>
-            <ButtonLink href={`/${lang}/contact`} className="mt-10">
+            <ButtonLink href={href(lang, 'contact')} className="mt-10">
               {vehicle.cta}
             </ButtonLink>
           </Reveal>

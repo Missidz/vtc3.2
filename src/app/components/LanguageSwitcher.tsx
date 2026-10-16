@@ -3,10 +3,14 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { LOCALE_COOKIE, locales, type Locale } from '@/i18n/config';
+import { findPage, pages } from '@/i18n/routes';
 
 export default function LanguageSwitcher({ lang, label }: { lang: Locale; label: string }) {
   const pathname = usePathname() ?? `/${lang}`;
-  const hrefFor = (target: Locale) => pathname.replace(/^\/(fr|en)(?=\/|$)/, `/${target}`);
+  const rest = pathname.replace(/^\/(fr|en)(?=\/|$)/, '');
+  const key = findPage(rest);
+  // Renvoie vers la version traduite de la page courante (slugs différents selon la langue)
+  const hrefFor = (target: Locale) => `/${target}${key ? pages[key][target] : rest}`;
   const remember = (target: Locale) => {
     document.cookie = `${LOCALE_COOKIE}=${target}; path=/; max-age=31536000; SameSite=Lax`;
   };

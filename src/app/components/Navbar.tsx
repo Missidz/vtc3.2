@@ -10,6 +10,7 @@ import type { Dictionary } from '@/i18n/get-dictionary';
 import { site } from '@/i18n/site';
 import LanguageSwitcher from './LanguageSwitcher';
 import { PhoneIcon, WhatsAppIcon } from './Icons';
+import { href } from '@/i18n/routes';
 
 type Props = { lang: Locale; nav: Dictionary['nav'] };
 
@@ -32,11 +33,11 @@ export default function Navbar({ lang, nav }: Props) {
   }, [open]);
 
   const links = [
-    { href: `/${lang}/services`, label: nav.services },
-    { href: `/${lang}/vehicule`, label: nav.vehicle },
-    { href: `/${lang}/tarifs`, label: nav.rates },
-    { href: `/${lang}/about`, label: nav.about },
-    { href: `/${lang}/contact`, label: nav.contact },
+    { href: href(lang, 'services'), label: nav.services },
+    { href: href(lang, 'vehicle'), label: nav.vehicle },
+    { href: href(lang, 'rates'), label: nav.rates },
+    { href: href(lang, 'about'), label: nav.about },
+    { href: href(lang, 'contact'), label: nav.contact },
   ];
   const isActive = (href: string) => pathname === href || pathname?.startsWith(`${href}/`);
 
@@ -47,7 +48,7 @@ export default function Navbar({ lang, nav }: Props) {
       }`}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-6 lg:px-12">
-        <Link href={`/${lang}`} aria-label={`${site.name} · ${nav.home}`} className="shrink-0">
+        <Link href={href(lang, 'home')} aria-label={`${site.name} · ${nav.home}`} className="shrink-0">
           <Image src="/logo-mark.png" alt={site.name} width={924} height={221} priority className="h-8 w-auto md:h-9" />
         </Link>
 
@@ -71,7 +72,7 @@ export default function Navbar({ lang, nav }: Props) {
             <PhoneIcon /> {site.phone}
           </a>
           <Link
-            href={`/${lang}/contact`}
+            href={href(lang, 'contact')}
             className="hidden bg-gold px-6 py-3 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-ink transition-colors duration-500 hover:bg-gold-light sm:inline-block"
           >
             {nav.book}
@@ -115,7 +116,7 @@ export default function Navbar({ lang, nav }: Props) {
                 </motion.div>
               ))}
               <div className="mt-10 grid gap-3">
-                <Link href={`/${lang}/contact`} className="bg-gold py-4 text-center text-xs font-semibold uppercase tracking-[0.2em] text-ink">
+                <Link href={href(lang, 'contact')} className="bg-gold py-4 text-center text-xs font-semibold uppercase tracking-[0.2em] text-ink">
                   {nav.book}
                 </Link>
                 <div className="grid grid-cols-2 gap-3">

@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { getDictionary } from '@/i18n/get-dictionary';
 import { pageMetadata } from '@/i18n/metadata';
 import { resolveLang } from '@/i18n/server';
+import { breadcrumbSchema, serviceSchema } from '@/i18n/schema';
+import JsonLd from '../../../components/JsonLd';
 import Commitment from '../../../components/Commitment';
 import FinalCta from '../../../components/FinalCta';
 import Reveal from '../../../components/Reveal';
@@ -9,12 +11,13 @@ import Visual from '../../../components/Visual';
 import { CheckIcon } from '../../../components/Icons';
 import { images } from '../../../components/images';
 import { ButtonLink, Container, Eyebrow } from '../../../components/ui';
+import { href } from '@/i18n/routes';
 
 type Props = { params: { lang: string } };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const lang = resolveLang(params.lang);
-  return pageMetadata(lang, '/services/tourisme', (await getDictionary(lang)).meta.tourism);
+  return pageMetadata(lang, 'tourism', (await getDictionary(lang)).meta.tourism);
 }
 
 export default async function Tourism({ params }: Props) {
@@ -24,13 +27,32 @@ export default async function Tourism({ params }: Props) {
 
   return (
     <>
+      <JsonLd
+        data={[
+          serviceSchema(lang, 'tourism', dict.meta.tourism, {
+            serviceType: 'Tourisme avec chauffeur privé',
+            hasOfferCatalog: {
+              '@type': 'OfferCatalog',
+              name: tourism.circuitsTitle,
+              itemListElement: tourism.circuits.map((c) => ({
+                '@type': 'Offer',
+                itemOffered: { '@type': 'TouristTrip', name: c.title, description: c.text },
+              })),
+            },
+          }),
+          breadcrumbSchema(lang, dict.nav.home, [
+            { key: 'services', name: dict.nav.services },
+            { key: 'tourism', name: dict.services.tourism.title },
+          ]),
+        ]}
+      />
       <section className="pb-24 pt-40 md:pb-32 md:pt-48">
         <Container className="grid items-center gap-16 lg:grid-cols-2">
           <Reveal>
-            <Eyebrow>{tourism.eyebrow}</Eyebrow>
-            <h1 className="mt-6 font-display text-5xl font-medium leading-[1.05] text-ivory md:text-7xl">{tourism.title}</h1>
+            <Eyebrow as="h1">{dict.meta.tourism.h1}</Eyebrow>
+            <p className="mt-6 font-display text-5xl font-medium leading-[1.05] text-ivory md:text-7xl">{tourism.title}</p>
             <p className="mt-8 text-lg leading-relaxed text-ivory-muted">{tourism.intro}</p>
-            <ButtonLink href={`/${lang}/contact?service=tourism`} className="mt-10">
+            <ButtonLink href={`${href(lang, 'contact')}?service=tourism`} className="mt-10">
               {tourism.cta}
             </ButtonLink>
           </Reveal>

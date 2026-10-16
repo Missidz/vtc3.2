@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { getDictionary } from '@/i18n/get-dictionary';
 import { pageMetadata } from '@/i18n/metadata';
 import { resolveLang } from '@/i18n/server';
+import { breadcrumbSchema } from '@/i18n/schema';
+import JsonLd from '../../components/JsonLd';
 import Commitment from '../../components/Commitment';
 import FinalCta from '../../components/FinalCta';
 import Reveal from '../../components/Reveal';
@@ -11,7 +13,7 @@ type Props = { params: { lang: string } };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const lang = resolveLang(params.lang);
-  return pageMetadata(lang, '/tarifs', (await getDictionary(lang)).meta.rates);
+  return pageMetadata(lang, 'rates', (await getDictionary(lang)).meta.rates);
 }
 
 export default async function Rates({ params }: Props) {
@@ -21,7 +23,10 @@ export default async function Rates({ params }: Props) {
 
   return (
     <>
-      <PageHeader eyebrow={rates.eyebrow} title={rates.title} intro={rates.intro} />
+      <JsonLd
+        data={breadcrumbSchema(lang, dict.nav.home, [{ key: 'rates', name: dict.nav.rates }])}
+      />
+      <PageHeader h1={dict.meta.rates.h1} title={rates.title} intro={rates.intro} />
       <section className="py-24 md:py-32">
         <Container>
           <div className="grid gap-px border border-ink-line bg-ink-line md:grid-cols-3">

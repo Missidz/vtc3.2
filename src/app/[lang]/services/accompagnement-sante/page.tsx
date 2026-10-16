@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { getDictionary } from '@/i18n/get-dictionary';
 import { pageMetadata } from '@/i18n/metadata';
 import { resolveLang } from '@/i18n/server';
+import { breadcrumbSchema, serviceSchema } from '@/i18n/schema';
+import JsonLd from '../../../components/JsonLd';
 import Commitment from '../../../components/Commitment';
 import FinalCta from '../../../components/FinalCta';
 import Reveal from '../../../components/Reveal';
@@ -9,12 +11,13 @@ import Visual from '../../../components/Visual';
 import { CheckIcon, WheelchairIcon } from '../../../components/Icons';
 import { images } from '../../../components/images';
 import { ButtonLink, Container, Eyebrow } from '../../../components/ui';
+import { href } from '@/i18n/routes';
 
 type Props = { params: { lang: string } };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const lang = resolveLang(params.lang);
-  return pageMetadata(lang, '/services/accompagnement-sante', (await getDictionary(lang)).meta.health);
+  return pageMetadata(lang, 'health', (await getDictionary(lang)).meta.health);
 }
 
 export default async function Health({ params }: Props) {
@@ -24,11 +27,20 @@ export default async function Health({ params }: Props) {
 
   return (
     <>
+      <JsonLd
+        data={[
+          serviceSchema(lang, 'health', dict.meta.health, { serviceType: 'Accompagnement non médicalisé de personnes malades' }),
+          breadcrumbSchema(lang, dict.nav.home, [
+            { key: 'services', name: dict.nav.services },
+            { key: 'health', name: dict.services.health.title },
+          ]),
+        ]}
+      />
       <section className="pb-24 pt-40 md:pb-32 md:pt-48">
         <Container className="grid items-center gap-16 lg:grid-cols-2">
           <Reveal>
-            <Eyebrow>{health.eyebrow}</Eyebrow>
-            <h1 className="mt-6 font-display text-5xl font-medium leading-[1.05] text-ivory md:text-7xl">{health.title}</h1>
+            <Eyebrow as="h1">{dict.meta.health.h1}</Eyebrow>
+            <p className="mt-6 font-display text-5xl font-medium leading-[1.05] text-ivory md:text-7xl">{health.title}</p>
             <p className="mt-8 text-lg leading-relaxed text-ivory-muted">{health.intro}</p>
 
             {/* Mention obligatoire, volontairement très visible */}
@@ -41,7 +53,7 @@ export default async function Health({ params }: Props) {
               <p className="mt-3 text-sm leading-relaxed text-ivory-muted">{health.requirementText}</p>
             </div>
 
-            <ButtonLink href={`/${lang}/contact?service=health`} className="mt-10">
+            <ButtonLink href={`${href(lang, 'contact')}?service=health`} className="mt-10">
               {health.cta}
             </ButtonLink>
           </Reveal>

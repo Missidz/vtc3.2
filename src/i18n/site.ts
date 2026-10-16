@@ -7,15 +7,3 @@ export const site = {
   snapchatHref: 'https://snapchat.com/add/monvtc37',
   email: 'yanisse.monvtc37@gmail.com',
 };
-
-// Pages publiques (sans préfixe de langue), utilisées par le sitemap.
-export const routes = [
-  '',
-  '/services',
-  '/services/tourisme',
-  '/services/accompagnement-sante',
-  '/vehicule',
-  '/tarifs',
-  '/about',
-  '/contact',
-] as const;

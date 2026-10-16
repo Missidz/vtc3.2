@@ -5,19 +5,20 @@ import type { Dictionary } from '@/i18n/get-dictionary';
 import { site } from '@/i18n/site';
 import { MailIcon, PhoneIcon, WhatsAppIcon } from './Icons';
 import LanguageSwitcher from './LanguageSwitcher';
+import { href } from '@/i18n/routes';
 
 type Props = { lang: Locale; dict: Dictionary };
 
 export default function Footer({ lang, dict }: Props) {
   const { footer, nav, services } = dict;
   const links = [
-    { href: `/${lang}/services`, label: nav.services },
-    { href: `/${lang}/services/tourisme`, label: services.tourism.title },
-    { href: `/${lang}/services/accompagnement-sante`, label: services.health.title },
-    { href: `/${lang}/vehicule`, label: nav.vehicle },
-    { href: `/${lang}/tarifs`, label: nav.rates },
-    { href: `/${lang}/about`, label: nav.about },
-    { href: `/${lang}/contact`, label: nav.contact },
+    { href: href(lang, 'services'), label: nav.services },
+    { href: href(lang, 'tourism'), label: services.tourism.title },
+    { href: href(lang, 'health'), label: services.health.title },
+    { href: href(lang, 'vehicle'), label: nav.vehicle },
+    { href: href(lang, 'rates'), label: nav.rates },
+    { href: href(lang, 'about'), label: nav.about },
+    { href: href(lang, 'contact'), label: nav.contact },
   ];
   const heading = 'mb-6 text-[0.7rem] font-medium uppercase tracking-eyebrow text-gold';
 

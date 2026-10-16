@@ -1,36 +1,43 @@
 {
   "meta": {
     "home": {
-      "title": "VTC Tours 37 · Chauffeur privé premium en Touraine",
-      "description": "Chauffeur privé haut de gamme à Tours et en Touraine : mise à disposition, longue distance, visites des châteaux de la Loire et des caves à vin, accompagnement des personnes malades. Berline BYD SEAL 100 % électrique."
+      "title": "VTC Tours 37 · Chauffeur privé à Tours et en Touraine",
+      "description": "VTC haut de gamme à Tours : chauffeur privé 24h/24, visites des châteaux de la Loire et caves à vin, accompagnement des personnes malades. BYD SEAL électrique."
     },
     "services": {
-      "title": "Nos services · VTC Tours 37",
-      "description": "Mise à disposition, longue distance, tourisme en Touraine et accompagnement santé : découvrez les services de votre chauffeur privé à Tours."
+      "title": "Services VTC à Tours : chauffeur privé, tourisme, santé",
+      "description": "Mise à disposition, trajets longue distance, visites des châteaux de la Loire et accompagnement santé : tous les services de votre VTC à Tours.",
+      "h1": "Services de chauffeur privé VTC à Tours"
     },
     "tourism": {
-      "title": "Tourisme en Touraine avec chauffeur · Châteaux de la Loire et caves à vin",
-      "description": "Visitez les châteaux de la Loire, les caves de Vouvray et de Chinon avec un chauffeur privé. Circuits sur mesure au départ de Tours, à bord d'une berline électrique."
+      "title": "Visite des châteaux de la Loire et caves à vin avec chauffeur",
+      "description": "Chenonceau, Amboise, Chambord, caves de Vouvray et Chinon : visitez le Val de Loire avec un chauffeur privé au départ de Tours. Circuits sur mesure.",
+      "h1": "Visite des châteaux de la Loire et caves à vin avec chauffeur"
     },
     "health": {
-      "title": "Accompagnement des personnes malades · VTC Tours 37",
-      "description": "Trajets vers vos rendez-vous médicaux avec un chauffeur attentionné, à Tours et en Touraine. Fauteuil roulant pliable obligatoire."
+      "title": "Transport et accompagnement des personnes malades à Tours",
+      "description": "Chauffeur attentionné pour vos rendez-vous médicaux à Tours et en Indre-et-Loire : aide à la montée, attente, retour. Fauteuil roulant pliable obligatoire.",
+      "h1": "Transport et accompagnement des personnes malades à Tours"
     },
     "vehicle": {
-      "title": "Le véhicule : BYD SEAL 100 % électrique · VTC Tours 37",
-      "description": "Voyagez à bord d'une BYD SEAL : berline 100 % électrique, silencieuse, intérieur cuir et toit panoramique."
+      "title": "BYD SEAL : VTC 100 % électrique à Tours",
+      "description": "Voyagez en BYD SEAL, berline 100 % électrique : silence, intérieur cuir, toit panoramique. Le confort premium de votre VTC à Tours et en Touraine.",
+      "h1": "VTC 100 % électrique à Tours"
     },
     "rates": {
-      "title": "Tarifs · VTC Tours 37",
-      "description": "Des tarifs clairs pour vos trajets à Tours, en Touraine et partout en France. Prix annoncé à la réservation."
+      "title": "Tarifs VTC à Tours et en Touraine",
+      "description": "Course VTC dans Tours dès 15 €, hors de Tours dès 20 €, circuits et longue distance sur devis. Prix annoncé à la réservation, sans surprise.",
+      "h1": "Tarifs VTC à Tours et en Touraine"
     },
     "about": {
-      "title": "À propos · VTC Tours 37",
-      "description": "Chauffeur privé à Tours : confort, ponctualité, discrétion, et l'engagement de toujours vous trouver une solution."
+      "title": "À propos de votre chauffeur privé à Tours",
+      "description": "Chauffeur VTC expérimenté à Tours : confort, ponctualité, discrétion, et l'engagement de toujours vous trouver un chauffeur, même indisponible.",
+      "h1": "Votre chauffeur privé à Tours"
     },
     "contact": {
-      "title": "Réserver · VTC Tours 37",
-      "description": "Réservez votre chauffeur privé à Tours et en Touraine par formulaire, téléphone ou WhatsApp. Réponse rapide, 7 j/7."
+      "title": "Réserver un VTC à Tours · Devis rapide",
+      "description": "Réservez votre chauffeur privé à Tours et en Touraine par formulaire, téléphone ou WhatsApp. Réponse rapide 7j/7, prix annoncé à l'avance.",
+      "h1": "Réserver un VTC à Tours"
     }
   },
   "nav": {
@@ -53,16 +60,33 @@
     "onQuote": "Sur devis"
   },
   "hero": {
-    "eyebrow": "Chauffeur privé · Tours & Touraine",
+    "eyebrow": "Chauffeur privé VTC à Tours et en Touraine",
     "title": "L'art de voyager, en toute sérénité",
     "subtitle": "Élégance, discrétion et ponctualité, de jour comme de nuit, à bord d'une berline 100 % électrique.",
-    "trust": ["Disponible 7 j/7, 24 h/24", "Prix annoncé à la réservation", "Toujours une solution"]
+    "trust": [
+      "Disponible 7 j/7, 24 h/24",
+      "Prix annoncé à la réservation",
+      "Toujours une solution"
+    ],
+    "imageAlt": "Chauffeur privé au volant au coucher du soleil, VTC à Tours"
   },
   "pillars": [
-    { "title": "Ponctualité", "text": "Trajets anticipés, horaires respectés, suivi en temps réel." },
-    { "title": "Confort premium", "text": "Berline électrique silencieuse, intérieur cuir, eau à bord." },
-    { "title": "Discrétion", "text": "Conduite souple et confidentialité absolue de vos échanges." },
-    { "title": "Toujours une solution", "text": "Si je ne suis pas disponible, je vous trouve un chauffeur partenaire." }
+    {
+      "title": "Ponctualité",
+      "text": "Trajets anticipés, horaires respectés, suivi en temps réel."
+    },
+    {
+      "title": "Confort premium",
+      "text": "Berline électrique silencieuse, intérieur cuir, eau à bord."
+    },
+    {
+      "title": "Discrétion",
+      "text": "Conduite souple et confidentialité absolue de vos échanges."
+    },
+    {
+      "title": "Toujours une solution",
+      "text": "Si je ne suis pas disponible, je vous trouve un chauffeur partenaire."
+    }
   ],
   "servicesSection": {
     "eyebrow": "Nos services",
@@ -94,9 +118,21 @@
     "intro": "Laissez le volant et profitez pleinement du Val de Loire, inscrit au patrimoine mondial de l'UNESCO. Je vous conduis de château en domaine viticole, sans contrainte d'horaires ni de stationnement, et je vous attends à chaque étape.",
     "circuitsTitle": "Idées de circuits",
     "circuits": [
-      { "title": "Les châteaux royaux", "duration": "Demi-journée ou journée", "text": "Chenonceau, Amboise, Chambord, Villandry, Azay-le-Rideau : composez votre itinéraire parmi les plus beaux châteaux de la Loire." },
-      { "title": "La route des vins", "duration": "Demi-journée", "text": "Vouvray, Montlouis, Chinon, Bourgueil : visites de caves troglodytes et dégustations chez les vignerons, en toute sécurité au retour." },
-      { "title": "Sur mesure", "duration": "Selon vos envies", "text": "Jardins, villages de caractère, restaurants étoilés ou zoo de Beauval : nous construisons ensemble la journée qui vous ressemble." }
+      {
+        "title": "Les châteaux royaux",
+        "duration": "Demi-journée ou journée",
+        "text": "Chenonceau, Amboise, Chambord, Villandry, Azay-le-Rideau : composez votre itinéraire parmi les plus beaux châteaux de la Loire."
+      },
+      {
+        "title": "La route des vins",
+        "duration": "Demi-journée",
+        "text": "Vouvray, Montlouis, Chinon, Bourgueil : visites de caves troglodytes et dégustations chez les vignerons, en toute sécurité au retour."
+      },
+      {
+        "title": "Sur mesure",
+        "duration": "Selon vos envies",
+        "text": "Jardins, villages de caractère, restaurants étoilés ou zoo de Beauval : nous construisons ensemble la journée qui vous ressemble."
+      }
     ],
     "includedTitle": "Inclus dans chaque circuit",
     "included": [
@@ -132,10 +168,22 @@
     "tagline": "Berline 100 % électrique · Silence · Confort grand tourisme",
     "intro": "Pour chaque trajet, une seule exigence : votre confort. La BYD SEAL offre un silence de fonctionnement remarquable, une conduite d'une grande douceur et un habitacle raffiné, pour voyager détendu tout en réduisant votre empreinte carbone.",
     "specs": [
-      { "label": "Motorisation", "value": "100 % électrique" },
-      { "label": "Passagers", "value": "Jusqu'à 4" },
-      { "label": "Bagages", "value": "2 valises + bagages cabine" },
-      { "label": "Émissions à l'usage", "value": "0 g CO₂/km" }
+      {
+        "label": "Motorisation",
+        "value": "100 % électrique"
+      },
+      {
+        "label": "Passagers",
+        "value": "Jusqu'à 4"
+      },
+      {
+        "label": "Bagages",
+        "value": "2 valises + bagages cabine"
+      },
+      {
+        "label": "Émissions à l'usage",
+        "value": "0 g CO₂/km"
+      }
     ],
     "featuresTitle": "À bord",
     "features": [
@@ -152,17 +200,59 @@
     "eyebrow": "Mon engagement",
     "title": "Jamais sans solution",
     "text": "Si je ne suis pas disponible à la date ou à l'heure souhaitée, je m'engage à vous trouver un autre chauffeur partenaire de confiance, aux mêmes standards de qualité. Vous n'avez rien à chercher : je m'occupe de tout.",
-    "points": ["Partenaires sélectionnés", "Même niveau d'exigence", "Une seule personne à contacter"]
+    "points": [
+      "Partenaires sélectionnés",
+      "Même niveau d'exigence",
+      "Une seule personne à contacter"
+    ]
+  },
+  "areas": {
+    "eyebrow": "Zones desservies",
+    "title": "Votre VTC à Tours, en Touraine et partout en France",
+    "text": "Basé à Tours, je vous prends en charge dans toute l'Indre-et-Loire, à domicile, à votre hôtel ou en gare de Tours et de Saint-Pierre-des-Corps, pour des trajets locaux, régionaux ou longue distance.",
+    "cities": [
+      "Tours",
+      "Saint-Pierre-des-Corps",
+      "Joué-lès-Tours",
+      "Saint-Cyr-sur-Loire",
+      "Saint-Avertin",
+      "Chambray-lès-Tours",
+      "La Riche",
+      "Fondettes",
+      "Amboise",
+      "Vouvray",
+      "Montlouis-sur-Loire",
+      "Chinon",
+      "Loches",
+      "Azay-le-Rideau",
+      "Chenonceaux",
+      "Bourgueil"
+    ]
   },
   "faq": {
     "eyebrow": "Questions fréquentes",
     "title": "Bon à savoir",
     "items": [
-      { "q": "Comment réserver ?", "a": "Par le formulaire de réservation, par téléphone ou sur WhatsApp. Je vous confirme rapidement le trajet et le prix." },
-      { "q": "Que se passe-t-il si vous n'êtes pas disponible ?", "a": "Je vous trouve un chauffeur partenaire de confiance, aux mêmes standards. Vous restez en contact avec moi du début à la fin." },
-      { "q": "Proposez-vous des visites des châteaux et des caves ?", "a": "Oui, en demi-journée, journée ou sur mesure. Je vous attends pendant chaque visite et vous ramène en toute sécurité après les dégustations." },
-      { "q": "Accompagnez-vous les personnes à mobilité réduite ?", "a": "Oui, à condition que le fauteuil roulant soit pliable et que le passager puisse s'installer sur le siège. Ce service n'est pas médicalisé ni remboursé par l'Assurance Maladie." },
-      { "q": "Quels moyens de paiement acceptez-vous ?", "a": "Carte bancaire, espèces et virement. Facturation possible pour les entreprises." }
+      {
+        "q": "Comment réserver ?",
+        "a": "Par le formulaire de réservation, par téléphone ou sur WhatsApp. Je vous confirme rapidement le trajet et le prix."
+      },
+      {
+        "q": "Que se passe-t-il si vous n'êtes pas disponible ?",
+        "a": "Je vous trouve un chauffeur partenaire de confiance, aux mêmes standards. Vous restez en contact avec moi du début à la fin."
+      },
+      {
+        "q": "Proposez-vous des visites des châteaux et des caves ?",
+        "a": "Oui, en demi-journée, journée ou sur mesure. Je vous attends pendant chaque visite et vous ramène en toute sécurité après les dégustations."
+      },
+      {
+        "q": "Accompagnez-vous les personnes à mobilité réduite ?",
+        "a": "Oui, à condition que le fauteuil roulant soit pliable et que le passager puisse s'installer sur le siège. Ce service n'est pas médicalisé ni remboursé par l'Assurance Maladie."
+      },
+      {
+        "q": "Quels moyens de paiement acceptez-vous ?",
+        "a": "Carte bancaire, espèces et virement. Facturation possible pour les entreprises."
+      }
     ]
   },
   "rates": {
@@ -170,9 +260,21 @@
     "title": "Des prix clairs, annoncés à l'avance",
     "intro": "Le prix de votre trajet vous est communiqué au moment de la réservation. Aucune surprise à l'arrivée.",
     "items": [
-      { "title": "Course dans Tours", "price": "15 €", "note": "Prise en charge et trajet intra-muros" },
-      { "title": "Hors de Tours", "price": "20 €", "note": "À partir de, selon la distance" },
-      { "title": "Circuits, longue distance et mise à disposition", "price": "Sur devis", "note": "Tarif personnalisé selon votre projet" }
+      {
+        "title": "Course dans Tours",
+        "price": "15 €",
+        "note": "Prise en charge et trajet intra-muros"
+      },
+      {
+        "title": "Hors de Tours",
+        "price": "20 €",
+        "note": "À partir de, selon la distance"
+      },
+      {
+        "title": "Circuits, longue distance et mise à disposition",
+        "price": "Sur devis",
+        "note": "Tarif personnalisé selon votre projet"
+      }
     ],
     "note": "Des suppléments peuvent s'appliquer la nuit, les jours fériés ou pour des bagages volumineux."
   },
@@ -181,9 +283,18 @@
     "title": "Votre chauffeur, en toute confiance",
     "intro": "Chauffeur VTC expérimenté installé à Tours, je mets un point d'honneur à offrir un service haut de gamme et personnalisé. Chaque client est accueilli comme un invité : ponctualité, conduite souple, discrétion et attention aux détails.",
     "values": [
-      { "title": "Confort", "text": "Un véhicule récent, impeccablement entretenu, pensé pour votre bien-être." },
-      { "title": "Ponctualité", "text": "Des trajets anticipés et des horaires tenus, à chaque fois." },
-      { "title": "Sécurité", "text": "Une conduite prudente et le respect total de votre confidentialité." }
+      {
+        "title": "Confort",
+        "text": "Un véhicule récent, impeccablement entretenu, pensé pour votre bien-être."
+      },
+      {
+        "title": "Ponctualité",
+        "text": "Des trajets anticipés et des horaires tenus, à chaque fois."
+      },
+      {
+        "title": "Sécurité",
+        "text": "Une conduite prudente et le respect total de votre confidentialité."
+      }
     ]
   },
   "contact": {

@@ -4,7 +4,8 @@ import { getDictionary } from '@/i18n/get-dictionary';
 import { pageMetadata } from '@/i18n/metadata';
 import { resolveLang } from '@/i18n/server';
 import { site } from '@/i18n/site';
-import { LocalBusinessJsonLd } from '../components/JsonLd';
+import JsonLd from '../components/JsonLd';
+import { faqSchema } from '@/i18n/schema';
 import Commitment from '../components/Commitment';
 import Faq from '../components/Faq';
 import FinalCta from '../components/FinalCta';
@@ -14,49 +15,42 @@ import Visual from '../components/Visual';
 import { ArrowIcon, WhatsAppIcon } from '../components/Icons';
 import { images } from '../components/images';
 import { ButtonLink, Container, Eyebrow, SectionHeader } from '../components/ui';
+import { href } from '@/i18n/routes';
 
 type Props = { params: { lang: string } };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const lang = resolveLang(params.lang);
-  return pageMetadata(lang, '', (await getDictionary(lang)).meta.home);
+  const { title, description } = (await getDictionary(lang)).meta.home;
+  return { ...pageMetadata(lang, 'home', { title, description }), title: { absolute: title } };
 }
 
 export default async function Home({ params }: Props) {
   const lang = resolveLang(params.lang);
   const dict = await getDictionary(lang);
-  const { hero, pillars, servicesSection, tourism, vehicle } = dict;
+  const { hero, pillars, servicesSection, tourism, vehicle, areas } = dict;
 
   return (
     <>
-      <LocalBusinessJsonLd
-        name={site.name}
-        description={dict.meta.home.description}
-        address={{ streetAddress: 'Tours', addressLocality: 'Tours', postalCode: '37000', addressCountry: 'FR' }}
-        geo={{ latitude: '47.3900', longitude: '0.6892' }}
-        telephone="+33666144197"
-        email={site.email}
-        url={`${site.url}/${lang}`}
-        priceRange="€€"
-        openingHours={['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map((d) => `${d} 00:00-23:59`)}
-      />
+      <JsonLd data={faqSchema(dict.faq.items)} />
 
       {/* Hero */}
       <section className="relative flex min-h-[100svh] items-end overflow-hidden pb-20 pt-32 md:items-center md:pb-0">
         {images.hero && (
-          <Image src={images.hero} alt="" fill priority sizes="100vw" className="object-cover opacity-70" />
+          <Image src={images.hero} alt={hero.imageAlt} fill priority sizes="100vw" className="object-cover opacity-70" />
         )}
         <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/20" aria-hidden />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/40" aria-hidden />
         <Container className="relative">
           <div className="max-w-3xl animate-rise">
-            <Eyebrow>{hero.eyebrow}</Eyebrow>
-            <h1 className="mt-8 font-display text-5xl font-medium leading-[1.02] text-ivory sm:text-6xl md:text-8xl">
+            {/* H1 = mots-clés (chauffeur privé + ville), slogan en grand juste en dessous */}
+            <Eyebrow as="h1">{hero.eyebrow}</Eyebrow>
+            <p className="mt-8 font-display text-5xl font-medium leading-[1.02] text-ivory sm:text-6xl md:text-8xl">
               {hero.title}
-            </h1>
+            </p>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-ivory/80">{hero.subtitle}</p>
             <div className="mt-12 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href={`/${lang}/contact`}>{dict.common.book}</ButtonLink>
+              <ButtonLink href={href(lang, 'contact')}>{dict.common.book}</ButtonLink>
               <ButtonLink href={site.whatsappHref} variant="outline" external>
                 <WhatsAppIcon /> {dict.common.whatsapp}
               </ButtonLink>
@@ -112,7 +106,7 @@ export default async function Home({ params }: Props) {
                   </li>
                 ))}
               </ul>
-              <ButtonLink href={`/${lang}/services/tourisme`} variant="ghost" className="mt-8 px-0">
+              <ButtonLink href={href(lang, 'tourism')} variant="ghost" className="mt-8 px-0">
                 {dict.common.learnMore} <ArrowIcon className="h-4 w-4 text-gold" />
               </ButtonLink>
             </Reveal>
@@ -139,7 +133,7 @@ export default async function Home({ params }: Props) {
                   </div>
                 ))}
               </dl>
-              <ButtonLink href={`/${lang}/vehicule`} variant="ghost" className="mt-8 px-0">
+              <ButtonLink href={href(lang, 'vehicle')} variant="ghost" className="mt-8 px-0">
                 {dict.common.learnMore} <ArrowIcon className="h-4 w-4 text-gold" />
               </ButtonLink>
             </Reveal>
@@ -148,6 +142,23 @@ export default async function Home({ params }: Props) {
       </section>
 
       <Commitment commitment={dict.commitment} />
+
+      {/* Zones desservies : référencement local */}
+      <section className="pt-28 md:pt-36">
+        <Container className="grid gap-12 lg:grid-cols-[1fr_1.2fr]">
+          <SectionHeader eyebrow={areas.eyebrow} title={areas.title} intro={areas.text} />
+          <Reveal delay={0.1}>
+            <ul className="flex flex-wrap gap-3 lg:pt-12">
+              {areas.cities.map((city) => (
+                <li key={city} className="border border-ink-line px-4 py-2 text-sm text-ivory-muted">
+                  {city}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </Container>
+      </section>
+
       <Faq faq={dict.faq} />
       <FinalCta lang={lang} dict={dict} />
     </>

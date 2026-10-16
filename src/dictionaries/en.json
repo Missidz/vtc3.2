@@ -1,36 +1,43 @@
 {
   "meta": {
     "home": {
-      "title": "VTC Tours 37 · Premium private driver in Tours & the Loire Valley",
-      "description": "Premium private driver in Tours and the Loire Valley: hourly hire, long distance, Loire châteaux and wine cellar tours, assistance for people with illness. 100% electric BYD SEAL sedan."
+      "title": "VTC Tours 37 · Private Driver in Tours & the Loire Valley",
+      "description": "Premium private driver in Tours, France: 24/7 chauffeur service, Loire Valley château and wine tours, medical appointment rides. 100% electric BYD SEAL."
     },
     "services": {
-      "title": "Our services · VTC Tours 37",
-      "description": "Hourly hire, long distance, Loire Valley tours and medical appointment assistance: discover the services of your private driver in Tours."
+      "title": "Private Driver Services in Tours, Loire Valley",
+      "description": "Hourly chauffeur hire, long-distance rides, Loire Valley château and wine tours, and medical appointment transport from your private driver in Tours.",
+      "h1": "Private driver services in Tours, France"
     },
     "tourism": {
-      "title": "Loire Valley tours with a private driver · Châteaux & wine cellars",
-      "description": "Visit the Loire châteaux and the wine cellars of Vouvray and Chinon with a private driver. Tailor-made tours from Tours in an electric sedan."
+      "title": "Loire Valley Château & Wine Tours with a Private Driver",
+      "description": "Chenonceau, Amboise, Chambord, Vouvray and Chinon wine cellars: explore the Loire Valley with an English-speaking private driver from Tours. Tailor-made tours.",
+      "h1": "Loire Valley château & wine tours with a private driver"
     },
     "health": {
-      "title": "Assistance for people with illness · VTC Tours 37",
-      "description": "Rides to your medical appointments with a caring driver in Tours and Touraine. Folding wheelchair required."
+      "title": "Medical Appointment Transport in Tours, France",
+      "description": "A caring driver for your medical appointments in Tours and Indre-et-Loire: help getting in, waiting, return trip. Folding wheelchair required.",
+      "h1": "Medical appointment transport in Tours, France"
     },
     "vehicle": {
-      "title": "The car: 100% electric BYD SEAL · VTC Tours 37",
-      "description": "Travel in a BYD SEAL: a quiet, 100% electric sedan with leather interior and panoramic glass roof."
+      "title": "BYD SEAL: 100% Electric Chauffeur Car in Tours",
+      "description": "Travel in a BYD SEAL, a 100% electric sedan: quiet cabin, leather seats, panoramic roof. Premium comfort from your private driver in Tours, France.",
+      "h1": "100% electric chauffeur car in Tours"
     },
     "rates": {
-      "title": "Rates · VTC Tours 37",
-      "description": "Clear rates for your rides in Tours, across Touraine and throughout France. Price confirmed when you book."
+      "title": "Private Driver Rates in Tours & the Loire Valley",
+      "description": "Rides within Tours from €15, outside Tours from €20, Loire Valley tours and long distance on quote. Price confirmed when you book, no surprises.",
+      "h1": "Private driver rates in Tours & the Loire Valley"
     },
     "about": {
-      "title": "About · VTC Tours 37",
-      "description": "Private driver in Tours: comfort, punctuality, discretion, and a commitment to always find you a solution."
+      "title": "About Your Private Driver in Tours, France",
+      "description": "An experienced English-speaking private driver in Tours: comfort, punctuality, discretion, and a commitment to always find you a driver.",
+      "h1": "Your private driver in Tours, France"
     },
     "contact": {
-      "title": "Book · VTC Tours 37",
-      "description": "Book your private driver in Tours and the Loire Valley by form, phone or WhatsApp. Fast reply, 7 days a week."
+      "title": "Book a Private Driver in Tours, France",
+      "description": "Book your private driver in Tours and the Loire Valley by form, phone or WhatsApp. Fast reply 7 days a week, price confirmed in advance.",
+      "h1": "Book a private driver in Tours"
     }
   },
   "nav": {
@@ -53,16 +60,33 @@
     "onQuote": "On quote"
   },
   "hero": {
-    "eyebrow": "Private driver · Tours & the Loire Valley",
+    "eyebrow": "Private driver & chauffeur service in Tours, Loire Valley",
     "title": "The art of travelling, with complete peace of mind",
     "subtitle": "Elegance, discretion and punctuality, day and night, in a 100% electric sedan.",
-    "trust": ["Available 24/7", "Price confirmed when you book", "Always a solution"]
+    "trust": [
+      "Available 24/7",
+      "Price confirmed when you book",
+      "Always a solution"
+    ],
+    "imageAlt": "Private driver at the wheel at sunset, chauffeur service in Tours, France"
   },
   "pillars": [
-    { "title": "Punctuality", "text": "Planned routes, times respected, real-time updates." },
-    { "title": "Premium comfort", "text": "Quiet electric sedan, leather interior, water on board." },
-    { "title": "Discretion", "text": "Smooth driving and complete confidentiality." },
-    { "title": "Always a solution", "text": "If I'm unavailable, I'll find you a trusted partner driver." }
+    {
+      "title": "Punctuality",
+      "text": "Planned routes, times respected, real-time updates."
+    },
+    {
+      "title": "Premium comfort",
+      "text": "Quiet electric sedan, leather interior, water on board."
+    },
+    {
+      "title": "Discretion",
+      "text": "Smooth driving and complete confidentiality."
+    },
+    {
+      "title": "Always a solution",
+      "text": "If I'm unavailable, I'll find you a trusted partner driver."
+    }
   ],
   "servicesSection": {
     "eyebrow": "Our services",
@@ -94,9 +118,21 @@
     "intro": "Leave the driving to me and fully enjoy the Loire Valley, a UNESCO World Heritage site. I take you from château to wine estate, with no timetable or parking worries, and wait for you at every stop.",
     "circuitsTitle": "Tour ideas",
     "circuits": [
-      { "title": "The royal châteaux", "duration": "Half or full day", "text": "Chenonceau, Amboise, Chambord, Villandry, Azay-le-Rideau: build your itinerary from the finest châteaux of the Loire." },
-      { "title": "The wine route", "duration": "Half day", "text": "Vouvray, Montlouis, Chinon, Bourgueil: cave cellar visits and tastings with winemakers, and a safe ride home." },
-      { "title": "Tailor-made", "duration": "As you wish", "text": "Gardens, charming villages, fine dining or Beauval Zoo: together we design the day that suits you." }
+      {
+        "title": "The royal châteaux",
+        "duration": "Half or full day",
+        "text": "Chenonceau, Amboise, Chambord, Villandry, Azay-le-Rideau: build your itinerary from the finest châteaux of the Loire."
+      },
+      {
+        "title": "The wine route",
+        "duration": "Half day",
+        "text": "Vouvray, Montlouis, Chinon, Bourgueil: cave cellar visits and tastings with winemakers, and a safe ride home."
+      },
+      {
+        "title": "Tailor-made",
+        "duration": "As you wish",
+        "text": "Gardens, charming villages, fine dining or Beauval Zoo: together we design the day that suits you."
+      }
     ],
     "includedTitle": "Included in every tour",
     "included": [
@@ -132,10 +168,22 @@
     "tagline": "100% electric sedan · Silence · Grand-touring comfort",
     "intro": "Every ride has one priority: your comfort. The BYD SEAL is remarkably quiet, exceptionally smooth to ride in and beautifully finished inside, so you can travel relaxed while reducing your carbon footprint.",
     "specs": [
-      { "label": "Powertrain", "value": "100% electric" },
-      { "label": "Passengers", "value": "Up to 4" },
-      { "label": "Luggage", "value": "2 suitcases + cabin bags" },
-      { "label": "Driving emissions", "value": "0 g CO₂/km" }
+      {
+        "label": "Powertrain",
+        "value": "100% electric"
+      },
+      {
+        "label": "Passengers",
+        "value": "Up to 4"
+      },
+      {
+        "label": "Luggage",
+        "value": "2 suitcases + cabin bags"
+      },
+      {
+        "label": "Driving emissions",
+        "value": "0 g CO₂/km"
+      }
     ],
     "featuresTitle": "On board",
     "features": [
@@ -152,17 +200,59 @@
     "eyebrow": "My commitment",
     "title": "Never left without a ride",
     "text": "If I'm not available on the date or at the time you need, I commit to finding you another trusted partner driver who meets the same quality standards. No searching on your side: I take care of everything.",
-    "points": ["Hand-picked partners", "Same high standards", "One single point of contact"]
+    "points": [
+      "Hand-picked partners",
+      "Same high standards",
+      "One single point of contact"
+    ]
+  },
+  "areas": {
+    "eyebrow": "Areas served",
+    "title": "Your private driver in Tours, the Loire Valley and across France",
+    "text": "Based in Tours, I pick you up anywhere in Indre-et-Loire, at home, at your hotel or at Tours and Saint-Pierre-des-Corps train stations, for local, regional or long-distance journeys.",
+    "cities": [
+      "Tours",
+      "Saint-Pierre-des-Corps",
+      "Joué-lès-Tours",
+      "Saint-Cyr-sur-Loire",
+      "Saint-Avertin",
+      "Chambray-lès-Tours",
+      "La Riche",
+      "Fondettes",
+      "Amboise",
+      "Vouvray",
+      "Montlouis-sur-Loire",
+      "Chinon",
+      "Loches",
+      "Azay-le-Rideau",
+      "Chenonceaux",
+      "Bourgueil"
+    ]
   },
   "faq": {
     "eyebrow": "FAQ",
     "title": "Good to know",
     "items": [
-      { "q": "How do I book?", "a": "Use the booking form, call me or message me on WhatsApp. I'll quickly confirm the ride and the price." },
-      { "q": "What if you're not available?", "a": "I'll find you a trusted partner driver who meets the same standards. You keep me as your contact from start to finish." },
-      { "q": "Do you offer château and wine cellar tours?", "a": "Yes: half day, full day or tailor-made. I wait during every visit and drive you home safely after tastings." },
-      { "q": "Do you assist people with reduced mobility?", "a": "Yes, provided the wheelchair is foldable and the passenger can transfer to the seat. This service is non-medical and not covered by French health insurance." },
-      { "q": "Which payment methods do you accept?", "a": "Card, cash and bank transfer. Invoicing is available for businesses." }
+      {
+        "q": "How do I book?",
+        "a": "Use the booking form, call me or message me on WhatsApp. I'll quickly confirm the ride and the price."
+      },
+      {
+        "q": "What if you're not available?",
+        "a": "I'll find you a trusted partner driver who meets the same standards. You keep me as your contact from start to finish."
+      },
+      {
+        "q": "Do you offer château and wine cellar tours?",
+        "a": "Yes: half day, full day or tailor-made. I wait during every visit and drive you home safely after tastings."
+      },
+      {
+        "q": "Do you assist people with reduced mobility?",
+        "a": "Yes, provided the wheelchair is foldable and the passenger can transfer to the seat. This service is non-medical and not covered by French health insurance."
+      },
+      {
+        "q": "Which payment methods do you accept?",
+        "a": "Card, cash and bank transfer. Invoicing is available for businesses."
+      }
     ]
   },
   "rates": {
@@ -170,9 +260,21 @@
     "title": "Clear prices, confirmed in advance",
     "intro": "The price of your ride is confirmed when you book. No surprises on arrival.",
     "items": [
-      { "title": "Ride within Tours", "price": "€15", "note": "Pick-up and city-centre ride" },
-      { "title": "Outside Tours", "price": "€20", "note": "Starting price, depending on distance" },
-      { "title": "Tours, long distance and hourly hire", "price": "On quote", "note": "Tailored price for your project" }
+      {
+        "title": "Ride within Tours",
+        "price": "€15",
+        "note": "Pick-up and city-centre ride"
+      },
+      {
+        "title": "Outside Tours",
+        "price": "€20",
+        "note": "Starting price, depending on distance"
+      },
+      {
+        "title": "Tours, long distance and hourly hire",
+        "price": "On quote",
+        "note": "Tailored price for your project"
+      }
     ],
     "note": "Surcharges may apply at night, on public holidays or for bulky luggage."
   },
@@ -181,9 +283,18 @@
     "title": "Your driver, someone you can trust",
     "intro": "An experienced private driver based in Tours, I take pride in offering a premium, personal service. Every client is welcomed like a guest: punctuality, smooth driving, discretion and attention to detail.",
     "values": [
-      { "title": "Comfort", "text": "A recent, impeccably maintained car designed for your well-being." },
-      { "title": "Punctuality", "text": "Planned journeys and times kept, every time." },
-      { "title": "Safety", "text": "Careful driving and complete respect for your privacy." }
+      {
+        "title": "Comfort",
+        "text": "A recent, impeccably maintained car designed for your well-being."
+      },
+      {
+        "title": "Punctuality",
+        "text": "Planned journeys and times kept, every time."
+      },
+      {
+        "title": "Safety",
+        "text": "Careful driving and complete respect for your privacy."
+      }
     ]
   },
   "contact": {

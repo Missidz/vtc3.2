@@ -1,12 +1,20 @@
 import Link from 'next/link';
 import Reveal from './Reveal';
 
-export function Eyebrow({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+export function Eyebrow({
+  children,
+  className = '',
+  as: Tag = 'p',
+}: {
+  children: React.ReactNode;
+  className?: string;
+  as?: 'p' | 'h1';
+}) {
   return (
-    <p className={`flex items-center gap-3 text-[0.7rem] font-medium uppercase tracking-eyebrow text-gold ${className}`}>
-      <span className="h-px w-8 bg-gold/60" aria-hidden />
+    <Tag className={`flex items-center gap-3 text-[0.7rem] font-medium uppercase tracking-eyebrow text-gold ${className}`}>
+      <span className="h-px w-8 shrink-0 bg-gold/60" aria-hidden />
       {children}
-    </p>
+    </Tag>
   );
 }
 
@@ -64,8 +72,8 @@ export function ButtonLink({
   );
 }
 
-/** En-tête des pages intérieures. */
-export function PageHeader({ eyebrow, title, intro }: { eyebrow: string; title: string; intro?: string }) {
+/** En-tête des pages intérieures : H1 court et riche en mots-clés, slogan en grand. */
+export function PageHeader({ h1, title, intro }: { h1: string; title: string; intro?: string }) {
   return (
     <header className="relative overflow-hidden border-b border-ink-line bg-ink-2 pb-20 pt-40 md:pb-28 md:pt-48">
       <div
@@ -74,8 +82,8 @@ export function PageHeader({ eyebrow, title, intro }: { eyebrow: string; title: 
       />
       <div className="container relative mx-auto px-6 lg:px-12">
         <Reveal className="max-w-3xl">
-          <Eyebrow>{eyebrow}</Eyebrow>
-          <h1 className="mt-6 font-display text-5xl font-medium leading-[1.05] text-ivory md:text-7xl">{title}</h1>
+          <Eyebrow as="h1">{h1}</Eyebrow>
+          <p className="mt-6 font-display text-5xl font-medium leading-[1.05] text-ivory md:text-7xl">{title}</p>
           {intro && <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ivory-muted">{intro}</p>}
         </Reveal>
       </div>
