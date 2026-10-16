@@ -23,7 +23,13 @@ export const metadata: Metadata = {
   formatDetection: { telephone: false },
   // Code de vérification Google Search Console (variable d'environnement sur Vercel)
   verification: { google: process.env.GOOGLE_SITE_VERIFICATION },
-  icons: { apple: '/icon-512.png' },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
   robots: {
     index: true,
     follow: true,
