@@ -14,10 +14,10 @@
       "description": "Chenonceau, Amboise, Chambord, caves de Vouvray et Chinon : visitez le Val de Loire avec un chauffeur privé au départ de Tours. Circuits sur mesure.",
       "h1": "Visite des châteaux de la Loire et caves à vin avec chauffeur"
     },
-    "health": {
-      "title": "Transport et accompagnement des personnes malades à Tours",
-      "description": "Chauffeur attentionné pour vos rendez-vous médicaux à Tours et en Indre-et-Loire : aide à la montée, attente, retour. Fauteuil roulant pliable obligatoire.",
-      "h1": "Transport et accompagnement des personnes malades à Tours"
+    "pmr": {
+      "title": "Transport PMR / Handicap à Tours et en Touraine",
+      "description": "Transport de personnes à mobilité réduite et en situation de handicap à Tours : aide à la montée, rendez-vous médicaux, sorties. Fauteuil pliable obligatoire.",
+      "h1": "Transport PMR et handicap à Tours"
     },
     "vehicle": {
       "title": "BYD SEAL : VTC 100 % électrique à Tours",
@@ -50,7 +50,10 @@
     "book": "Réserver",
     "menu": "Ouvrir le menu",
     "close": "Fermer le menu",
-    "language": "Langue"
+    "language": "Langue",
+    "pmr": "Transport PMR / Handicap",
+    "pmrShort": "Transport PMR",
+    "tourism": "Tourisme"
   },
   "common": {
     "learnMore": "Découvrir",
@@ -69,6 +72,28 @@
       "Toujours une solution"
     ],
     "imageAlt": "Chauffeur privé au volant au coucher du soleil, VTC à Tours"
+  },
+  "quick": {
+    "call": {
+      "title": "Appelez-moi",
+      "text": "Réponse immédiate, 7 j/7 et 24 h/24.",
+      "cta": "Appeler"
+    },
+    "whatsapp": {
+      "title": "WhatsApp",
+      "text": "Envoyez votre demande, je vous réponds rapidement.",
+      "cta": "Écrire sur WhatsApp"
+    },
+    "pmr": {
+      "title": "Transport PMR / Handicap",
+      "text": "Un trajet adapté aux personnes à mobilité réduite. Fauteuil roulant pliable obligatoire.",
+      "cta": "Faire une demande"
+    }
+  },
+  "mobileBar": {
+    "call": "Appeler",
+    "whatsapp": "WhatsApp",
+    "pmr": "PMR"
   },
   "pillars": [
     {
@@ -94,6 +119,15 @@
     "intro": "Du rendez-vous d'affaires à l'escapade dans les vignes, chaque trajet est préparé avec le même soin."
   },
   "services": {
+    "pmr": {
+      "title": "Transport PMR / Handicap",
+      "text": "Personnes à mobilité réduite, en situation de handicap, âgées ou malades : des trajets adaptés, avec patience et bienveillance.",
+      "badge": "Fauteuil roulant pliable obligatoire"
+    },
+    "tourism": {
+      "title": "Tourisme en Touraine",
+      "text": "Châteaux de la Loire, circuits touristiques et visites de caves à vin, à votre rythme."
+    },
     "disposal": {
       "title": "Mise à disposition",
       "text": "Un chauffeur privé à l'heure ou à la journée pour vos rendez-vous, événements et soirées."
@@ -101,15 +135,6 @@
     "longDistance": {
       "title": "Longue distance",
       "text": "Vos trajets partout en France, en gare comme en centre-ville, dans un confort grand tourisme."
-    },
-    "tourism": {
-      "title": "Tourisme en Touraine",
-      "text": "Châteaux de la Loire, circuits touristiques et visites de caves à vin, à votre rythme."
-    },
-    "health": {
-      "title": "Accompagnement santé",
-      "text": "Trajets vers vos rendez-vous médicaux avec un chauffeur attentionné et patient.",
-      "badge": "Fauteuil roulant pliable obligatoire"
     }
   },
   "tourism": {
@@ -144,10 +169,18 @@
     ],
     "cta": "Demander un devis pour un circuit"
   },
-  "health": {
-    "eyebrow": "Accompagnement santé",
-    "title": "Des trajets en toute bienveillance",
-    "intro": "Consultations, examens, séances de soins ou sortie d'hospitalisation : je vous accompagne avec patience et attention, de votre porte jusqu'à l'entrée de l'établissement.",
+  "pmr": {
+    "eyebrow": "Transport PMR / Handicap",
+    "title": "Se déplacer en toute sérénité",
+    "intro": "Rendez-vous médicaux, démarches, visites à vos proches ou sorties : j'accompagne les personnes à mobilité réduite et en situation de handicap avec patience et bienveillance, de votre porte jusqu'à destination.",
+    "audienceTitle": "Pour qui ?",
+    "audience": [
+      "Personnes à mobilité réduite (PMR)",
+      "Personnes en situation de handicap",
+      "Personnes âgées",
+      "Personnes malades ou en convalescence",
+      "Sorties d’hospitalisation et rendez-vous médicaux"
+    ],
     "requirementTitle": "Condition obligatoire",
     "requirement": "Fauteuil roulant pliable obligatoire",
     "requirementText": "Le fauteuil doit pouvoir être plié et rangé dans le coffre. Le passager doit pouvoir s'installer sur le siège du véhicule, seul ou avec une aide légère.",
@@ -160,7 +193,7 @@
       "Accompagnant bienvenu à bord"
     ],
     "disclaimer": "Service de transport non médicalisé, non pris en charge par l'Assurance Maladie. Pour un transport sanitaire remboursé, adressez-vous à une ambulance, un VSL ou un taxi conventionné.",
-    "cta": "Organiser un trajet"
+    "cta": "Demander un transport PMR"
   },
   "vehicle": {
     "eyebrow": "Le véhicule",
@@ -246,8 +279,8 @@
         "a": "Oui, en demi-journée, journée ou sur mesure. Je vous attends pendant chaque visite et vous ramène en toute sécurité après les dégustations."
       },
       {
-        "q": "Accompagnez-vous les personnes à mobilité réduite ?",
-        "a": "Oui, à condition que le fauteuil roulant soit pliable et que le passager puisse s'installer sur le siège. Ce service n'est pas médicalisé ni remboursé par l'Assurance Maladie."
+        "q": "Proposez-vous le transport PMR et handicap ?",
+        "a": "Oui, c'est un service prioritaire : personnes à mobilité réduite, en situation de handicap, âgées ou malades. Le fauteuil roulant doit être pliable et le passager doit pouvoir s'installer sur le siège. Ce service n'est pas médicalisé ni remboursé par l'Assurance Maladie."
       },
       {
         "q": "Quels moyens de paiement acceptez-vous ?",
@@ -310,17 +343,17 @@
       "servicePlaceholder": "Sélectionnez un service",
       "date": "Date et heure souhaitées",
       "message": "Votre demande (adresses, nombre de passagers, bagages…)",
-      "healthConsent": "J'ai bien noté que le fauteuil roulant pliable est obligatoire et que ce service n'est ni médicalisé ni remboursé par l'Assurance Maladie.",
       "submit": "Envoyer la demande",
       "sending": "Envoi en cours…",
       "success": "Merci, votre demande a bien été envoyée. Je reviens vers vous très rapidement.",
-      "error": "Une erreur est survenue lors de l'envoi. Merci de réessayer ou de m'appeler directement."
+      "error": "Une erreur est survenue lors de l'envoi. Merci de réessayer ou de m'appeler directement.",
+      "pmrConsent": "J'ai bien noté que le fauteuil roulant pliable est obligatoire et que ce service n'est ni médicalisé ni remboursé par l'Assurance Maladie."
     },
     "serviceOptions": {
+      "pmr": "Transport PMR / Handicap",
+      "tourism": "Tourisme en Touraine (châteaux, caves à vin)",
       "disposal": "Mise à disposition",
       "longDistance": "Longue distance",
-      "tourism": "Tourisme en Touraine (châteaux, caves à vin)",
-      "health": "Accompagnement santé",
       "other": "Autre demande"
     }
   },

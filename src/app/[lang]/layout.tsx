@@ -4,6 +4,7 @@ import '../globals.css';
 import { display, sans } from '../fonts';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import MobileActionBar from '../components/MobileActionBar';
 import { locales } from '@/i18n/config';
 import { getDictionary } from '@/i18n/get-dictionary';
 import { resolveLang } from '@/i18n/server';
@@ -22,7 +23,13 @@ export const metadata: Metadata = {
   formatDetection: { telephone: false },
   // Code de vérification Google Search Console (variable d'environnement sur Vercel)
   verification: { google: process.env.GOOGLE_SITE_VERIFICATION },
-  icons: { apple: '/icon-512.png' },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
   robots: {
     index: true,
     follow: true,
@@ -38,11 +45,12 @@ export default async function LangLayout({ children, params }: { children: React
 
   return (
     <html lang={lang} className={`${display.variable} ${sans.variable}`}>
-      <body className="flex min-h-screen flex-col">
+      <body className="flex min-h-screen flex-col pb-16 md:pb-0">
         <JsonLd data={businessSchema(lang, dict)} />
         <Navbar lang={lang} nav={dict.nav} />
         <main className="flex-grow">{children}</main>
         <Footer lang={lang} dict={dict} />
+        <MobileActionBar lang={lang} labels={dict.mobileBar} />
         <Analytics />
       </body>
     </html>

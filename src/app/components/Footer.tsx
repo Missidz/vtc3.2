@@ -12,13 +12,13 @@ type Props = { lang: Locale; dict: Dictionary };
 export default function Footer({ lang, dict }: Props) {
   const { footer, nav, services } = dict;
   const links = [
-    { href: href(lang, 'services'), label: nav.services },
+    { href: href(lang, 'contact'), label: nav.contact },
+    { href: href(lang, 'pmr'), label: nav.pmr },
     { href: href(lang, 'tourism'), label: services.tourism.title },
-    { href: href(lang, 'health'), label: services.health.title },
+    { href: href(lang, 'services'), label: nav.services },
     { href: href(lang, 'vehicle'), label: nav.vehicle },
     { href: href(lang, 'rates'), label: nav.rates },
     { href: href(lang, 'about'), label: nav.about },
-    { href: href(lang, 'contact'), label: nav.contact },
   ];
   const heading = 'mb-6 text-[0.7rem] font-medium uppercase tracking-eyebrow text-gold';
 
