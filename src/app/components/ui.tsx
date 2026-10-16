@@ -41,6 +41,7 @@ export function SectionHeader({
 const buttonStyles = {
   primary: 'bg-gold text-ink hover:bg-gold-light',
   outline: 'border border-gold/60 text-ivory hover:border-gold hover:bg-gold/10',
+  accent: 'border border-gold text-gold hover:bg-gold hover:text-ink',
   ghost: 'text-ivory hover:text-gold',
 };
 
