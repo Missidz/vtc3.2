@@ -3,8 +3,37 @@
 @tailwind utilities;
 
 @layer base {
+  /* Thème sombre (par défaut) */
+  :root {
+    --c-ink: 11 11 12;
+    --c-ink-2: 20 21 23;
+    --c-ink-3: 28 29 32;
+    --c-ink-line: 42 43 46;
+    --c-ivory: 243 239 231;
+    --c-ivory-muted: 163 158 148;
+    --c-gold: 198 167 105;
+    --c-gold-light: 216 191 138;
+    --c-gold-dark: 156 130 80;
+    color-scheme: dark;
+  }
+  /* Thème clair : fond ivoire, texte anthracite, or plus soutenu pour rester lisible */
+  [data-theme='light'] {
+    --c-ink: 247 244 238;
+    --c-ink-2: 239 234 225;
+    --c-ink-3: 230 224 212;
+    --c-ink-line: 216 208 194;
+    --c-ivory: 23 23 26;
+    --c-ivory-muted: 94 89 81;
+    --c-gold: 140 107 47;
+    --c-gold-light: 160 125 62;
+    --c-gold-dark: 112 85 37;
+    color-scheme: light;
+  }
   html {
     scroll-behavior: smooth;
+  }
+  body {
+    transition: background-color 0.4s ease, color 0.4s ease;
   }
   body {
     @apply bg-ink text-ivory font-sans antialiased;

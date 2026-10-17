@@ -26,7 +26,8 @@ export default function Footer({ lang, dict }: Props) {
     <footer className="border-t border-ink-line bg-ink">
       <div className="container mx-auto grid gap-12 px-6 py-20 md:grid-cols-2 lg:grid-cols-4 lg:px-12">
         <div>
-          <Image src="/logo-mark.png" alt={site.name} width={924} height={221} className="h-10 w-auto" />
+          <Image src="/logo-mark.png" alt={site.name} width={924} height={221} className="hidden h-10 w-auto dark:block" />
+          <Image src="/logo-mark-dark.png" alt={site.name} width={924} height={221} className="h-10 w-auto dark:hidden" />
           <p className="mt-6 max-w-xs text-sm leading-relaxed text-ivory-muted">{footer.tagline}</p>
         </div>
 

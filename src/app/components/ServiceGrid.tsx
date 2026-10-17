@@ -23,7 +23,7 @@ export default function ServiceGrid({ lang, dict }: Props) {
           <Link
             href={item.href}
             className={`group flex h-full flex-col p-10 transition-colors duration-700 ease-premium md:p-12 ${
-              'badge' in item ? 'bg-ink-2 shadow-[inset_0_0_0_1px_#C6A769] hover:bg-ink-3' : 'bg-ink hover:bg-ink-2'
+              'badge' in item ? 'bg-ink-2 shadow-[inset_0_0_0_1px_rgb(var(--c-gold))] hover:bg-ink-3' : 'bg-ink hover:bg-ink-2'
             }`}
           >
             <span className="font-display text-lg italic text-gold/80">0{i + 1}</span>

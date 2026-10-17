@@ -53,7 +53,9 @@
     "language": "Language",
     "pmr": "Reduced mobility transport",
     "pmrShort": "Mobility transport",
-    "tourism": "Sightseeing"
+    "tourism": "Sightseeing",
+    "themeLight": "Switch to light theme",
+    "themeDark": "Switch to dark theme"
   },
   "common": {
     "learnMore": "Discover",

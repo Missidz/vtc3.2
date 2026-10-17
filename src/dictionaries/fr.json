@@ -53,7 +53,9 @@
     "language": "Langue",
     "pmr": "Transport PMR / Handicap",
     "pmrShort": "Transport PMR",
-    "tourism": "Tourisme"
+    "tourism": "Tourisme",
+    "themeLight": "Passer en thème clair",
+    "themeDark": "Passer en thème sombre"
   },
   "common": {
     "learnMore": "Découvrir",

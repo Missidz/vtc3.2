@@ -9,6 +9,7 @@ import type { Locale } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/get-dictionary';
 import { site } from '@/i18n/site';
 import LanguageSwitcher from './LanguageSwitcher';
+import ThemeToggle from './ThemeToggle';
 import { PhoneIcon, WhatsAppIcon, WheelchairIcon } from './Icons';
 import { href } from '@/i18n/routes';
 
@@ -50,7 +51,8 @@ export default function Navbar({ lang, nav }: Props) {
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-6 lg:px-12">
         <Link href={href(lang, 'home')} aria-label={`${site.name} · ${nav.home}`} className="mr-8 shrink-0">
-          <Image src="/logo-mark.png" alt={site.name} width={924} height={221} priority className="h-8 w-auto md:h-9" />
+          <Image src="/logo-mark.png" alt={site.name} width={924} height={221} priority className="hidden h-8 w-auto dark:block md:h-9" />
+          <Image src="/logo-mark-dark.png" alt={site.name} width={924} height={221} priority className="h-8 w-auto dark:hidden md:h-9" />
         </Link>
 
         <nav className="hidden items-center gap-7 xl:flex" aria-label="Navigation">
@@ -79,12 +81,13 @@ export default function Navbar({ lang, nav }: Props) {
           )}
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 sm:gap-4">
           <LanguageSwitcher lang={lang} label={nav.language} />
+          <ThemeToggle labels={{ light: nav.themeLight, dark: nav.themeDark }} />
           <a
             href={site.phoneHref}
             aria-label={site.phone}
-            className="flex items-center gap-2 whitespace-nowrap border border-ink-line px-3 py-3 text-sm font-semibold text-ivory transition-colors hover:border-gold hover:text-gold sm:px-4"
+            className="hidden items-center gap-2 whitespace-nowrap border border-ink-line px-3 py-3 text-sm font-semibold text-ivory transition-colors hover:border-gold hover:text-gold sm:flex sm:px-4"
           >
             <PhoneIcon className="h-4 w-4 text-gold" /> <span className="hidden sm:inline xl:hidden 2xl:inline">{site.phone}</span>
           </a>

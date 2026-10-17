@@ -1,12 +1,16 @@
+const c = (name) => `rgb(var(--c-${name}) / <alpha-value>)`;
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
+  darkMode: ['class', '[data-theme="dark"]'],
   theme: {
     extend: {
+      // Couleurs pilotées par des variables CSS (thème clair / sombre, voir globals.css)
       colors: {
-        ink: { DEFAULT: '#0B0B0C', 2: '#141517', 3: '#1C1D20', line: '#2A2B2E' },
-        ivory: { DEFAULT: '#F3EFE7', muted: '#A39E94' },
-        gold: { DEFAULT: '#C6A769', light: '#D8BF8A', dark: '#9C8250' },
+        ink: { DEFAULT: c('ink'), 2: c('ink-2'), 3: c('ink-3'), line: c('ink-line') },
+        ivory: { DEFAULT: c('ivory'), muted: c('ivory-muted') },
+        gold: { DEFAULT: c('gold'), light: c('gold-light'), dark: c('gold-dark') },
       },
       fontFamily: {
         display: ['var(--font-display)', 'Georgia', 'serif'],
