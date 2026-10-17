@@ -85,7 +85,7 @@ export default function ContactForm({ lang, contact }: Props) {
         </label>
         <label className={label}>
           {form.date}
-          <input type="datetime-local" name="date" value={data.date} onChange={handleChange} className={`${field} [color-scheme:dark]`} />
+          <input type="datetime-local" name="date" value={data.date} onChange={handleChange} className={`${field}`} />
         </label>
       </div>
 
@@ -103,7 +103,7 @@ export default function ContactForm({ lang, contact }: Props) {
 
       {data.service === 'pmr' && (
         <label className="flex items-start gap-4 border border-gold/50 p-5 text-sm leading-relaxed text-ivory">
-          <input type="checkbox" required className="mt-1 h-4 w-4 shrink-0 accent-[#C6A769]" />
+          <input type="checkbox" required className="mt-1 h-4 w-4 shrink-0 accent-[rgb(var(--c-gold))]" />
           <span>
             <span className="mb-2 flex items-center gap-2 font-semibold uppercase tracking-[0.15em] text-gold">
               <WheelchairIcon /> {contact.serviceOptions.pmr}

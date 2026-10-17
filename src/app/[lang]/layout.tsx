@@ -39,14 +39,25 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport: Viewport = { themeColor: '#0B0B0C' };
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: dark)', color: '#0B0B0C' },
+    { media: '(prefers-color-scheme: light)', color: '#F7F4EE' },
+  ],
+};
+
+// Exécuté avant l'affichage : choix mémorisé du visiteur, sinon préférence de son appareil
+const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}document.documentElement.dataset.theme=t}catch(e){}})()`;
 
 export default async function LangLayout({ children, params }: { children: React.ReactNode; params: { lang: string } }) {
   const lang = resolveLang(params.lang);
   const dict = await getDictionary(lang);
 
   return (
-    <html lang={lang} className={`${display.variable} ${sans.variable}`}>
+    <html lang={lang} data-theme="dark" suppressHydrationWarning className={`${display.variable} ${sans.variable}`}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="flex min-h-screen flex-col pb-16 md:pb-0">
         <JsonLd data={businessSchema(lang, dict)} />
         <Navbar lang={lang} nav={dict.nav} />

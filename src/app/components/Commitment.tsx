@@ -6,7 +6,7 @@ export default function Commitment({ commitment }: { commitment: Dictionary['com
   return (
     <section className="relative overflow-hidden border-y border-ink-line bg-ink-2 py-28 md:py-36">
       <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(198,167,105,0.10),transparent_60%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgb(var(--c-gold)/0.10),transparent_60%)]"
         aria-hidden
       />
       <Container className="relative">

@@ -26,7 +26,7 @@ export default function Visual({ src, alt, placeholder, className = '', priority
         <div
           role="img"
           aria-label={alt}
-          className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(ellipse_at_30%_20%,rgba(198,167,105,0.18),transparent_60%),linear-gradient(160deg,#1C1D20,#0B0B0C)]"
+          className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(ellipse_at_30%_20%,rgb(var(--c-gold)/0.18),transparent_60%),linear-gradient(160deg,rgb(var(--c-ink-3)),rgb(var(--c-ink)))]"
         >
           <span className="select-none font-display text-6xl italic tracking-wide text-ivory/10 md:text-8xl">
             {placeholder}

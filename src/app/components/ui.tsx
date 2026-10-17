@@ -78,7 +78,7 @@ export function PageHeader({ h1, title, intro }: { h1: string; title: string; in
   return (
     <header className="relative overflow-hidden border-b border-ink-line bg-ink-2 pb-20 pt-40 md:pb-28 md:pt-48">
       <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(198,167,105,0.12),transparent_55%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgb(var(--c-gold)/0.12),transparent_55%)]"
         aria-hidden
       />
       <div className="container relative mx-auto px-6 lg:px-12">
