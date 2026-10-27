@@ -13,7 +13,7 @@ import FinalCta from '../components/FinalCta';
 import Reveal from '../components/Reveal';
 import ServiceGrid from '../components/ServiceGrid';
 import Visual from '../components/Visual';
-import { ArrowIcon, PhoneIcon, WhatsAppIcon, WheelchairIcon } from '../components/Icons';
+import { ArrowIcon, MailIcon, PhoneIcon, WhatsAppIcon, WheelchairIcon } from '../components/Icons';
 import { images } from '../components/images';
 import { ButtonLink, Container, Eyebrow, SectionHeader } from '../components/ui';
 import { href } from '@/i18n/routes';
@@ -50,8 +50,11 @@ export default async function Home({ params }: Props) {
               {hero.title}
             </p>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-ivory/80">{hero.subtitle}</p>
-            <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <ButtonLink href={site.phoneHref}>
+            <div className="mt-12 grid max-w-2xl gap-3 sm:grid-cols-2">
+              <ButtonLink href={href(lang, 'contact')}>
+                <MailIcon /> {dict.common.contactCta}
+              </ButtonLink>
+              <ButtonLink href={site.phoneHref} variant="outline">
                 <PhoneIcon /> {site.phone}
               </ButtonLink>
               <ButtonLink href={site.whatsappHref} variant="outline" external>

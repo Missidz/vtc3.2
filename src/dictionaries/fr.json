@@ -35,9 +35,9 @@
       "h1": "Votre chauffeur privé à Tours"
     },
     "contact": {
-      "title": "Réserver un VTC à Tours · Devis rapide",
-      "description": "Réservez votre chauffeur privé à Tours et en Touraine par formulaire, téléphone ou WhatsApp. Réponse rapide 7j/7, prix annoncé à l'avance.",
-      "h1": "Réserver un VTC à Tours"
+      "title": "Contact et réservation VTC à Tours · Devis rapide 7j/7",
+      "description": "Réservez votre VTC à Tours en 1 minute : départ, arrivée, jour et heure. Envoi par WhatsApp ou e-mail, réponse rapide avec le prix. Disponible 7j/7.",
+      "h1": "Contact et réservation VTC à Tours"
     }
   },
   "nav": {
@@ -62,7 +62,8 @@
     "book": "Réserver",
     "whatsapp": "WhatsApp",
     "call": "Appeler",
-    "onQuote": "Sur devis"
+    "onQuote": "Sur devis",
+    "contactCta": "Contact & réservation"
   },
   "hero": {
     "eyebrow": "Chauffeur privé VTC à Tours et en Touraine",
@@ -76,6 +77,11 @@
     "imageAlt": "Chauffeur privé au volant au coucher du soleil, VTC à Tours"
   },
   "quick": {
+    "contact": {
+      "title": "Formulaire de réservation",
+      "text": "Votre trajet en quelques champs : départ, arrivée, jour et heure. Réponse rapide avec le prix.",
+      "cta": "Réserver en ligne"
+    },
     "call": {
       "title": "Appelez-moi",
       "text": "Réponse immédiate, 7 j/7 et 24 h/24.",
@@ -93,6 +99,7 @@
     }
   },
   "mobileBar": {
+    "contact": "Contact",
     "call": "Appeler",
     "whatsapp": "WhatsApp",
     "pmr": "PMR"
@@ -382,6 +389,45 @@
       "details": "Précisions",
       "pmr": "Fauteuil roulant pliable : oui",
       "closing": "Merci de me confirmer la disponibilité et le prix."
+    },
+    "steps": {
+      "title": "Réserver en 3 étapes",
+      "items": [
+        {
+          "title": "Indiquez votre trajet",
+          "text": "Adresse de départ, adresse d'arrivée, jour et heure de prise en charge."
+        },
+        {
+          "title": "Envoyez votre demande",
+          "text": "Par WhatsApp ou par e-mail : votre message est rédigé automatiquement."
+        },
+        {
+          "title": "Je vous confirme",
+          "text": "Disponibilité et prix confirmés rapidement, avant toute prise en charge."
+        }
+      ]
+    },
+    "faq": {
+      "eyebrow": "Questions fréquentes",
+      "title": "Questions sur la réservation",
+      "items": [
+        {
+          "q": "Combien de temps à l'avance faut-il réserver un VTC à Tours ?",
+          "a": "Le plus tôt possible pour garantir la disponibilité, idéalement 24 h à l'avance. Pour un trajet urgent, appelez-moi directement : je fais le maximum, et si je ne suis pas disponible je vous trouve un chauffeur partenaire."
+        },
+        {
+          "q": "Le prix est-il fixé à l'avance ?",
+          "a": "Oui. Le prix vous est communiqué au moment de la confirmation, avant le trajet. Aucune surprise à l'arrivée."
+        },
+        {
+          "q": "Puis-je réserver un aller-retour ?",
+          "a": "Oui, précisez-le dans le champ « Précisions » (heure de retour, attente sur place). Je vous propose un tarif global."
+        },
+        {
+          "q": "Comment réserver un transport PMR ou handicap ?",
+          "a": "Choisissez « Transport PMR / Handicap » dans le formulaire. Le fauteuil roulant doit être pliable et le passager doit pouvoir s'installer sur le siège."
+        }
+      ]
     }
   },
   "cta": {

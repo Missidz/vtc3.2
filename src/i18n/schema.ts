@@ -53,6 +53,19 @@ export function businessSchema(lang: Locale, dict: Dictionary) {
       closes: '23:59',
     },
     sameAs: [site.snapchatHref],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+33666144197',
+      email: site.email,
+      contactType: 'reservations',
+      availableLanguage: ['French', 'English'],
+      areaServed: 'FR',
+      hoursAvailable: { '@type': 'OpeningHoursSpecification', opens: '00:00', closes: '23:59' },
+    },
+    potentialAction: {
+      '@type': 'ReserveAction',
+      target: { '@type': 'EntryPoint', urlTemplate: abs(href(lang, 'contact')), inLanguage: lang },
+    },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: dict.servicesSection.title,
@@ -102,5 +115,18 @@ export function faqSchema(items: { q: string; a: string }[]) {
       name: item.q,
       acceptedAnswer: { '@type': 'Answer', text: item.a },
     })),
+  };
+}
+
+/** Page de contact / réservation. */
+export function contactPageSchema(lang: Locale, { title, description }: { title: string; description: string }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: title,
+    description,
+    url: abs(href(lang, 'contact')),
+    inLanguage: lang,
+    mainEntity: { '@id': businessId },
   };
 }

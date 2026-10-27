@@ -16,7 +16,7 @@ export default function FinalCta({ lang, dict }: { lang: Locale; dict: Dictionar
             <p className="mt-6 text-lg text-ivory-muted">{dict.cta.text}</p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href={href(lang, 'contact')}>{dict.common.book}</ButtonLink>
+            <ButtonLink href={href(lang, 'contact')}>{dict.common.contactCta}</ButtonLink>
             <ButtonLink href={site.whatsappHref} variant="outline" external>
               <WhatsAppIcon /> {dict.common.whatsapp}
             </ButtonLink>

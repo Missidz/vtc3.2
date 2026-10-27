@@ -35,9 +35,9 @@
       "h1": "Your private driver in Tours, France"
     },
     "contact": {
-      "title": "Book a Private Driver in Tours, France",
-      "description": "Book your private driver in Tours and the Loire Valley by form, phone or WhatsApp. Fast reply 7 days a week, price confirmed in advance.",
-      "h1": "Book a private driver in Tours"
+      "title": "Contact & Book a Private Driver in Tours, France",
+      "description": "Book your private driver in Tours in 1 minute: pick-up, drop-off, date and time. Send by WhatsApp or email, fast reply with the price. Available 24/7.",
+      "h1": "Contact & booking: private driver in Tours"
     }
   },
   "nav": {
@@ -62,7 +62,8 @@
     "book": "Book",
     "whatsapp": "WhatsApp",
     "call": "Call",
-    "onQuote": "On quote"
+    "onQuote": "On quote",
+    "contactCta": "Contact & booking"
   },
   "hero": {
     "eyebrow": "Private driver & chauffeur service in Tours, Loire Valley",
@@ -76,6 +77,11 @@
     "imageAlt": "Private driver at the wheel at sunset, chauffeur service in Tours, France"
   },
   "quick": {
+    "contact": {
+      "title": "Booking form",
+      "text": "Your trip in a few fields: pick-up, drop-off, date and time. Fast reply with the price.",
+      "cta": "Book online"
+    },
     "call": {
       "title": "Call me",
       "text": "Immediate answer, 24/7.",
@@ -93,6 +99,7 @@
     }
   },
   "mobileBar": {
+    "contact": "Contact",
     "call": "Call",
     "whatsapp": "WhatsApp",
     "pmr": "Mobility"
@@ -382,6 +389,45 @@
       "details": "Details",
       "pmr": "Folding wheelchair: yes",
       "closing": "Could you please confirm availability and price?"
+    },
+    "steps": {
+      "title": "Book in 3 steps",
+      "items": [
+        {
+          "title": "Enter your trip",
+          "text": "Pick-up address, drop-off address, date and time."
+        },
+        {
+          "title": "Send your request",
+          "text": "By WhatsApp or email: your message is written for you."
+        },
+        {
+          "title": "I confirm",
+          "text": "Availability and price confirmed quickly, before any pick-up."
+        }
+      ]
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Booking questions",
+      "items": [
+        {
+          "q": "How far in advance should I book a private driver in Tours?",
+          "a": "As early as possible to secure availability, ideally 24 hours ahead. For urgent rides, call me directly: I'll do my best, and if I'm unavailable I'll find you a partner driver."
+        },
+        {
+          "q": "Is the price fixed in advance?",
+          "a": "Yes. The price is confirmed with your booking, before the ride. No surprises on arrival."
+        },
+        {
+          "q": "Can I book a return trip?",
+          "a": "Yes, mention it in the \"Details\" field (return time, waiting time). I will offer you an all-in price."
+        },
+        {
+          "q": "How do I book reduced mobility transport?",
+          "a": "Choose \"Reduced mobility / disability transport\" in the form. The wheelchair must be foldable and the passenger must be able to transfer to the seat."
+        }
+      ]
     }
   },
   "cta": {
