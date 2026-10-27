@@ -4,7 +4,7 @@ import { site } from '@/i18n/site';
 import Reveal from './Reveal';
 import { WhatsAppIcon } from './Icons';
 import { ButtonLink, Container } from './ui';
-import { href } from '@/i18n/routes';
+import { bookingHref } from '@/i18n/routes';
 
 export default function FinalCta({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   return (
@@ -16,7 +16,7 @@ export default function FinalCta({ lang, dict }: { lang: Locale; dict: Dictionar
             <p className="mt-6 text-lg text-ivory-muted">{dict.cta.text}</p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href={href(lang, 'contact')}>{dict.common.contactCta}</ButtonLink>
+            <ButtonLink href={bookingHref(lang)}>{dict.common.contactCta}</ButtonLink>
             <ButtonLink href={site.whatsappHref} variant="outline" external>
               <WhatsAppIcon /> {dict.common.whatsapp}
             </ButtonLink>

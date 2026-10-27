@@ -36,3 +36,10 @@ export function findPage(path: string): PageKey | undefined {
     return p.internal === clean || p.fr === clean || p.en === clean;
   });
 }
+
+/**
+ * Lien vers le formulaire de réservation : arrive directement sur le formulaire (#reservation),
+ * avec le service éventuellement présélectionné.
+ */
+export const bookingHref = (lang: Locale, service?: string) =>
+  `${href(lang, 'contact')}${service ? `?service=${service}` : ''}#reservation`;

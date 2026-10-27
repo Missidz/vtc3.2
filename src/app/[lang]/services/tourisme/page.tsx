@@ -11,7 +11,7 @@ import Visual from '../../../components/Visual';
 import { CheckIcon } from '../../../components/Icons';
 import { images } from '../../../components/images';
 import { ButtonLink, Container, Eyebrow } from '../../../components/ui';
-import { href } from '@/i18n/routes';
+import { bookingHref } from '@/i18n/routes';
 
 type Props = { params: { lang: string } };
 
@@ -52,7 +52,7 @@ export default async function Tourism({ params }: Props) {
             <Eyebrow as="h1">{dict.meta.tourism.h1}</Eyebrow>
             <p className="mt-6 font-display text-5xl font-medium leading-[1.05] text-ivory md:text-7xl">{tourism.title}</p>
             <p className="mt-8 text-lg leading-relaxed text-ivory-muted">{tourism.intro}</p>
-            <ButtonLink href={`${href(lang, 'contact')}?service=tourism`} className="mt-10">
+            <ButtonLink href={bookingHref(lang, 'tourism')} className="mt-10">
               {tourism.cta}
             </ButtonLink>
           </Reveal>

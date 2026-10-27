@@ -3,7 +3,7 @@ import type { Locale } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/get-dictionary';
 import Reveal from './Reveal';
 import { ArrowIcon, WheelchairIcon } from './Icons';
-import { href } from '@/i18n/routes';
+import { bookingHref, href } from '@/i18n/routes';
 
 type Props = { lang: Locale; dict: Dictionary };
 
@@ -12,8 +12,8 @@ export default function ServiceGrid({ lang, dict }: Props) {
   const items = [
     { ...services.pmr, href: href(lang, 'pmr') },
     { ...services.tourism, href: href(lang, 'tourism') },
-    { ...services.disposal, href: `${href(lang, 'contact')}?service=disposal` },
-    { ...services.longDistance, href: `${href(lang, 'contact')}?service=longDistance` },
+    { ...services.disposal, href: bookingHref(lang, 'disposal') },
+    { ...services.longDistance, href: bookingHref(lang, 'longDistance') },
   ];
 
   return (
