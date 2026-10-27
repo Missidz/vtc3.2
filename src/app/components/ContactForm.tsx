@@ -239,15 +239,6 @@ export default function ContactForm({ lang, contact }: Props) {
         </div>
       </fieldset>
 
-      {/* Aperçu du message pré-écrit, mis à jour à chaque saisie */}
-      <div>
-        <p className={legend}>{form.previewTitle}</p>
-        <p className="-mt-4 mb-4 text-sm text-ivory-muted">{form.previewHint}</p>
-        <pre aria-live="polite" className="whitespace-pre-wrap border border-ink-line bg-ink-2 p-6 font-sans text-sm leading-relaxed text-ivory">
-          {message}
-        </pre>
-      </div>
-
       <div className="grid gap-3 sm:grid-cols-2">
         <button
           type="button"
