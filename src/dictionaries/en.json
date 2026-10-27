@@ -340,8 +340,6 @@
     "form": {
       "tripTitle": "Your trip",
       "contactTitle": "Your details",
-      "previewTitle": "Your message",
-      "previewHint": "Written automatically from your answers.",
       "service": "Service",
       "servicePlaceholder": "Select a service",
       "departure": "Pick-up address",

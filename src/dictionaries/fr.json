@@ -340,8 +340,6 @@
     "form": {
       "tripTitle": "Votre trajet",
       "contactTitle": "Vos coordonnées",
-      "previewTitle": "Votre message",
-      "previewHint": "Rédigé automatiquement à partir de vos réponses.",
       "service": "Service souhaité",
       "servicePlaceholder": "Sélectionnez un service",
       "departure": "Adresse de départ",
