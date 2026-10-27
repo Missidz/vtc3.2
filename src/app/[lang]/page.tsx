@@ -131,7 +131,7 @@ export default async function Home({ params }: Props) {
         <Container className="grid items-center gap-16 lg:grid-cols-[1fr_1.2fr]">
           <div className="lg:order-2">
             <Reveal>
-              <Visual src={images.vehicle} alt={`${vehicle.title} · ${vehicle.tagline}`} placeholder="SEAL" className="aspect-[16/10]" />
+              <Visual src={images.vehicle} alt={`${vehicle.title} · ${vehicle.tagline}`} placeholder="SEAL" className="mx-auto aspect-[3/4] max-w-md" />
             </Reveal>
           </div>
           <div>
