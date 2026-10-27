@@ -10,7 +10,7 @@ import Visual from '../../components/Visual';
 import { CheckIcon } from '../../components/Icons';
 import { images } from '../../components/images';
 import { ButtonLink, Container, Eyebrow } from '../../components/ui';
-import { href } from '@/i18n/routes';
+import { bookingHref } from '@/i18n/routes';
 
 type Props = { params: { lang: string } };
 
@@ -70,7 +70,7 @@ export default async function Vehicle({ params }: Props) {
                 </li>
               ))}
             </ul>
-            <ButtonLink href={href(lang, 'contact')} className="mt-10">
+            <ButtonLink href={bookingHref(lang)} className="mt-10">
               {vehicle.cta}
             </ButtonLink>
           </Reveal>

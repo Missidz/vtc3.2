@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { Locale } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/get-dictionary';
-import { href } from '@/i18n/routes';
+import { bookingHref } from '@/i18n/routes';
 import { site } from '@/i18n/site';
 import Reveal from './Reveal';
 import { ArrowIcon, MailIcon, PhoneIcon, WhatsAppIcon, WheelchairIcon } from './Icons';
@@ -11,10 +11,10 @@ import { Container } from './ui';
 export default function QuickContact({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   const { quick } = dict;
   const boxes = [
-    { ...quick.contact, href: href(lang, 'contact'), icon: <MailIcon className="h-6 w-6" />, detail: null, external: false, style: 'featured' },
+    { ...quick.contact, href: bookingHref(lang), icon: <MailIcon className="h-6 w-6" />, detail: null, external: false, style: 'featured' },
     { ...quick.call, href: site.phoneHref, icon: <PhoneIcon className="h-6 w-6" />, detail: site.phone, external: false, style: 'default' },
     { ...quick.whatsapp, href: site.whatsappHref, icon: <WhatsAppIcon className="h-6 w-6" />, detail: site.phone, external: true, style: 'default' },
-    { ...quick.pmr, href: `${href(lang, 'contact')}?service=pmr`, icon: <WheelchairIcon className="h-6 w-6" />, detail: null, external: false, style: 'accent' },
+    { ...quick.pmr, href: bookingHref(lang, 'pmr'), icon: <WheelchairIcon className="h-6 w-6" />, detail: null, external: false, style: 'accent' },
   ];
 
   return (

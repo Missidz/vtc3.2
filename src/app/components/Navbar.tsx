@@ -11,7 +11,7 @@ import { site } from '@/i18n/site';
 import LanguageSwitcher from './LanguageSwitcher';
 import ThemeToggle from './ThemeToggle';
 import { PhoneIcon, WhatsAppIcon, WheelchairIcon } from './Icons';
-import { href } from '@/i18n/routes';
+import { bookingHref, href } from '@/i18n/routes';
 
 type Props = { lang: Locale; nav: Dictionary['nav'] };
 
@@ -92,7 +92,7 @@ export default function Navbar({ lang, nav }: Props) {
             <PhoneIcon className="h-4 w-4 text-gold" /> <span className="hidden sm:inline xl:hidden 2xl:inline">{site.phone}</span>
           </a>
           <Link
-            href={href(lang, 'contact')}
+            href={bookingHref(lang)}
             className="hidden whitespace-nowrap bg-gold px-6 py-3 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-ink transition-colors duration-500 hover:bg-gold-light lg:inline-block"
           >
             {nav.book}
@@ -139,7 +139,7 @@ export default function Navbar({ lang, nav }: Props) {
                 </motion.div>
               ))}
               <div className="mt-10 grid gap-3">
-                <Link href={href(lang, 'contact')} className="bg-gold py-4 text-center text-xs font-semibold uppercase tracking-[0.2em] text-ink">
+                <Link href={bookingHref(lang)} className="bg-gold py-4 text-center text-xs font-semibold uppercase tracking-[0.2em] text-ink">
                   {nav.book}
                 </Link>
                 <div className="grid grid-cols-2 gap-3">

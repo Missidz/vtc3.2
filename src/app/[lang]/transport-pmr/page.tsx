@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getDictionary } from '@/i18n/get-dictionary';
 import { pageMetadata } from '@/i18n/metadata';
-import { href } from '@/i18n/routes';
+import { bookingHref } from '@/i18n/routes';
 import { breadcrumbSchema, serviceSchema } from '@/i18n/schema';
 import { resolveLang } from '@/i18n/server';
 import { site } from '@/i18n/site';
@@ -55,7 +55,7 @@ export default async function TransportPmr({ params }: Props) {
             </div>
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <ButtonLink href={`${href(lang, 'contact')}?service=pmr`}>{pmr.cta}</ButtonLink>
+              <ButtonLink href={bookingHref(lang, 'pmr')}>{pmr.cta}</ButtonLink>
               <ButtonLink href={site.phoneHref} variant="outline">
                 <PhoneIcon /> {site.phone}
               </ButtonLink>

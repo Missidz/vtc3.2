@@ -16,7 +16,7 @@ import Visual from '../components/Visual';
 import { ArrowIcon, MailIcon, PhoneIcon, WhatsAppIcon, WheelchairIcon } from '../components/Icons';
 import { images } from '../components/images';
 import { ButtonLink, Container, Eyebrow, SectionHeader } from '../components/ui';
-import { href } from '@/i18n/routes';
+import { bookingHref, href } from '@/i18n/routes';
 
 type Props = { params: { lang: string } };
 
@@ -51,7 +51,7 @@ export default async function Home({ params }: Props) {
             </p>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-ivory/80">{hero.subtitle}</p>
             <div className="mt-12 grid max-w-2xl gap-3 sm:grid-cols-2">
-              <ButtonLink href={href(lang, 'contact')}>
+              <ButtonLink href={bookingHref(lang)}>
                 <MailIcon /> {dict.common.contactCta}
               </ButtonLink>
               <ButtonLink href={site.phoneHref} variant="outline">
@@ -60,7 +60,7 @@ export default async function Home({ params }: Props) {
               <ButtonLink href={site.whatsappHref} variant="outline" external>
                 <WhatsAppIcon /> {dict.common.whatsapp}
               </ButtonLink>
-              <ButtonLink href={`${href(lang, 'contact')}?service=pmr`} variant="accent">
+              <ButtonLink href={bookingHref(lang, 'pmr')} variant="accent">
                 <WheelchairIcon /> {dict.nav.pmr}
               </ButtonLink>
             </div>

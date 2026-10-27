@@ -73,10 +73,15 @@ export function ButtonLink({
   );
 }
 
-/** En-tête des pages intérieures : H1 court et riche en mots-clés, slogan en grand. */
-export function PageHeader({ h1, title, intro }: { h1: string; title: string; intro?: string }) {
+/**
+ * En-tête des pages intérieures : H1 court et riche en mots-clés, slogan en grand.
+ * `compact` : en-tête réduit sur mobile (intro masquée) pour afficher le contenu sans défiler.
+ */
+export function PageHeader({ h1, title, intro, compact = false }: { h1: string; title: string; intro?: string; compact?: boolean }) {
   return (
-    <header className="relative overflow-hidden border-b border-ink-line bg-ink-2 pb-20 pt-40 md:pb-28 md:pt-48">
+    <header
+      className={`relative overflow-hidden border-b border-ink-line bg-ink-2 md:pb-28 md:pt-48 ${compact ? 'pb-6 pt-28' : 'pb-20 pt-40'}`}
+    >
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgb(var(--c-gold)/0.12),transparent_55%)]"
         aria-hidden
@@ -84,8 +89,14 @@ export function PageHeader({ h1, title, intro }: { h1: string; title: string; in
       <div className="container relative mx-auto px-6 lg:px-12">
         <Reveal className="max-w-3xl">
           <Eyebrow as="h1">{h1}</Eyebrow>
-          <p className="mt-6 font-display text-5xl font-medium leading-[1.05] text-ivory md:text-7xl">{title}</p>
-          {intro && <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ivory-muted">{intro}</p>}
+          <p
+            className={`font-display font-medium leading-[1.05] text-ivory md:mt-6 md:text-7xl ${compact ? 'mt-3 text-4xl' : 'mt-6 text-5xl'}`}
+          >
+            {title}
+          </p>
+          {intro && (
+            <p className={`mt-8 max-w-2xl text-lg leading-relaxed text-ivory-muted ${compact ? 'hidden md:block' : ''}`}>{intro}</p>
+          )}
         </Reveal>
       </div>
     </header>
