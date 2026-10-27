@@ -3,10 +3,11 @@ import { Suspense } from 'react';
 import { getDictionary } from '@/i18n/get-dictionary';
 import { pageMetadata } from '@/i18n/metadata';
 import { resolveLang } from '@/i18n/server';
-import { breadcrumbSchema } from '@/i18n/schema';
+import { breadcrumbSchema, contactPageSchema, faqSchema } from '@/i18n/schema';
 import JsonLd from '../../components/JsonLd';
 import { site } from '@/i18n/site';
 import ContactForm from '../../components/ContactForm';
+import Faq from '../../components/Faq';
 import Reveal from '../../components/Reveal';
 import { MailIcon, PhoneIcon, WhatsAppIcon } from '../../components/Icons';
 import { Container, PageHeader } from '../../components/ui';
@@ -31,9 +32,33 @@ export default async function Contact({ params }: Props) {
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema(lang, dict.nav.home, [{ key: 'contact', name: dict.nav.contact }])}
+        data={[
+          contactPageSchema(lang, dict.meta.contact),
+          breadcrumbSchema(lang, dict.nav.home, [{ key: 'contact', name: dict.nav.contact }]),
+          faqSchema(contact.faq.items),
+        ]}
       />
       <PageHeader h1={dict.meta.contact.h1} title={contact.title} intro={contact.intro} />
+
+      {/* Réserver en 3 étapes */}
+      <section className="border-b border-ink-line">
+        <Container>
+          <h2 className="sr-only">{contact.steps.title}</h2>
+          <Reveal>
+            <ol className="grid divide-y divide-ink-line md:grid-cols-3 md:divide-x md:divide-y-0">
+              {contact.steps.items.map((step, i) => (
+                <li key={step.title} className="flex gap-5 py-8 md:px-8 md:first:pl-0 md:last:pr-0">
+                  <span className="font-display text-4xl italic leading-none text-gold">{i + 1}</span>
+                  <span>
+                    <span className="block font-display text-2xl text-ivory">{step.title}</span>
+                    <span className="mt-2 block text-sm leading-relaxed text-ivory-muted">{step.text}</span>
+                  </span>
+                </li>
+              ))}
+            </ol>
+          </Reveal>
+        </Container>
+      </section>
       <section className="py-24 md:py-32">
         <Container className="grid gap-20 lg:grid-cols-[1.5fr_1fr]">
           <Reveal>
@@ -68,6 +93,7 @@ export default async function Contact({ params }: Props) {
           </Reveal>
         </Container>
       </section>
+      <Faq faq={contact.faq} />
     </>
   );
 }
