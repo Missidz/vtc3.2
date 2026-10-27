@@ -30,14 +30,20 @@ export default async function Vehicle({ params }: Props) {
         data={breadcrumbSchema(lang, dict.nav.home, [{ key: 'vehicle', name: dict.nav.vehicle }])}
       />
       <section className="pb-16 pt-40 md:pt-48">
-        <Container>
-          <Reveal className="max-w-3xl">
+        <Container className="grid items-center gap-16 lg:grid-cols-2">
+          <Reveal>
             <Eyebrow as="h1">{dict.meta.vehicle.h1}</Eyebrow>
             <p className="mt-6 font-display text-6xl font-medium leading-none text-ivory md:text-8xl">{vehicle.title}</p>
             <p className="mt-6 text-sm uppercase tracking-[0.2em] text-gold">{vehicle.tagline}</p>
           </Reveal>
-          <Reveal delay={0.15} className="mt-16">
-            <Visual src={images.vehicle} alt={`${vehicle.title} · ${vehicle.tagline}`} placeholder="BYD SEAL" className="aspect-[16/9]" priority />
+          <Reveal delay={0.15}>
+            <Visual
+              src={images.vehicle}
+              alt={`${vehicle.title} · ${vehicle.tagline}`}
+              placeholder="BYD SEAL"
+              className="mx-auto aspect-[3/4] max-w-md"
+              priority
+            />
           </Reveal>
         </Container>
       </section>
