@@ -45,6 +45,26 @@
     background-color: rgb(var(--c-ink-2));
     color: rgb(var(--c-ivory));
   }
+  /* Saisie automatique : les navigateurs colorent les champs remplis automatiquement
+     (jaune / bleu sur Chrome et Edge, teinte jaune-vert par filtre sur Firefox).
+     On garde les couleurs du thème. */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    -webkit-text-fill-color: rgb(var(--c-ivory));
+    caret-color: rgb(var(--c-ivory));
+    box-shadow: 0 0 0 1000px rgb(var(--c-ink)) inset;
+    transition: background-color 9999s ease-out 0s;
+  }
+  input:autofill,
+  textarea:autofill,
+  select:autofill {
+    filter: none;
+    -webkit-text-fill-color: rgb(var(--c-ivory));
+    box-shadow: 0 0 0 1000px rgb(var(--c-ink)) inset;
+  }
   ::selection {
     @apply bg-gold text-ink;
   }
