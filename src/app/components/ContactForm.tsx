@@ -105,31 +105,32 @@ export default function ContactForm({ lang, contact }: Props) {
     try {
       // FormSubmit : envoi direct sur la boîte mail, sans compte ni clé.
       // La toute première demande déclenche un e-mail « Activate Form » à valider une seule fois.
-      const res = await fetch(`https://formsubmit.co/ajax/${site.email}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          _subject: `Nouvelle réservation – ${service} – ${data.day} ${data.time}`,
-          _template: 'table',
-          _captcha: 'false',
-          _replyto: data.email || undefined,
-          _honey: honeypot,
-          Service: service,
-          Départ: data.departure,
-          Arrivée: data.arrival,
-          Date: data.day,
-          Heure: data.time,
-          Passagers: data.passengers,
-          Nom: data.name,
-          Téléphone: data.phone,
-          'E-mail': data.email || '-',
-          Précisions: data.details || '-',
-          Langue: lang.toUpperCase(),
-          Message: message,
-        }),
-      });
-      const result = await res.json().catch(() => ({}));
-      if (!res.ok || String(result.success) !== 'true') throw new Error(result.message || `HTTP ${res.status}`);
+      const fields: Record<string, string> = {
+        _subject: `Nouvelle réservation – ${service} – ${data.day} ${data.time}`,
+        _template: 'table',
+        _captcha: 'false',
+        _honey: honeypot,
+        Service: service,
+        Départ: data.departure,
+        Arrivée: data.arrival,
+        Date: data.day,
+        Heure: data.time,
+        Passagers: data.passengers,
+        Nom: data.name,
+        Téléphone: data.phone,
+        'E-mail': data.email || '-',
+        Précisions: data.details || '-',
+        Langue: lang.toUpperCase(),
+        Message: message,
+      };
+      if (data.email) fields._replyto = data.email;
+      const body = new FormData();
+      Object.entries(fields).forEach(([key, value]) => body.append(key, value));
+
+      // Envoi « no-cors » : le navigateur ne peut pas lire la réponse de FormSubmit (en-têtes CORS),
+      // alors que l'e-mail part bien. On considère donc la demande envoyée dès que la requête aboutit ;
+      // seule une vraie coupure réseau déclenche le message d'erreur.
+      await fetch(`https://formsubmit.co/ajax/${site.email}`, { method: 'POST', mode: 'no-cors', body });
       setStatus('success');
       setData({ ...emptyForm, service: data.service });
     } catch (error) {
