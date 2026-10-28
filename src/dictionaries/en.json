@@ -366,7 +366,8 @@
       "whatsapp": "Send on WhatsApp",
       "sending": "Sending…",
       "success": "Thank you, your request has been sent. I'll get back to you very shortly.",
-      "error": "Something went wrong. Please send your request on WhatsApp or call me directly."
+      "error": "The automatic sending did not go through. Send the same request in one click:",
+      "mailFallback": "Send from my email app"
     },
     "serviceOptions": {
       "pmr": "Reduced mobility / disability transport",

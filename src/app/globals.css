@@ -38,6 +38,13 @@
   body {
     @apply bg-ink text-ivory font-sans antialiased;
   }
+  /* Listes déroulantes : Chrome / Edge (Windows) affichent les options sur fond blanc
+     en gardant la couleur du texte du site → texte invisible en thème sombre. */
+  select option,
+  select optgroup {
+    background-color: rgb(var(--c-ink-2));
+    color: rgb(var(--c-ivory));
+  }
   ::selection {
     @apply bg-gold text-ink;
   }

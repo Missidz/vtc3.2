@@ -366,7 +366,8 @@
       "whatsapp": "Envoyer sur WhatsApp",
       "sending": "Envoi en cours…",
       "success": "Merci, votre demande a bien été envoyée. Je reviens vers vous très rapidement.",
-      "error": "Une erreur est survenue lors de l'envoi. Envoyez votre demande sur WhatsApp ou appelez-moi directement."
+      "error": "L'envoi automatique n'a pas abouti. Envoyez la même demande en un clic :",
+      "mailFallback": "Envoyer depuis ma messagerie"
     },
     "serviceOptions": {
       "pmr": "Transport PMR / Handicap",
