@@ -1,8 +1,6 @@
 'use client';
 
-import { useMemo, useRef, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
-import emailjs from '@emailjs/browser';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Locale } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/get-dictionary';
 import { site } from '@/i18n/site';
@@ -76,12 +74,21 @@ function buildMessage(data: FormData, lang: Locale, contact: Dictionary['contact
 export default function ContactForm({ lang, contact }: Props) {
   const { form, serviceOptions } = contact;
   const formRef = useRef<HTMLFormElement>(null);
-  const preselected = useSearchParams()?.get('service') ?? '';
-  const [data, setData] = useState<FormData>({
-    ...emptyForm,
-    service: preselected in serviceOptions ? preselected : '',
-  });
+  const [data, setData] = useState<FormData>(emptyForm);
+
+  // Service présélectionné via ?service=… (lu après l'affichage : le formulaire reste dans le HTML initial)
+  useEffect(() => {
+    const preselected = new URLSearchParams(window.location.search).get('service') ?? '';
+    if (preselected in serviceOptions) setData((prev) => ({ ...prev, service: preselected }));
+  }, [serviceOptions]);
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [honeypot, setHoneypot] = useState(''); // champ invisible anti-robots
+  const statusRef = useRef<HTMLElement | null>(null);
+
+  // Le message de résultat reste visible (utile sur mobile, sous le clavier ou la barre du bas)
+  useEffect(() => {
+    if (status === 'success' || status === 'error') statusRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, [status]);
 
   const message = useMemo(() => buildMessage(data, lang, contact), [data, lang, contact]);
 
@@ -94,27 +101,35 @@ export default function ContactForm({ lang, contact }: Props) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
+    const service = serviceOptions[data.service as ServiceKey] ?? data.service;
     try {
-      await emailjs.send(
-        'service_dlyt2ws',
-        'template_acx7m0m',
-        {
-          to_email: site.email,
-          from_name: data.name,
-          from_email: data.email,
-          phone: data.phone,
-          service: serviceOptions[data.service as ServiceKey] ?? data.service,
-          message,
-          // Champs détaillés, utilisables dans le modèle EmailJS si besoin
-          depart: data.departure,
-          arrivee: data.arrival,
-          date: data.day,
-          heure: data.time,
-          passagers: data.passengers,
-          langue: lang.toUpperCase(),
-        },
-        'papgmzAJAEHYQ2tnG',
-      );
+      // FormSubmit : envoi direct sur la boîte mail, sans compte ni clé.
+      // La toute première demande déclenche un e-mail « Activate Form » à valider une seule fois.
+      const res = await fetch(`https://formsubmit.co/ajax/${site.email}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          _subject: `Nouvelle réservation – ${service} – ${data.day} ${data.time}`,
+          _template: 'table',
+          _captcha: 'false',
+          _replyto: data.email || undefined,
+          _honey: honeypot,
+          Service: service,
+          Départ: data.departure,
+          Arrivée: data.arrival,
+          Date: data.day,
+          Heure: data.time,
+          Passagers: data.passengers,
+          Nom: data.name,
+          Téléphone: data.phone,
+          'E-mail': data.email || '-',
+          Précisions: data.details || '-',
+          Langue: lang.toUpperCase(),
+          Message: message,
+        }),
+      });
+      const result = await res.json().catch(() => ({}));
+      if (!res.ok || String(result.success) !== 'true') throw new Error(result.message || `HTTP ${res.status}`);
       setStatus('success');
       setData({ ...emptyForm, service: data.service });
     } catch (error) {
@@ -122,6 +137,11 @@ export default function ContactForm({ lang, contact }: Props) {
       setStatus('error');
     }
   };
+
+  /** Secours : la même demande, envoyée depuis la messagerie du client. */
+  const mailtoHref = `mailto:${site.email}?subject=${encodeURIComponent(
+    `Réservation – ${serviceOptions[data.service as ServiceKey] ?? ''}`,
+  )}&body=${encodeURIComponent(message)}`;
 
   /** Même message, envoyé sur WhatsApp (après vérification des champs obligatoires). */
   const sendWhatsApp = () => {
@@ -136,16 +156,17 @@ export default function ContactForm({ lang, contact }: Props) {
 
   return (
     <form ref={formRef} onSubmit={handleSubmit} className="space-y-12">
-      {status === 'success' && (
-        <p role="status" className="border border-gold/50 bg-gold/10 p-4 text-sm text-ivory">
-          {form.success}
-        </p>
-      )}
-      {status === 'error' && (
-        <p role="alert" className="border border-red-400/50 bg-red-400/10 p-4 text-sm text-ivory">
-          {form.error}
-        </p>
-      )}
+      {/* Piège à robots : invisible pour les visiteurs */}
+      <input
+        type="text"
+        name="_honey"
+        value={honeypot}
+        onChange={(e) => setHoneypot(e.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden
+        className="hidden"
+      />
 
       <fieldset className="space-y-8">
         <legend className={legend}>{form.tripTitle}</legend>
@@ -238,6 +259,25 @@ export default function ContactForm({ lang, contact }: Props) {
           </label>
         </div>
       </fieldset>
+
+      {status === 'success' && (
+        <p role="status" ref={(el) => { statusRef.current = el; }} className="border border-gold/50 bg-gold/10 p-4 text-sm text-ivory">
+          {form.success}
+        </p>
+      )}
+      {status === 'error' && (
+        <div role="alert" ref={(el) => { statusRef.current = el; }} className="space-y-4 border border-red-400/50 bg-red-400/10 p-4 text-sm text-ivory">
+          <p>{form.error}</p>
+          <div className="flex flex-col gap-2 sm:flex-row">
+            <button type="button" onClick={sendWhatsApp} className="flex items-center justify-center gap-2 bg-gold px-4 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-ink">
+              <WhatsAppIcon /> {form.whatsapp}
+            </button>
+            <a href={mailtoHref} className="flex items-center justify-center gap-2 border border-gold/60 px-4 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-ivory">
+              <MailIcon /> {form.mailFallback}
+            </a>
+          </div>
+        </div>
+      )}
 
       <div className="grid gap-3 sm:grid-cols-2">
         <button
