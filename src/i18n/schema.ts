@@ -27,6 +27,8 @@ export function businessSchema(lang: Locale, dict: Dictionary) {
     '@type': 'LocalBusiness',
     '@id': businessId,
     name: site.name,
+    alternateName: ['VTC Tours', 'VTC Tours 37', 'Mon VTC 37', 'VTC 37'],
+    slogan: dict.hero.title,
     description: dict.meta.home.description,
     url: abs(href(lang, 'home')),
     telephone: '+33666144197',

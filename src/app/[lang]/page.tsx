@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Home({ params }: Props) {
   const lang = resolveLang(params.lang);
   const dict = await getDictionary(lang);
-  const { hero, pillars, servicesSection, tourism, vehicle, areas } = dict;
+  const { hero, pillars, servicesSection, tourism, vehicle, areas, seoIntro } = dict;
 
   return (
     <>
@@ -154,6 +154,18 @@ export default async function Home({ params }: Props) {
       </section>
 
       <Commitment commitment={dict.commitment} />
+
+      {/* Présentation « VTC Tours » : contenu textuel pour le référencement */}
+      <section className="pt-28 md:pt-36">
+        <Container className="grid gap-12 lg:grid-cols-[1fr_1.2fr]">
+          <SectionHeader eyebrow={seoIntro.eyebrow} title={seoIntro.title} />
+          <Reveal delay={0.1} className="space-y-5 leading-relaxed text-ivory-muted lg:pt-12">
+            {seoIntro.paragraphs.map((paragraph) => (
+              <p key={paragraph.slice(0, 24)}>{paragraph}</p>
+            ))}
+          </Reveal>
+        </Container>
+      </section>
 
       {/* Zones desservies : référencement local */}
       <section className="pt-28 md:pt-36">
