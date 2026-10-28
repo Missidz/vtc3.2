@@ -1,8 +1,8 @@
 {
   "meta": {
     "home": {
-      "title": "VTC Tours 37 · Private Driver in Tours & the Loire Valley",
-      "description": "Premium private driver in Tours, France: 24/7 chauffeur service, Loire Valley château and wine tours, medical appointment rides. 100% electric BYD SEAL."
+      "title": "VTC Tours · Private Driver in Tours, France 24/7 | VTC Tours 37",
+      "description": "Private driver in Tours, France, 24/7: city rides, Tours & Saint-Pierre-des-Corps stations, Loire château tours, reduced mobility transport. From €15."
     },
     "services": {
       "title": "Private Driver Services in Tours, Loire Valley",
@@ -66,7 +66,7 @@
     "contactCta": "Contact & booking"
   },
   "hero": {
-    "eyebrow": "Private driver & chauffeur service in Tours, Loire Valley",
+    "eyebrow": "VTC Tours · Private driver in Tours & the Loire Valley",
     "title": "The art of travelling, with complete peace of mind",
     "subtitle": "Elegance, discretion and punctuality, day and night, in a 100% electric sedan.",
     "trust": [
@@ -271,10 +271,27 @@
       "Bourgueil"
     ]
   },
+  "seoIntro": {
+    "eyebrow": "Private driver in Tours",
+    "title": "Your private driver in Tours, day and night",
+    "paragraphs": [
+      "VTC Tours 37 is a private driver service based in Tours, France, available 24/7. I pick you up at home, at your hotel, at Tours station or at the Saint-Pierre-des-Corps high-speed train station, for city rides, business meetings, evenings out or long-distance journeys.",
+      "Unlike a ride-hailing app, you book your driver directly: the price is confirmed in advance with no surge pricing, and you travel in a quiet, comfortable 100% electric sedan, the BYD SEAL.",
+      "Beyond everyday rides, I offer Loire Valley château tours and wine cellar visits in Vouvray and Chinon, as well as reduced mobility transport. And if I'm unavailable, I'll find you a trusted partner driver."
+    ]
+  },
   "faq": {
     "eyebrow": "FAQ",
     "title": "Good to know",
     "items": [
+      {
+        "q": "How much does a private driver cost in Tours?",
+        "a": "A ride within Tours costs €15, and from €20 outside Tours depending on distance. Sightseeing tours, hourly hire and long distance are on quote. The price is always confirmed before the ride."
+      },
+      {
+        "q": "Can you pick me up at Tours or Saint-Pierre-des-Corps station?",
+        "a": "Yes. I'll meet you when your train arrives, at Tours station or at the Saint-Pierre-des-Corps high-speed station, and drive you anywhere in the Loire Valley or across France."
+      },
       {
         "q": "How do I book?",
         "a": "Use the booking form, call me or message me on WhatsApp. I'll quickly confirm the ride and the price."

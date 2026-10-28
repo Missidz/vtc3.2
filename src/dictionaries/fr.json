@@ -1,8 +1,8 @@
 {
   "meta": {
     "home": {
-      "title": "VTC Tours 37 · Chauffeur privé à Tours et en Touraine",
-      "description": "VTC haut de gamme à Tours : chauffeur privé 24h/24, visites des châteaux de la Loire et caves à vin, accompagnement des personnes malades. BYD SEAL électrique."
+      "title": "VTC Tours · Chauffeur privé à Tours 24h/24 | VTC Tours 37",
+      "description": "VTC à Tours 24h/24 : chauffeur privé en ville, gares de Tours et Saint-Pierre-des-Corps, châteaux de la Loire et transport PMR. Course dès 15 €."
     },
     "services": {
       "title": "Services VTC à Tours : chauffeur privé, tourisme, santé",
@@ -66,7 +66,7 @@
     "contactCta": "Contact & réservation"
   },
   "hero": {
-    "eyebrow": "Chauffeur privé VTC à Tours et en Touraine",
+    "eyebrow": "VTC Tours · Chauffeur privé à Tours et en Touraine",
     "title": "L'art de voyager, en toute sérénité",
     "subtitle": "Élégance, discrétion et ponctualité, de jour comme de nuit, à bord d'une berline 100 % électrique.",
     "trust": [
@@ -271,10 +271,27 @@
       "Bourgueil"
     ]
   },
+  "seoIntro": {
+    "eyebrow": "VTC à Tours",
+    "title": "Votre VTC à Tours, de jour comme de nuit",
+    "paragraphs": [
+      "VTC Tours 37 est un service de chauffeur privé basé à Tours, disponible 7 j/7 et 24 h/24. Je vous prends en charge à domicile, à votre hôtel, à la gare de Tours ou à la gare TGV de Saint-Pierre-des-Corps, pour vos trajets en ville, vos rendez-vous professionnels, vos soirées ou vos voyages longue distance.",
+      "Contrairement à une application, vous réservez directement votre chauffeur : le prix est annoncé à l'avance, sans majoration surprise, et vous voyagez à bord d'une berline 100 % électrique, la BYD SEAL, silencieuse et confortable.",
+      "Au-delà des trajets du quotidien, je propose des visites des châteaux de la Loire et des caves à vin de Vouvray ou de Chinon, ainsi qu'un transport PMR / handicap pour les personnes à mobilité réduite. Et si je ne suis pas disponible, je vous trouve un chauffeur partenaire de confiance."
+    ]
+  },
   "faq": {
     "eyebrow": "Questions fréquentes",
     "title": "Bon à savoir",
     "items": [
+      {
+        "q": "Combien coûte un VTC à Tours ?",
+        "a": "Une course dans Tours coûte 15 €, et 20 € à partir de hors de Tours selon la distance. Les circuits touristiques, la mise à disposition et la longue distance sont sur devis. Le prix est toujours annoncé avant le trajet."
+      },
+      {
+        "q": "Pouvez-vous venir me chercher à la gare de Tours ou de Saint-Pierre-des-Corps ?",
+        "a": "Oui. Je vous attends à l'arrivée de votre train, en gare de Tours comme en gare TGV de Saint-Pierre-des-Corps, et je vous dépose où vous le souhaitez en Touraine ou ailleurs en France."
+      },
       {
         "q": "Comment réserver ?",
         "a": "Par le formulaire de réservation, par téléphone ou sur WhatsApp. Je vous confirme rapidement le trajet et le prix."

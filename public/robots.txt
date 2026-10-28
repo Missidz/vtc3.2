@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://monvtc37.fr/sitemap.xml
+Sitemap: https://www.monvtc37.fr/sitemap.xml
