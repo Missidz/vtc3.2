@@ -17,7 +17,7 @@ export default function NotFound() {
         <p className="mt-4 text-ivory-muted">{t.text}</p>
         <Link
           href={`/${lang}`}
-          className="mt-10 inline-block bg-gold px-7 py-4 text-[0.95rem] font-semibold text-ink transition-[background-color,transform] duration-200 hover:bg-gold-light active:scale-[0.97]"
+          className="mt-10 inline-block border border-gold/60 px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-ivory transition-colors hover:bg-gold/10"
         >
           {t.back}
         </Link>

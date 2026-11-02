@@ -4,8 +4,6 @@ const c = (name) => `rgb(var(--c-${name}) / <alpha-value>)`;
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   darkMode: ['class', '[data-theme="dark"]'],
-  // Les effets de survol ne s'appliquent qu'aux appareils à pointeur précis (pas au tap sur mobile)
-  future: { hoverOnlyWhenSupported: true },
   theme: {
     extend: {
       // Couleurs pilotées par des variables CSS (thème clair / sombre, voir globals.css)
@@ -18,20 +16,18 @@ module.exports = {
         display: ['var(--font-display)', 'Georgia', 'serif'],
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
       },
+      letterSpacing: {
+        eyebrow: '0.28em',
+      },
       keyframes: {
         rise: { from: { opacity: '0', transform: 'translateY(24px)' }, to: { opacity: '1', transform: 'none' } },
-        drift: { from: { transform: 'scale(1.08)' }, to: { transform: 'scale(1)' } },
       },
       animation: {
         // Animation CSS du hero : visible sans attendre le JavaScript (meilleur LCP)
-        rise: 'rise 0.8s cubic-bezier(0.23, 1, 0.32, 1) both',
-        // Photo du hero qui se pose lentement (« une image qui bouge », Taste)
-        drift: 'drift 18s cubic-bezier(0.23, 1, 0.32, 1) both',
+        rise: 'rise 1.1s cubic-bezier(0.22, 1, 0.36, 1) both',
       },
       transitionTimingFunction: {
-        // Courbes fortes recommandées par Emil Kowalski
-        premium: 'cubic-bezier(0.23, 1, 0.32, 1)',
-        'in-out-strong': 'cubic-bezier(0.77, 0, 0.175, 1)',
+        premium: 'cubic-bezier(0.22, 1, 0.36, 1)',
       },
     },
   },

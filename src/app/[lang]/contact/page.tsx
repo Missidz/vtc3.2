@@ -38,23 +38,22 @@ export default async function Contact({ params }: Props) {
           faqSchema(contact.faq.items),
         ]}
       />
-      <PageHeader title={dict.meta.contact.h1} intro={contact.intro} compact />
+      <PageHeader h1={dict.meta.contact.h1} title={contact.title} intro={contact.intro} compact />
 
       {/* Mobile : formulaire en premier, étapes ensuite. Ordinateur : étapes au-dessus. */}
       <div className="flex flex-col">
         {/* Réserver en 3 étapes */}
-        <section className="order-2 bg-ink-2 md:order-1">
+        <section className="order-2 border-y border-ink-line md:order-1 md:border-t-0">
           <Container>
             <h2 className="sr-only">{contact.steps.title}</h2>
             <Reveal>
-              {/* Vraie liste ordonnée : l'ordre des étapes compte (Taste l'autorise) */}
-              <ol className="grid gap-8 py-10 md:grid-cols-3 md:gap-12 md:pb-12 md:pt-0">
+              <ol className="grid divide-y divide-ink-line md:grid-cols-3 md:divide-x md:divide-y-0">
                 {contact.steps.items.map((step, i) => (
-                  <li key={step.title} className="flex gap-4">
-                    <span className="font-display text-3xl leading-none text-gold">{i + 1}.</span>
+                  <li key={step.title} className="flex gap-5 py-8 md:px-8 md:first:pl-0 md:last:pr-0">
+                    <span className="font-display text-4xl italic leading-none text-gold">{i + 1}</span>
                     <span>
                       <span className="block font-display text-2xl text-ivory">{step.title}</span>
-                      <span className="mt-2 block leading-relaxed text-ivory">{step.text}</span>
+                      <span className="mt-2 block text-sm leading-relaxed text-ivory-muted">{step.text}</span>
                     </span>
                   </li>
                 ))}
@@ -71,14 +70,14 @@ export default async function Contact({ params }: Props) {
             <Reveal delay={0.1}>
               <aside className="space-y-12">
                 <div>
-                  <h2 className="font-display text-3xl text-ivory">{contact.directTitle}</h2>
-                  <ul className="mt-6 space-y-2">
+                  <p className="text-[0.7rem] font-medium uppercase tracking-eyebrow text-gold">{contact.directTitle}</p>
+                  <ul className="mt-6 divide-y divide-ink-line border-y border-ink-line">
                     {direct.map((item) => (
                       <li key={item.href}>
                         <a
                           href={item.href}
                           {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                          className="flex items-center gap-4 break-all bg-ink-2 px-5 py-4 text-lg text-ivory transition-[background-color,color,transform] duration-200 hover:bg-ink-3 hover:text-gold active:scale-[0.98]"
+                          className="flex items-center gap-4 break-all py-5 text-ivory transition-colors hover:text-gold"
                         >
                           <span className="text-gold">{item.icon}</span> {item.label}
                         </a>
@@ -86,9 +85,10 @@ export default async function Contact({ params }: Props) {
                     ))}
                   </ul>
                 </div>
-                <div className="bg-ink-2 p-8">
-                  <p className="font-display text-3xl text-ivory">{commitment.title}</p>
-                  <p className="mt-4 leading-relaxed text-ivory">{commitment.text}</p>
+                <div className="border border-ink-line bg-ink-2 p-8">
+                  <p className="text-[0.7rem] font-medium uppercase tracking-eyebrow text-gold">{commitment.eyebrow}</p>
+                  <p className="mt-4 font-display text-3xl italic text-ivory">{commitment.title}</p>
+                  <p className="mt-4 text-sm leading-relaxed text-ivory-muted">{commitment.text}</p>
                 </div>
               </aside>
             </Reveal>
