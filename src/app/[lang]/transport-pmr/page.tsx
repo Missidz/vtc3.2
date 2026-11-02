@@ -12,7 +12,7 @@ import Reveal from '../../components/Reveal';
 import Visual from '../../components/Visual';
 import { CheckIcon, PhoneIcon, WheelchairIcon } from '../../components/Icons';
 import { images } from '../../components/images';
-import { ButtonLink, Container, Eyebrow } from '../../components/ui';
+import { ButtonLink, Container } from '../../components/ui';
 
 type Props = { params: { lang: string } };
 
@@ -40,8 +40,7 @@ export default async function TransportPmr({ params }: Props) {
       <section className="pb-24 pt-40 md:pb-32 md:pt-48">
         <Container className="grid items-center gap-16 lg:grid-cols-2">
           <Reveal>
-            <Eyebrow as="h1">{dict.meta.pmr.h1}</Eyebrow>
-            <p className="mt-6 font-display text-5xl font-medium leading-[1.05] text-ivory md:text-7xl">{pmr.title}</p>
+            <h1 className="text-balance font-display text-5xl font-medium leading-[1.05] text-ivory md:text-7xl">{dict.meta.pmr.h1}</h1>
             <p className="mt-8 text-lg leading-relaxed text-ivory-muted">{pmr.intro}</p>
 
             {/* Mention obligatoire, volontairement très visible */}

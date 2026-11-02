@@ -38,7 +38,7 @@ export default async function Contact({ params }: Props) {
           faqSchema(contact.faq.items),
         ]}
       />
-      <PageHeader h1={dict.meta.contact.h1} title={contact.title} intro={contact.intro} compact />
+      <PageHeader title={dict.meta.contact.h1} intro={contact.intro} compact />
 
       {/* Mobile : formulaire en premier, étapes ensuite. Ordinateur : étapes au-dessus. */}
       <div className="flex flex-col">
@@ -86,8 +86,7 @@ export default async function Contact({ params }: Props) {
                   </ul>
                 </div>
                 <div className="border border-ink-line bg-ink-2 p-8">
-                  <p className="text-[0.7rem] font-medium uppercase tracking-eyebrow text-gold">{commitment.eyebrow}</p>
-                  <p className="mt-4 font-display text-3xl italic text-ivory">{commitment.title}</p>
+                  <p className="font-display text-3xl italic text-ivory">{commitment.title}</p>
                   <p className="mt-4 text-sm leading-relaxed text-ivory-muted">{commitment.text}</p>
                 </div>
               </aside>

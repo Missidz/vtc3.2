@@ -28,11 +28,11 @@ export default async function About({ params }: Props) {
       <JsonLd
         data={breadcrumbSchema(lang, dict.nav.home, [{ key: 'about', name: dict.nav.about }])}
       />
-      <PageHeader h1={dict.meta.about.h1} title={about.title} />
+      <PageHeader title={dict.meta.about.h1} />
       <section className="py-24 md:py-32">
         <Container className="grid items-center gap-16 lg:grid-cols-2">
           <Reveal>
-            <Visual src={images.about} alt={about.title} placeholder="VTC 37" className="aspect-[4/3]" />
+            <Visual src={images.about} alt={dict.meta.about.h1} placeholder="VTC 37" className="aspect-[4/3]" />
           </Reveal>
           <Reveal delay={0.1}>
             <p className="font-display text-2xl leading-relaxed text-ivory md:text-3xl">{about.intro}</p>
@@ -42,8 +42,7 @@ export default async function About({ params }: Props) {
           {about.values.map((value, i) => (
             <Reveal key={value.title} delay={0.08 * i} className="h-full">
               <article className="h-full bg-ink p-10">
-                <span className="font-display text-lg italic text-gold/80">0{i + 1}</span>
-                <h2 className="mt-4 font-display text-3xl text-ivory">{value.title}</h2>
+                <h2 className="font-display text-3xl text-ivory">{value.title}</h2>
                 <p className="mt-4 leading-relaxed text-ivory-muted">{value.text}</p>
               </article>
             </Reveal>

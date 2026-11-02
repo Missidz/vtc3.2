@@ -7,37 +7,37 @@
     "services": {
       "title": "Private Driver Services in Tours, Loire Valley",
       "description": "Hourly chauffeur hire, long-distance rides, Loire Valley château and wine tours, and medical appointment transport from your private driver in Tours.",
-      "h1": "Private driver services in Tours, France"
+      "h1": "Private driver services in Tours"
     },
     "tourism": {
       "title": "Loire Valley Château & Wine Tours with a Private Driver",
       "description": "Chenonceau, Amboise, Chambord, Vouvray and Chinon wine cellars: explore the Loire Valley with an English-speaking private driver from Tours. Tailor-made tours.",
-      "h1": "Loire Valley château & wine tours with a private driver"
+      "h1": "Loire châteaux with a private driver"
     },
     "pmr": {
       "title": "Reduced Mobility & Disability Transport in Tours, France",
       "description": "Transport for people with reduced mobility or disabilities in Tours: help getting in, medical appointments, outings. Folding wheelchair required.",
-      "h1": "Reduced mobility & disability transport in Tours"
+      "h1": "Reduced mobility transport in Tours"
     },
     "vehicle": {
       "title": "BYD SEAL: 100% Electric Chauffeur Car in Tours",
       "description": "Travel in a BYD SEAL, a 100% electric sedan: quiet cabin, leather seats, panoramic roof. Premium comfort from your private driver in Tours, France.",
-      "h1": "100% electric chauffeur car in Tours"
+      "h1": "BYD SEAL, 100% electric comfort"
     },
     "rates": {
       "title": "Private Driver Rates in Tours & the Loire Valley",
       "description": "Rides within Tours from €15, outside Tours from €20, Loire Valley tours and long distance on quote. Price confirmed when you book, no surprises.",
-      "h1": "Private driver rates in Tours & the Loire Valley"
+      "h1": "Private driver rates in Tours"
     },
     "about": {
       "title": "About Your Private Driver in Tours, France",
       "description": "An experienced English-speaking private driver in Tours: comfort, punctuality, discretion, and a commitment to always find you a driver.",
-      "h1": "Your private driver in Tours, France"
+      "h1": "Your private driver in Tours"
     },
     "contact": {
       "title": "Contact & Book a Private Driver in Tours, France",
       "description": "Book your private driver in Tours in 1 minute: pick-up, drop-off, date and time. Send by WhatsApp or email, fast reply with the price. Available 24/7.",
-      "h1": "Contact & booking: private driver in Tours"
+      "h1": "Book your driver in Tours"
     }
   },
   "nav": {
@@ -66,7 +66,6 @@
     "contactCta": "Contact & booking"
   },
   "hero": {
-    "eyebrow": "VTC Tours · Private driver in Tours & the Loire Valley",
     "title": "The art of travelling, with complete peace of mind",
     "subtitle": "Elegance, discretion and punctuality, day and night, in a 100% electric sedan.",
     "trust": [
@@ -74,7 +73,8 @@
       "Price confirmed when you book",
       "Always a solution"
     ],
-    "imageAlt": "Private driver at the wheel at sunset, chauffeur service in Tours, France"
+    "imageAlt": "Private driver at the wheel at sunset, chauffeur service in Tours, France",
+    "h1": "VTC Tours, your private driver"
   },
   "quick": {
     "contact": {
@@ -123,7 +123,6 @@
     }
   ],
   "servicesSection": {
-    "eyebrow": "Our services",
     "title": "A driver for every occasion",
     "intro": "From business meetings to a getaway among the vineyards, every journey is prepared with the same care."
   },
@@ -147,7 +146,6 @@
     }
   },
   "tourism": {
-    "eyebrow": "Regional transport",
     "title": "The Loire Valley, from the back seat",
     "intro": "Leave the driving to me and fully enjoy the Loire Valley, a UNESCO World Heritage site. I take you from château to wine estate, with no timetable or parking worries, and wait for you at every stop.",
     "circuitsTitle": "Tour ideas",
@@ -179,7 +177,6 @@
     "cta": "Request a tour quote"
   },
   "pmr": {
-    "eyebrow": "Reduced mobility & disability transport",
     "title": "Getting around with peace of mind",
     "intro": "Medical appointments, errands, visiting loved ones or outings: I accompany people with reduced mobility or disabilities patiently and attentively, from your door to your destination.",
     "audienceTitle": "Who is it for?",
@@ -205,7 +202,6 @@
     "cta": "Request a mobility ride"
   },
   "vehicle": {
-    "eyebrow": "The car",
     "title": "BYD SEAL",
     "tagline": "100% electric sedan · Silence · Grand-touring comfort",
     "intro": "Every ride has one priority: your comfort. The BYD SEAL is remarkably quiet, exceptionally smooth to ride in and beautifully finished inside, so you can travel relaxed while reducing your carbon footprint.",
@@ -239,7 +235,6 @@
     "cta": "Book the BYD SEAL"
   },
   "commitment": {
-    "eyebrow": "My commitment",
     "title": "Never left without a ride",
     "text": "If I'm not available on the date or at the time you need, I commit to finding you another trusted partner driver who meets the same quality standards. No searching on your side: I take care of everything.",
     "points": [
@@ -249,7 +244,6 @@
     ]
   },
   "areas": {
-    "eyebrow": "Areas served",
     "title": "Your private driver in Tours, the Loire Valley and across France",
     "text": "Based in Tours, I pick you up anywhere in Indre-et-Loire, at home, at your hotel or at Tours and Saint-Pierre-des-Corps train stations, for local, regional or long-distance journeys.",
     "cities": [
@@ -272,7 +266,6 @@
     ]
   },
   "seoIntro": {
-    "eyebrow": "Private driver in Tours",
     "title": "Your private driver in Tours, day and night",
     "paragraphs": [
       "VTC Tours 37 is a private driver service based in Tours, France, available 24/7. I pick you up at home, at your hotel, at Tours station or at the Saint-Pierre-des-Corps high-speed train station, for city rides, business meetings, evenings out or long-distance journeys.",
@@ -281,7 +274,6 @@
     ]
   },
   "faq": {
-    "eyebrow": "FAQ",
     "title": "Good to know",
     "items": [
       {
@@ -315,8 +307,6 @@
     ]
   },
   "rates": {
-    "eyebrow": "Rates",
-    "title": "Clear prices, confirmed in advance",
     "intro": "The price of your ride is confirmed when you book. No surprises on arrival.",
     "items": [
       {
@@ -338,8 +328,6 @@
     "note": "Surcharges may apply at night, on public holidays or for bulky luggage."
   },
   "about": {
-    "eyebrow": "About",
-    "title": "Your driver, someone you can trust",
     "intro": "An experienced private driver based in Tours, I take pride in offering a premium, personal service. Every client is welcomed like a guest: punctuality, smooth driving, discretion and attention to detail.",
     "values": [
       {
@@ -357,8 +345,6 @@
     ]
   },
   "contact": {
-    "eyebrow": "Booking",
-    "title": "Let's plan your ride",
     "intro": "Enter your trip details: your request is written for you. Send it by email or WhatsApp and I'll quickly confirm availability and price.",
     "directTitle": "Direct contact",
     "form": {
@@ -426,7 +412,6 @@
       ]
     },
     "faq": {
-      "eyebrow": "FAQ",
       "title": "Booking questions",
       "items": [
         {

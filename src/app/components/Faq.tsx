@@ -6,7 +6,7 @@ export default function Faq({ faq }: { faq: Dictionary['faq'] }) {
   return (
     <section className="py-28 md:py-36">
       <Container className="grid gap-16 lg:grid-cols-[1fr_1.4fr]">
-        <SectionHeader eyebrow={faq.eyebrow} title={faq.title} />
+        <SectionHeader title={faq.title} />
         <Reveal className="divide-y divide-ink-line border-y border-ink-line">
           {faq.items.map((item) => (
             <details key={item.q} className="group py-6">

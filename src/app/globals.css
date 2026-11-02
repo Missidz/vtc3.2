@@ -35,6 +35,17 @@
   body {
     transition: background-color 0.4s ease, color 0.4s ease;
   }
+  /* Surfaces natives du navigateur aux couleurs du thème (Impeccable) */
+  html {
+    scrollbar-color: rgb(var(--c-ink-line)) rgb(var(--c-ink));
+  }
+  input,
+  textarea {
+    caret-color: rgb(var(--c-gold));
+  }
+  a {
+    text-underline-offset: 0.2em;
+  }
   body {
     @apply bg-ink text-ivory font-sans antialiased;
   }

@@ -9,7 +9,7 @@ import Reveal from '../../components/Reveal';
 import Visual from '../../components/Visual';
 import { CheckIcon } from '../../components/Icons';
 import { images } from '../../components/images';
-import { ButtonLink, Container, Eyebrow } from '../../components/ui';
+import { ButtonLink, Container } from '../../components/ui';
 import { bookingHref } from '@/i18n/routes';
 
 type Props = { params: { lang: string } };
@@ -32,9 +32,8 @@ export default async function Vehicle({ params }: Props) {
       <section className="pb-16 pt-40 md:pt-48">
         <Container className="grid items-center gap-16 lg:grid-cols-2">
           <Reveal>
-            <Eyebrow as="h1">{dict.meta.vehicle.h1}</Eyebrow>
-            <p className="mt-6 font-display text-6xl font-medium leading-none text-ivory md:text-8xl">{vehicle.title}</p>
-            <p className="mt-6 text-sm uppercase tracking-[0.2em] text-gold">{vehicle.tagline}</p>
+            <h1 className="text-balance font-display text-5xl font-medium leading-[1.02] text-ivory md:text-7xl">{dict.meta.vehicle.h1}</h1>
+            <p className="mt-6 text-lg text-ivory-muted">{vehicle.tagline}</p>
           </Reveal>
           <Reveal delay={0.15}>
             <Visual

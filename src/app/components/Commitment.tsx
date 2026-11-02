@@ -1,6 +1,6 @@
 import type { Dictionary } from '@/i18n/get-dictionary';
 import Reveal from './Reveal';
-import { Container, Eyebrow } from './ui';
+import { Container } from './ui';
 
 export default function Commitment({ commitment }: { commitment: Dictionary['commitment'] }) {
   return (
@@ -11,8 +11,7 @@ export default function Commitment({ commitment }: { commitment: Dictionary['com
       />
       <Container className="relative">
         <Reveal className="mx-auto max-w-3xl text-center">
-          <Eyebrow className="justify-center">{commitment.eyebrow}</Eyebrow>
-          <h2 className="mt-6 font-display text-5xl font-medium italic text-ivory md:text-6xl">{commitment.title}</h2>
+          <h2 className="font-display text-5xl font-medium italic text-ivory md:text-6xl">{commitment.title}</h2>
           <p className="mt-8 text-lg leading-relaxed text-ivory-muted">{commitment.text}</p>
           <ul className="mt-12 flex flex-col items-center justify-center gap-4 text-[0.72rem] font-medium uppercase tracking-[0.2em] text-ivory sm:flex-row sm:gap-8">
             {commitment.points.map((point) => (

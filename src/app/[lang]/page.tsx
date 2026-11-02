@@ -15,7 +15,7 @@ import ServiceGrid from '../components/ServiceGrid';
 import Visual from '../components/Visual';
 import { ArrowIcon, MailIcon, PhoneIcon, WhatsAppIcon, WheelchairIcon } from '../components/Icons';
 import { images } from '../components/images';
-import { ButtonLink, Container, Eyebrow, SectionHeader } from '../components/ui';
+import { ButtonLink, Container, SectionHeader } from '../components/ui';
 import { bookingHref, href } from '@/i18n/routes';
 
 type Props = { params: { lang: string } };
@@ -44,11 +44,10 @@ export default async function Home({ params }: Props) {
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/40" aria-hidden />
         <Container className="relative">
           <div className="max-w-3xl animate-rise">
-            {/* H1 = mots-clés (chauffeur privé + ville), slogan en grand juste en dessous */}
-            <Eyebrow as="h1">{hero.eyebrow}</Eyebrow>
-            <p className="mt-8 font-display text-5xl font-medium leading-[1.02] text-ivory sm:text-6xl md:text-8xl">
-              {hero.title}
-            </p>
+            {/* H1 : le grand titre dit ce que c'est (« VTC Tours ») */}
+            <h1 className="text-balance font-display text-5xl font-medium leading-[1.02] text-ivory sm:text-6xl md:text-8xl">
+              {hero.h1}
+            </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-ivory/80">{hero.subtitle}</p>
             <div className="mt-12 grid max-w-2xl gap-3 sm:grid-cols-2">
               <ButtonLink href={bookingHref(lang)}>
@@ -94,7 +93,7 @@ export default async function Home({ params }: Props) {
       {/* Services */}
       <section className="py-28 md:py-36">
         <Container>
-          <SectionHeader eyebrow={servicesSection.eyebrow} title={servicesSection.title} intro={servicesSection.intro} />
+          <SectionHeader title={servicesSection.title} intro={servicesSection.intro} />
           <div className="mt-16">
             <ServiceGrid lang={lang} dict={dict} />
           </div>
@@ -108,7 +107,7 @@ export default async function Home({ params }: Props) {
             <Visual src={images.tourism} alt={tourism.title} placeholder="Val de Loire" className="aspect-[4/5]" />
           </Reveal>
           <div>
-            <SectionHeader eyebrow={tourism.eyebrow} title={tourism.title} intro={tourism.intro} />
+            <SectionHeader title={tourism.title} intro={tourism.intro} />
             <Reveal delay={0.1}>
               <ul className="mt-10 divide-y divide-ink-line border-y border-ink-line">
                 {tourism.circuits.map((circuit) => (
@@ -135,7 +134,7 @@ export default async function Home({ params }: Props) {
             </Reveal>
           </div>
           <div>
-            <SectionHeader eyebrow={vehicle.eyebrow} title={vehicle.title} intro={vehicle.tagline} />
+            <SectionHeader title={vehicle.title} intro={vehicle.tagline} />
             <Reveal delay={0.1}>
               <dl className="mt-10 grid grid-cols-2 gap-px border border-ink-line bg-ink-line">
                 {vehicle.specs.map((spec) => (
@@ -158,7 +157,7 @@ export default async function Home({ params }: Props) {
       {/* Présentation « VTC Tours » : contenu textuel pour le référencement */}
       <section className="pt-28 md:pt-36">
         <Container className="grid gap-12 lg:grid-cols-[1fr_1.2fr]">
-          <SectionHeader eyebrow={seoIntro.eyebrow} title={seoIntro.title} />
+          <SectionHeader title={seoIntro.title} />
           <Reveal delay={0.1} className="space-y-5 leading-relaxed text-ivory-muted lg:pt-12">
             {seoIntro.paragraphs.map((paragraph) => (
               <p key={paragraph.slice(0, 24)}>{paragraph}</p>
@@ -170,7 +169,7 @@ export default async function Home({ params }: Props) {
       {/* Zones desservies : référencement local */}
       <section className="pt-28 md:pt-36">
         <Container className="grid gap-12 lg:grid-cols-[1fr_1.2fr]">
-          <SectionHeader eyebrow={areas.eyebrow} title={areas.title} intro={areas.text} />
+          <SectionHeader title={areas.title} intro={areas.text} />
           <Reveal delay={0.1}>
             <ul className="flex flex-wrap gap-3 lg:pt-12">
               {areas.cities.map((city) => (

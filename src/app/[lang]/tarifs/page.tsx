@@ -26,7 +26,7 @@ export default async function Rates({ params }: Props) {
       <JsonLd
         data={breadcrumbSchema(lang, dict.nav.home, [{ key: 'rates', name: dict.nav.rates }])}
       />
-      <PageHeader h1={dict.meta.rates.h1} title={rates.title} intro={rates.intro} />
+      <PageHeader title={dict.meta.rates.h1} intro={rates.intro} />
       <section className="py-24 md:py-32">
         <Container>
           <div className="grid gap-px border border-ink-line bg-ink-line md:grid-cols-3">
@@ -34,7 +34,7 @@ export default async function Rates({ params }: Props) {
               <Reveal key={item.title} delay={0.08 * i} className="h-full">
                 <article className="flex h-full flex-col bg-ink p-10">
                   <h2 className="text-[0.7rem] font-medium uppercase tracking-[0.2em] text-ivory-muted">{item.title}</h2>
-                  <p className="mt-8 font-display text-6xl text-ivory">{item.price}</p>
+                  <p className="mt-8 font-display text-6xl tabular-nums text-ivory">{item.price}</p>
                   <p className="mt-6 border-t border-ink-line pt-6 text-sm text-ivory-muted">{item.note}</p>
                 </article>
               </Reveal>

@@ -1,38 +1,11 @@
 import Link from 'next/link';
 import Reveal from './Reveal';
 
-export function Eyebrow({
-  children,
-  className = '',
-  as: Tag = 'p',
-}: {
-  children: React.ReactNode;
-  className?: string;
-  as?: 'p' | 'h1';
-}) {
+/** Titre de section : le titre porte seul le message (pas de sur-titre, cf. Impeccable). */
+export function SectionHeader({ title, intro, center = false }: { title: string; intro?: string; center?: boolean }) {
   return (
-    <Tag className={`flex items-center gap-3 text-[0.7rem] font-medium uppercase tracking-eyebrow text-gold ${className}`}>
-      <span className="h-px w-8 shrink-0 bg-gold/60" aria-hidden />
-      {children}
-    </Tag>
-  );
-}
-
-export function SectionHeader({
-  eyebrow,
-  title,
-  intro,
-  center = false,
-}: {
-  eyebrow: string;
-  title: string;
-  intro?: string;
-  center?: boolean;
-}) {
-  return (
-    <Reveal className={`max-w-2xl ${center ? 'mx-auto text-center [&>p:first-child]:justify-center' : ''}`}>
-      <Eyebrow>{eyebrow}</Eyebrow>
-      <h2 className="mt-5 font-display text-4xl font-medium leading-[1.1] text-ivory md:text-5xl">{title}</h2>
+    <Reveal className={`max-w-2xl ${center ? 'mx-auto text-center' : ''}`}>
+      <h2 className="text-balance font-display text-4xl font-medium leading-[1.1] text-ivory md:text-5xl">{title}</h2>
       {intro && <p className="mt-6 text-base leading-relaxed text-ivory-muted md:text-lg">{intro}</p>}
     </Reveal>
   );
@@ -74,10 +47,10 @@ export function ButtonLink({
 }
 
 /**
- * En-tête des pages intérieures : H1 court et riche en mots-clés, slogan en grand.
+ * En-tête des pages intérieures : le H1 est le grand titre, court et riche en mots-clés.
  * `compact` : en-tête réduit sur mobile (intro masquée) pour afficher le contenu sans défiler.
  */
-export function PageHeader({ h1, title, intro, compact = false }: { h1: string; title: string; intro?: string; compact?: boolean }) {
+export function PageHeader({ title, intro, compact = false }: { title: string; intro?: string; compact?: boolean }) {
   return (
     <header
       className={`relative overflow-hidden border-b border-ink-line bg-ink-2 md:pb-28 md:pt-48 ${compact ? 'pb-6 pt-28' : 'pb-20 pt-40'}`}
@@ -87,13 +60,10 @@ export function PageHeader({ h1, title, intro, compact = false }: { h1: string; 
         aria-hidden
       />
       <div className="container relative mx-auto px-6 lg:px-12">
-        <Reveal className="max-w-3xl">
-          <Eyebrow as="h1">{h1}</Eyebrow>
-          <p
-            className={`font-display font-medium leading-[1.05] text-ivory md:mt-6 md:text-7xl ${compact ? 'mt-3 text-4xl' : 'mt-6 text-5xl'}`}
-          >
+        <Reveal className="max-w-4xl">
+          <h1 className={`text-balance font-display font-medium leading-[1.05] text-ivory md:text-7xl ${compact ? 'text-4xl' : 'text-5xl'}`}>
             {title}
-          </p>
+          </h1>
           {intro && (
             <p className={`mt-8 max-w-2xl text-lg leading-relaxed text-ivory-muted ${compact ? 'hidden md:block' : ''}`}>{intro}</p>
           )}

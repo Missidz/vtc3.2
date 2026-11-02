@@ -10,7 +10,7 @@ import Reveal from '../../../components/Reveal';
 import Visual from '../../../components/Visual';
 import { CheckIcon } from '../../../components/Icons';
 import { images } from '../../../components/images';
-import { ButtonLink, Container, Eyebrow } from '../../../components/ui';
+import { ButtonLink, Container } from '../../../components/ui';
 import { bookingHref } from '@/i18n/routes';
 
 type Props = { params: { lang: string } };
@@ -49,8 +49,7 @@ export default async function Tourism({ params }: Props) {
       <section className="pb-24 pt-40 md:pb-32 md:pt-48">
         <Container className="grid items-center gap-16 lg:grid-cols-2">
           <Reveal>
-            <Eyebrow as="h1">{dict.meta.tourism.h1}</Eyebrow>
-            <p className="mt-6 font-display text-5xl font-medium leading-[1.05] text-ivory md:text-7xl">{tourism.title}</p>
+            <h1 className="text-balance font-display text-5xl font-medium leading-[1.05] text-ivory md:text-7xl">{dict.meta.tourism.h1}</h1>
             <p className="mt-8 text-lg leading-relaxed text-ivory-muted">{tourism.intro}</p>
             <ButtonLink href={bookingHref(lang, 'tourism')} className="mt-10">
               {tourism.cta}
@@ -65,7 +64,7 @@ export default async function Tourism({ params }: Props) {
       <section className="border-t border-ink-line bg-ink-2 py-24 md:py-32">
         <Container>
           <Reveal>
-            <Eyebrow>{tourism.circuitsTitle}</Eyebrow>
+            <h2 className="font-display text-4xl text-ivory md:text-5xl">{tourism.circuitsTitle}</h2>
           </Reveal>
           <div className="mt-12 grid gap-px border border-ink-line bg-ink-line md:grid-cols-3">
             {tourism.circuits.map((circuit, i) => (

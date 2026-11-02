@@ -26,8 +26,7 @@ export default function ServiceGrid({ lang, dict }: Props) {
               'badge' in item ? 'bg-ink-2 shadow-[inset_0_0_0_1px_rgb(var(--c-gold))] hover:bg-ink-3' : 'bg-ink hover:bg-ink-2'
             }`}
           >
-            <span className="font-display text-lg italic text-gold/80">0{i + 1}</span>
-            <h3 className="mt-6 font-display text-3xl text-ivory md:text-4xl">{item.title}</h3>
+            <h3 className="font-display text-3xl text-ivory md:text-4xl">{item.title}</h3>
             <p className="mt-4 max-w-md leading-relaxed text-ivory-muted">{item.text}</p>
             {'badge' in item && (
               <p className="mt-6 inline-flex w-fit items-center gap-2 border border-gold/50 px-3 py-2 text-xs font-medium uppercase tracking-[0.15em] text-gold">
