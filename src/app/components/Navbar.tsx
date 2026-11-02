@@ -45,7 +45,7 @@ export default function Navbar({ lang, nav }: Props) {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-premium ${
+      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color] duration-300 ease-premium ${
         scrolled || open ? 'border-b border-ink-line bg-ink/90 backdrop-blur-md' : 'border-b border-transparent bg-transparent'
       }`}
     >
@@ -71,8 +71,8 @@ export default function Navbar({ lang, nav }: Props) {
             <Link
               key={link.href}
               href={link.href}
-              className={`relative whitespace-nowrap text-[0.72rem] font-medium uppercase tracking-[0.2em] transition-colors duration-300 after:absolute after:-bottom-2 after:left-0 after:h-px after:bg-gold after:transition-all after:duration-500 after:ease-premium ${
-                isActive(link.href) ? 'text-ivory after:w-full' : 'text-ivory-muted after:w-0 hover:text-ivory hover:after:w-full'
+              className={`relative whitespace-nowrap text-[0.72rem] font-medium uppercase tracking-[0.2em] transition-colors duration-200 after:absolute after:-bottom-2 after:left-0 after:h-px after:w-full after:origin-left after:bg-gold after:transition-transform after:duration-200 after:ease-premium ${
+                isActive(link.href) ? 'text-ivory after:scale-x-100' : 'text-ivory-muted after:scale-x-0 hover:text-ivory hover:after:scale-x-100'
               }`}
             >
               {link.label}
@@ -87,13 +87,13 @@ export default function Navbar({ lang, nav }: Props) {
           <a
             href={site.phoneHref}
             aria-label={site.phone}
-            className="hidden items-center gap-2 whitespace-nowrap border border-ink-line px-3 py-3 text-sm font-semibold text-ivory transition-colors hover:border-gold hover:text-gold sm:flex sm:px-4"
+            className="hidden items-center gap-2 whitespace-nowrap border border-ink-line px-3 py-3 text-sm font-semibold text-ivory transition-[color,border-color,transform] duration-200 hover:border-gold hover:text-gold active:scale-[0.97] sm:flex sm:px-4"
           >
             <PhoneIcon className="h-4 w-4 text-gold" /> <span className="hidden sm:inline xl:hidden 2xl:inline">{site.phone}</span>
           </a>
           <Link
             href={bookingHref(lang)}
-            className="hidden whitespace-nowrap bg-gold px-6 py-3 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-ink transition-colors duration-500 hover:bg-gold-light lg:inline-block"
+            className="hidden whitespace-nowrap bg-gold px-6 py-3 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-ink transition-[background-color,transform] duration-200 hover:bg-gold-light active:scale-[0.97] lg:inline-block"
           >
             {nav.book}
           </Link>
@@ -114,9 +114,8 @@ export default function Navbar({ lang, nav }: Props) {
         {open && (
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            animate={{ opacity: 1, transition: { duration: 0.25, ease: [0.23, 1, 0.32, 1] } }}
+            exit={{ opacity: 0, transition: { duration: 0.15 } }}
             className="h-[calc(100dvh-5rem)] overflow-y-auto bg-ink xl:hidden"
           >
             <nav className="container mx-auto flex flex-col px-6 py-10" aria-label="Navigation">

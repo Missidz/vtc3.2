@@ -284,14 +284,14 @@ export default function ContactForm({ lang, contact }: Props) {
         <button
           type="button"
           onClick={sendWhatsApp}
-          className="flex items-center justify-center gap-3 bg-gold px-8 py-5 text-xs font-semibold uppercase tracking-[0.2em] text-ink transition-colors duration-500 hover:bg-gold-light"
+          className="flex items-center justify-center gap-3 bg-gold px-8 py-5 text-xs font-semibold uppercase tracking-[0.2em] text-ink transition-[background-color,transform] duration-200 hover:bg-gold-light active:scale-[0.97]"
         >
           <WhatsAppIcon /> {form.whatsapp}
         </button>
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="flex items-center justify-center gap-3 border border-gold/60 px-8 py-5 text-xs font-semibold uppercase tracking-[0.2em] text-ivory transition-colors duration-500 hover:border-gold hover:bg-gold/10 disabled:cursor-wait disabled:opacity-60"
+          className="flex items-center justify-center gap-3 border border-gold/60 px-8 py-5 text-xs font-semibold uppercase tracking-[0.2em] text-ivory transition-[background-color,border-color,transform] duration-200 hover:border-gold hover:bg-gold/10 active:scale-[0.97] disabled:cursor-wait disabled:opacity-60"
         >
           <MailIcon /> {status === 'loading' ? form.sending : form.submit}
         </button>

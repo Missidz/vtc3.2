@@ -22,7 +22,7 @@ export default function ServiceGrid({ lang, dict }: Props) {
         <Reveal key={item.title} delay={0.08 * i} className="h-full">
           <Link
             href={item.href}
-            className={`group flex h-full flex-col p-10 transition-colors duration-700 ease-premium md:p-12 ${
+            className={`group flex h-full flex-col p-10 transition-[background-color,transform] duration-200 ease-premium active:scale-[0.99] md:p-12 ${
               'badge' in item ? 'bg-ink-2 shadow-[inset_0_0_0_1px_rgb(var(--c-gold))] hover:bg-ink-3' : 'bg-ink hover:bg-ink-2'
             }`}
           >
@@ -36,7 +36,7 @@ export default function ServiceGrid({ lang, dict }: Props) {
             )}
             <span className="mt-auto flex items-center gap-3 pt-10 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-ivory">
               {common.learnMore}
-              <ArrowIcon className="h-4 w-4 text-gold transition-transform duration-500 ease-premium group-hover:translate-x-2" />
+              <ArrowIcon className="h-4 w-4 text-gold transition-transform duration-200 ease-premium group-hover:translate-x-1.5" />
             </span>
           </Link>
         </Reveal>

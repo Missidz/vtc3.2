@@ -22,7 +22,7 @@ export default function QuickContact({ lang, dict }: { lang: Locale; dict: Dicti
       <Container className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {boxes.map((box, i) => {
           const featured = box.style === 'featured';
-          const classes = `group flex h-full flex-col p-8 transition-colors duration-500 ease-premium ${
+          const classes = `group flex h-full flex-col p-8 transition-[background-color,border-color,transform] duration-200 ease-premium active:scale-[0.98] ${
             featured
               ? 'border border-gold bg-gold text-ink hover:bg-gold-light'
               : box.style === 'accent'
@@ -37,7 +37,7 @@ export default function QuickContact({ lang, dict }: { lang: Locale; dict: Dicti
               <span className={`mt-3 text-sm leading-relaxed ${featured ? 'text-ink/80' : 'text-ivory-muted'}`}>{box.text}</span>
               <span className="mt-auto flex items-center gap-3 pt-8 text-[0.7rem] font-semibold uppercase tracking-[0.2em]">
                 {box.cta}
-                <ArrowIcon className="h-4 w-4 transition-transform duration-500 ease-premium group-hover:translate-x-2" />
+                <ArrowIcon className="h-4 w-4 transition-transform duration-200 ease-premium group-hover:translate-x-1.5" />
               </span>
             </>
           );

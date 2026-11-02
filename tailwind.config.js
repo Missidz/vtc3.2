@@ -4,6 +4,8 @@ const c = (name) => `rgb(var(--c-${name}) / <alpha-value>)`;
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   darkMode: ['class', '[data-theme="dark"]'],
+  // Les effets de survol ne s'appliquent qu'aux appareils à pointeur précis (pas au tap sur mobile)
+  future: { hoverOnlyWhenSupported: true },
   theme: {
     extend: {
       // Couleurs pilotées par des variables CSS (thème clair / sombre, voir globals.css)
@@ -24,10 +26,12 @@ module.exports = {
       },
       animation: {
         // Animation CSS du hero : visible sans attendre le JavaScript (meilleur LCP)
-        rise: 'rise 1.1s cubic-bezier(0.22, 1, 0.36, 1) both',
+        rise: 'rise 0.8s cubic-bezier(0.23, 1, 0.32, 1) both',
       },
       transitionTimingFunction: {
-        premium: 'cubic-bezier(0.22, 1, 0.36, 1)',
+        // Courbes fortes recommandées par Emil Kowalski
+        premium: 'cubic-bezier(0.23, 1, 0.32, 1)',
+        'in-out-strong': 'cubic-bezier(0.77, 0, 0.175, 1)',
       },
     },
   },

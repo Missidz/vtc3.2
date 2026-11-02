@@ -33,7 +33,7 @@ export default function LanguageSwitcher({ lang, label }: { lang: Locale; label:
             aria-current={active ? 'true' : undefined}
             aria-label={name}
             title={name}
-            className={`block h-7 w-7 overflow-hidden rounded-full ring-1 ring-offset-2 ring-offset-ink transition duration-300 ${
+            className={`block h-7 w-7 overflow-hidden rounded-full ring-1 ring-offset-2 ring-offset-ink transition-[opacity,box-shadow,transform] duration-200 active:scale-[0.94] ${
               active ? 'ring-gold' : 'opacity-50 ring-ivory/20 hover:opacity-100 hover:ring-ivory/60'
             }`}
           >

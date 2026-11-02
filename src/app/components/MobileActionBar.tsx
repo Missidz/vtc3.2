@@ -7,7 +7,8 @@ import { MailIcon, PhoneIcon, WhatsAppIcon, WheelchairIcon } from './Icons';
 
 /** Barre fixe en bas de l'écran sur mobile : contact, appel, WhatsApp et transport PMR en un geste. */
 export default function MobileActionBar({ lang, labels }: { lang: Locale; labels: Dictionary['mobileBar'] }) {
-  const item = 'flex flex-1 flex-col items-center justify-center gap-1 py-3 text-[0.6rem] font-semibold uppercase tracking-[0.12em]';
+  const item =
+    'flex flex-1 flex-col items-center justify-center gap-1 py-3 text-[0.6rem] font-semibold uppercase tracking-[0.12em] transition-transform duration-150 ease-premium active:scale-[0.95]';
   return (
     <nav className="fixed inset-x-0 bottom-0 z-40 flex border-t border-ink-line bg-ink/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-md md:hidden">
       <Link href={bookingHref(lang)} className={`${item} bg-gold text-ink`}>
