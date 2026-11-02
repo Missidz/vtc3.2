@@ -152,7 +152,7 @@ export default function ContactForm({ lang, contact }: Props) {
 
   const field =
     'mt-2 block w-full border-0 border-b border-ink-line bg-transparent px-0 py-3 text-base normal-case tracking-normal text-ivory placeholder-ivory-muted/50 transition-colors focus:border-gold focus:outline-none focus:ring-0';
-  const label = 'block text-[0.7rem] font-medium uppercase tracking-[0.2em] text-ivory-muted';
+  const label = 'block text-[0.95rem] font-medium text-ivory-muted';
   const legend = 'mb-6 font-display text-2xl text-ivory';
 
   return (
@@ -225,10 +225,10 @@ export default function ContactForm({ lang, contact }: Props) {
         </div>
 
         {data.service === 'pmr' && (
-          <label className="flex items-start gap-4 border border-gold/50 p-5 text-sm leading-relaxed text-ivory">
+          <label className="flex items-start gap-4 bg-gold/[0.15] p-5 text-[0.95rem] leading-relaxed text-ivory">
             <input type="checkbox" required className="mt-1 h-4 w-4 shrink-0 accent-[rgb(var(--c-gold))]" />
             <span>
-              <span className="mb-2 flex items-center gap-2 font-semibold uppercase tracking-[0.15em] text-gold">
+              <span className="mb-2 flex items-center gap-2 font-semibold text-gold">
                 <WheelchairIcon /> {serviceOptions.pmr}
               </span>
               {form.pmrConsent}
@@ -262,18 +262,18 @@ export default function ContactForm({ lang, contact }: Props) {
       </fieldset>
 
       {status === 'success' && (
-        <p role="status" ref={(el) => { statusRef.current = el; }} className="border border-gold/50 bg-gold/10 p-4 text-sm text-ivory">
+        <p role="status" ref={(el) => { statusRef.current = el; }} className="bg-gold/[0.15] p-5 text-[0.95rem] text-ivory">
           {form.success}
         </p>
       )}
       {status === 'error' && (
-        <div role="alert" ref={(el) => { statusRef.current = el; }} className="space-y-4 border border-red-400/50 bg-red-400/10 p-4 text-sm text-ivory">
+        <div role="alert" ref={(el) => { statusRef.current = el; }} className="space-y-4 bg-red-500/[0.15] p-5 text-[0.95rem] text-ivory">
           <p>{form.error}</p>
           <div className="flex flex-col gap-2 sm:flex-row">
-            <button type="button" onClick={sendWhatsApp} className="flex items-center justify-center gap-2 bg-gold px-4 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-ink">
+            <button type="button" onClick={sendWhatsApp} className="flex items-center justify-center gap-2 bg-gold px-4 py-3 text-[0.95rem] font-semibold text-ink transition-transform duration-150 active:scale-[0.97]">
               <WhatsAppIcon /> {form.whatsapp}
             </button>
-            <a href={mailtoHref} className="flex items-center justify-center gap-2 border border-gold/60 px-4 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-ivory">
+            <a href={mailtoHref} className="flex items-center justify-center gap-2 bg-ink-3 px-4 py-3 text-[0.95rem] font-semibold text-ivory transition-transform duration-150 active:scale-[0.97]">
               <MailIcon /> {form.mailFallback}
             </a>
           </div>
@@ -284,14 +284,14 @@ export default function ContactForm({ lang, contact }: Props) {
         <button
           type="button"
           onClick={sendWhatsApp}
-          className="flex items-center justify-center gap-3 bg-gold px-8 py-5 text-xs font-semibold uppercase tracking-[0.2em] text-ink transition-[background-color,transform] duration-200 hover:bg-gold-light active:scale-[0.97]"
+          className="flex items-center justify-center gap-3 bg-gold px-8 py-5 text-base font-semibold text-ink transition-[background-color,transform] duration-200 hover:bg-gold-light active:scale-[0.97]"
         >
           <WhatsAppIcon /> {form.whatsapp}
         </button>
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="flex items-center justify-center gap-3 border border-gold/60 px-8 py-5 text-xs font-semibold uppercase tracking-[0.2em] text-ivory transition-[background-color,border-color,transform] duration-200 hover:border-gold hover:bg-gold/10 active:scale-[0.97] disabled:cursor-wait disabled:opacity-60"
+          className="flex items-center justify-center gap-3 bg-ink-3 px-8 py-5 text-base font-semibold text-ivory transition-[background-color,transform] duration-200 hover:bg-ink-line active:scale-[0.97] disabled:cursor-wait disabled:opacity-60"
         >
           <MailIcon /> {status === 'loading' ? form.sending : form.submit}
         </button>

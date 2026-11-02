@@ -104,24 +104,6 @@
     "whatsapp": "WhatsApp",
     "pmr": "PMR"
   },
-  "pillars": [
-    {
-      "title": "Ponctualité",
-      "text": "Trajets anticipés, horaires respectés, suivi en temps réel."
-    },
-    {
-      "title": "Confort premium",
-      "text": "Berline électrique silencieuse, intérieur cuir, eau à bord."
-    },
-    {
-      "title": "Discrétion",
-      "text": "Conduite souple et confidentialité absolue de vos échanges."
-    },
-    {
-      "title": "Toujours une solution",
-      "text": "Si je ne suis pas disponible, je vous trouve un chauffeur partenaire."
-    }
-  ],
   "servicesSection": {
     "title": "Un chauffeur pour chaque moment",
     "intro": "Du rendez-vous d'affaires à l'escapade dans les vignes, chaque trajet est préparé avec le même soin."
@@ -244,7 +226,7 @@
     ]
   },
   "areas": {
-    "title": "Votre VTC à Tours, en Touraine et partout en France",
+    "title": "Tours, la Touraine et toute la France",
     "text": "Basé à Tours, je vous prends en charge dans toute l'Indre-et-Loire, à domicile, à votre hôtel ou en gare de Tours et de Saint-Pierre-des-Corps, pour des trajets locaux, régionaux ou longue distance.",
     "cities": [
       "Tours",

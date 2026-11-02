@@ -32,21 +32,24 @@ export default async function About({ params }: Props) {
       <section className="py-24 md:py-32">
         <Container className="grid items-center gap-16 lg:grid-cols-2">
           <Reveal>
-            <Visual src={images.about} alt={dict.meta.about.h1} placeholder="VTC 37" className="aspect-[4/3]" />
+            <Visual src={images.about} alt={dict.meta.about.h1} className="aspect-[4/3]" />
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="font-display text-2xl leading-relaxed text-ivory md:text-3xl">{about.intro}</p>
+            <p className="text-xl leading-relaxed text-ivory md:text-2xl">{about.intro}</p>
           </Reveal>
         </Container>
-        <Container className="mt-24 grid gap-px border border-ink-line bg-ink-line md:grid-cols-3">
-          {about.values.map((value, i) => (
-            <Reveal key={value.title} delay={0.08 * i} className="h-full">
-              <article className="h-full bg-ink p-10">
-                <h2 className="font-display text-3xl text-ivory">{value.title}</h2>
-                <p className="mt-4 leading-relaxed text-ivory-muted">{value.text}</p>
-              </article>
-            </Reveal>
-          ))}
+        {/* Valeurs en liste : titre à gauche, texte à droite */}
+        <Container className="mt-24">
+          <ul className="space-y-10 md:space-y-14">
+            {about.values.map((value, i) => (
+              <li key={value.title}>
+                <Reveal delay={0.06 * i} className="grid gap-3 md:grid-cols-[1fr_1.4fr] md:gap-12">
+                  <h2 className="font-display text-3xl text-ivory md:text-4xl">{value.title}</h2>
+                  <p className="text-lg leading-relaxed text-ivory">{value.text}</p>
+                </Reveal>
+              </li>
+            ))}
+          </ul>
         </Container>
       </section>
       <Commitment commitment={dict.commitment} />

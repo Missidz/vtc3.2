@@ -88,7 +88,8 @@
   html {
     scroll-behavior: auto;
   }
-  .animate-rise {
+  .animate-rise,
+  .animate-drift {
     animation: none;
   }
 }

@@ -18,15 +18,15 @@ module.exports = {
         display: ['var(--font-display)', 'Georgia', 'serif'],
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
       },
-      letterSpacing: {
-        eyebrow: '0.28em',
-      },
       keyframes: {
         rise: { from: { opacity: '0', transform: 'translateY(24px)' }, to: { opacity: '1', transform: 'none' } },
+        drift: { from: { transform: 'scale(1.08)' }, to: { transform: 'scale(1)' } },
       },
       animation: {
         // Animation CSS du hero : visible sans attendre le JavaScript (meilleur LCP)
         rise: 'rise 0.8s cubic-bezier(0.23, 1, 0.32, 1) both',
+        // Photo du hero qui se pose lentement (« une image qui bouge », Taste)
+        drift: 'drift 18s cubic-bezier(0.23, 1, 0.32, 1) both',
       },
       transitionTimingFunction: {
         // Courbes fortes recommandées par Emil Kowalski

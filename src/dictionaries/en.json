@@ -104,24 +104,6 @@
     "whatsapp": "WhatsApp",
     "pmr": "Mobility"
   },
-  "pillars": [
-    {
-      "title": "Punctuality",
-      "text": "Planned routes, times respected, real-time updates."
-    },
-    {
-      "title": "Premium comfort",
-      "text": "Quiet electric sedan, leather interior, water on board."
-    },
-    {
-      "title": "Discretion",
-      "text": "Smooth driving and complete confidentiality."
-    },
-    {
-      "title": "Always a solution",
-      "text": "If I'm unavailable, I'll find you a trusted partner driver."
-    }
-  ],
   "servicesSection": {
     "title": "A driver for every occasion",
     "intro": "From business meetings to a getaway among the vineyards, every journey is prepared with the same care."
@@ -244,7 +226,7 @@
     ]
   },
   "areas": {
-    "title": "Your private driver in Tours, the Loire Valley and across France",
+    "title": "Tours, the Loire Valley and beyond",
     "text": "Based in Tours, I pick you up anywhere in Indre-et-Loire, at home, at your hotel or at Tours and Saint-Pierre-des-Corps train stations, for local, regional or long-distance journeys.",
     "cities": [
       "Tours",

@@ -6,16 +6,19 @@ export function SectionHeader({ title, intro, center = false }: { title: string;
   return (
     <Reveal className={`max-w-2xl ${center ? 'mx-auto text-center' : ''}`}>
       <h2 className="text-balance font-display text-4xl font-medium leading-[1.1] text-ivory md:text-5xl">{title}</h2>
-      {intro && <p className="mt-6 text-base leading-relaxed text-ivory-muted md:text-lg">{intro}</p>}
+      {intro && <p className="mt-6 text-base leading-relaxed text-ivory md:text-lg">{intro}</p>}
     </Reveal>
   );
 }
 
+// Boutons plats, une seule couleur de remplissage, sans contour (Taste)
 const buttonStyles = {
   primary: 'bg-gold text-ink hover:bg-gold-light',
-  outline: 'border border-gold/60 text-ivory hover:border-gold hover:bg-gold/10',
-  accent: 'border border-gold text-gold hover:bg-gold hover:text-ink',
-  ghost: 'text-ivory hover:text-gold',
+  secondary: 'bg-ink-3 text-ivory hover:bg-ink-line',
+  accent: 'bg-gold/[0.15] text-gold hover:bg-gold/25',
+  inverse: 'bg-ink text-ivory hover:bg-ink-2',
+  onGold: 'bg-ink/10 text-ink hover:bg-ink/20',
+  ghost: 'text-ivory underline decoration-gold/60 underline-offset-[0.35em] hover:text-gold',
 };
 
 export function ButtonLink({
@@ -31,7 +34,7 @@ export function ButtonLink({
   external?: boolean;
   className?: string;
 }) {
-  const classes = `inline-flex items-center justify-center gap-3 whitespace-nowrap px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] transition-[background-color,border-color,color,transform] duration-200 ease-premium active:scale-[0.97] ${buttonStyles[variant]} ${className}`;
+  const classes = `inline-flex items-center justify-center gap-3 whitespace-nowrap px-7 py-4 text-[0.95rem] font-semibold transition-[background-color,border-color,color,transform] duration-200 ease-premium active:scale-[0.97] ${buttonStyles[variant]} ${className}`;
   if (external || href.startsWith('tel:')) {
     return (
       <a href={href} className={classes} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
@@ -52,20 +55,14 @@ export function ButtonLink({
  */
 export function PageHeader({ title, intro, compact = false }: { title: string; intro?: string; compact?: boolean }) {
   return (
-    <header
-      className={`relative overflow-hidden border-b border-ink-line bg-ink-2 md:pb-28 md:pt-48 ${compact ? 'pb-6 pt-28' : 'pb-20 pt-40'}`}
-    >
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgb(var(--c-gold)/0.12),transparent_55%)]"
-        aria-hidden
-      />
-      <div className="container relative mx-auto px-6 lg:px-12">
+    <header className={`bg-ink-2 md:pb-28 md:pt-48 ${compact ? 'pb-6 pt-28' : 'pb-16 pt-36'}`}>
+      <div className="container mx-auto px-6 lg:px-12">
         <Reveal className="max-w-4xl">
-          <h1 className={`text-balance font-display font-medium leading-[1.05] text-ivory md:text-7xl ${compact ? 'text-4xl' : 'text-5xl'}`}>
+          <h1 className="text-balance font-display text-4xl font-medium leading-[1.05] text-ivory sm:text-5xl md:text-7xl">
             {title}
           </h1>
           {intro && (
-            <p className={`mt-8 max-w-2xl text-lg leading-relaxed text-ivory-muted ${compact ? 'hidden md:block' : ''}`}>{intro}</p>
+            <p className={`mt-8 max-w-2xl text-lg leading-relaxed text-ivory ${compact ? 'hidden md:block' : ''}`}>{intro}</p>
           )}
         </Reveal>
       </div>

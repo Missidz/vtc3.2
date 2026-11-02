@@ -29,7 +29,7 @@ export default function ThemeToggle({ labels }: { labels: { light: string; dark:
       onClick={toggle}
       aria-label={label}
       title={label}
-      className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-ink-line text-ivory transition-[color,border-color,transform] duration-200 ease-premium hover:border-gold hover:text-gold active:scale-[0.94]"
+      className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-ink-3 text-ivory transition-[color,background-color,transform] duration-200 ease-premium hover:bg-ink-line hover:text-gold active:scale-[0.94]"
     >
       {/* Les deux icônes sont superposées : fondu + léger flou pour masquer le changement (Emil Kowalski) */}
       <svg
