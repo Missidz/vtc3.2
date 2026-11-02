@@ -20,10 +20,10 @@ export default function Footer({ lang, dict }: Props) {
     { href: href(lang, 'rates'), label: nav.rates },
     { href: href(lang, 'about'), label: nav.about },
   ];
-  const heading = 'mb-6 text-[0.7rem] font-medium uppercase tracking-eyebrow text-gold';
+  const heading = 'mb-5 text-base font-semibold text-ivory';
 
   return (
-    <footer className="border-t border-ink-line bg-ink">
+    <footer className="bg-ink-2">
       <div className="container mx-auto grid gap-12 px-6 py-20 md:grid-cols-2 lg:grid-cols-4 lg:px-12">
         <div>
           <Image src="/logo-mark.png" alt={site.name} width={924} height={221} className="hidden h-10 w-auto dark:block" />
@@ -33,7 +33,7 @@ export default function Footer({ lang, dict }: Props) {
 
         <div>
           <p className={heading}>{footer.links}</p>
-          <ul className="space-y-3 text-sm">
+          <ul className="space-y-3 text-[0.95rem]">
             {links.map((link) => (
               <li key={link.href}>
                 <Link href={link.href} className="text-ivory-muted transition-colors hover:text-ivory">
@@ -46,7 +46,7 @@ export default function Footer({ lang, dict }: Props) {
 
         <div>
           <p className={heading}>{footer.contact}</p>
-          <ul className="space-y-4 text-sm">
+          <ul className="space-y-4 text-[0.95rem]">
             <li>
               <a href={site.phoneHref} className="flex items-center gap-3 text-ivory-muted transition-colors hover:text-ivory">
                 <PhoneIcon /> {site.phone}
@@ -67,7 +67,7 @@ export default function Footer({ lang, dict }: Props) {
 
         <div>
           <p className={heading}>{footer.follow}</p>
-          <a href={site.snapchatHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 text-sm text-ivory-muted transition-colors hover:text-ivory">
+          <a href={site.snapchatHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 text-[0.95rem] text-ivory-muted transition-colors hover:text-ivory">
             <Image src="/snapchat_logo.png" alt="" width={20} height={20} /> Snapchat
           </a>
           <div className="mt-10">
@@ -76,8 +76,12 @@ export default function Footer({ lang, dict }: Props) {
         </div>
       </div>
 
-      <div className="border-t border-ink-line">
-        <div className="container mx-auto flex flex-col gap-2 px-6 py-6 text-xs text-ivory-muted/70 md:flex-row md:justify-between lg:px-12">
+      {/* Clôture : le nom revient en pleine largeur (Taste) */}
+      <div className="container mx-auto px-6 lg:px-12">
+        <p aria-hidden className="select-none whitespace-nowrap font-display text-[15.5vw] font-medium leading-[0.8] tracking-[-0.03em] text-ivory lg:text-[13.5vw]">
+          VTC Tours 37
+        </p>
+        <div className="flex flex-col gap-2 py-8 text-sm text-ivory-muted md:flex-row md:justify-between">
           <p>
             &copy; {new Date().getFullYear()} {site.name}. {footer.rights}
           </p>

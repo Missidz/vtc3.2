@@ -7,10 +7,9 @@ import JsonLd from '../../../components/JsonLd';
 import Commitment from '../../../components/Commitment';
 import FinalCta from '../../../components/FinalCta';
 import Reveal from '../../../components/Reveal';
-import Visual from '../../../components/Visual';
 import { CheckIcon } from '../../../components/Icons';
 import { images } from '../../../components/images';
-import { ButtonLink, Container, Eyebrow } from '../../../components/ui';
+import { ButtonLink, Container } from '../../../components/ui';
 import { bookingHref } from '@/i18n/routes';
 
 type Props = { params: { lang: string } };
@@ -46,55 +45,50 @@ export default async function Tourism({ params }: Props) {
           ]),
         ]}
       />
-      <section className="pb-24 pt-40 md:pb-32 md:pt-48">
-        <Container className="grid items-center gap-16 lg:grid-cols-2">
+      {/* En-tête : texte à gauche, ce qui est inclus à droite (pas de photo honnête disponible pour l'instant) */}
+      <section className="pb-24 pt-36 md:pb-32 md:pt-48">
+        <Container className="grid items-start gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal>
-            <Eyebrow as="h1">{dict.meta.tourism.h1}</Eyebrow>
-            <p className="mt-6 font-display text-5xl font-medium leading-[1.05] text-ivory md:text-7xl">{tourism.title}</p>
-            <p className="mt-8 text-lg leading-relaxed text-ivory-muted">{tourism.intro}</p>
+            <h1 className="text-balance font-display text-4xl font-medium leading-[1.05] text-ivory sm:text-5xl lg:text-6xl">
+              {dict.meta.tourism.h1}
+            </h1>
+            <p className="mt-8 text-lg leading-relaxed text-ivory">{tourism.intro}</p>
             <ButtonLink href={bookingHref(lang, 'tourism')} className="mt-10">
               {tourism.cta}
             </ButtonLink>
           </Reveal>
-          <Reveal delay={0.15}>
-            <Visual src={images.tourism} alt={tourism.title} placeholder="Val de Loire" className="aspect-[4/5]" priority />
-          </Reveal>
-        </Container>
-      </section>
-
-      <section className="border-t border-ink-line bg-ink-2 py-24 md:py-32">
-        <Container>
-          <Reveal>
-            <Eyebrow>{tourism.circuitsTitle}</Eyebrow>
-          </Reveal>
-          <div className="mt-12 grid gap-px border border-ink-line bg-ink-line md:grid-cols-3">
-            {tourism.circuits.map((circuit, i) => (
-              <Reveal key={circuit.title} delay={0.08 * i} className="h-full">
-                <article className="flex h-full flex-col bg-ink-2 p-10">
-                  <span className="text-[0.65rem] uppercase tracking-[0.2em] text-gold">{circuit.duration}</span>
-                  <h2 className="mt-4 font-display text-3xl text-ivory">{circuit.title}</h2>
-                  <p className="mt-4 leading-relaxed text-ivory-muted">{circuit.text}</p>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="py-24 md:py-32">
-        <Container className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
-          <Reveal>
-            <h2 className="font-display text-4xl text-ivory md:text-5xl">{tourism.includedTitle}</h2>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <ul className="divide-y divide-ink-line border-y border-ink-line">
+          <Reveal delay={0.12} className="bg-ink-2 p-8 md:p-12">
+            <h2 className="font-display text-3xl text-ivory md:text-4xl">{tourism.includedTitle}</h2>
+            <ul className="mt-8 space-y-4">
               {tourism.included.map((item) => (
-                <li key={item} className="flex items-center gap-4 py-5 text-ivory">
-                  <CheckIcon className="h-5 w-5 shrink-0 text-gold" /> {item}
+                <li key={item} className="flex items-start gap-4 text-lg text-ivory">
+                  <CheckIcon className="mt-1 h-5 w-5 shrink-0 text-gold" /> {item}
                 </li>
               ))}
             </ul>
           </Reveal>
+        </Container>
+      </section>
+
+      {/* Circuits en liste : titre et durée à gauche, description à droite */}
+      <section className="pb-24 md:pb-36">
+        <Container>
+          <Reveal>
+            <h2 className="font-display text-4xl text-ivory md:text-5xl">{tourism.circuitsTitle}</h2>
+          </Reveal>
+          <ul className="mt-12 space-y-12 md:space-y-16">
+            {tourism.circuits.map((circuit, i) => (
+              <li key={circuit.title}>
+                <Reveal delay={0.06 * i} className="grid gap-4 md:grid-cols-[1fr_1.4fr] md:gap-12">
+                  <div>
+                    <h3 className="font-display text-3xl text-ivory md:text-4xl">{circuit.title}</h3>
+                    <p className="mt-2 text-[0.95rem] text-gold">{circuit.duration}</p>
+                  </div>
+                  <p className="text-lg leading-relaxed text-ivory">{circuit.text}</p>
+                </Reveal>
+              </li>
+            ))}
+          </ul>
         </Container>
       </section>
 

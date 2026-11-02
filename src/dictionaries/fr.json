@@ -7,12 +7,12 @@
     "services": {
       "title": "Services VTC à Tours : chauffeur privé, tourisme, santé",
       "description": "Mise à disposition, trajets longue distance, visites des châteaux de la Loire et accompagnement santé : tous les services de votre VTC à Tours.",
-      "h1": "Services de chauffeur privé VTC à Tours"
+      "h1": "Services VTC à Tours"
     },
     "tourism": {
       "title": "Visite des châteaux de la Loire et caves à vin avec chauffeur",
       "description": "Chenonceau, Amboise, Chambord, caves de Vouvray et Chinon : visitez le Val de Loire avec un chauffeur privé au départ de Tours. Circuits sur mesure.",
-      "h1": "Visite des châteaux de la Loire et caves à vin avec chauffeur"
+      "h1": "Les châteaux de la Loire avec chauffeur"
     },
     "pmr": {
       "title": "Transport PMR / Handicap à Tours et en Touraine",
@@ -22,12 +22,12 @@
     "vehicle": {
       "title": "BYD SEAL : VTC 100 % électrique à Tours",
       "description": "Voyagez en BYD SEAL, berline 100 % électrique : silence, intérieur cuir, toit panoramique. Le confort premium de votre VTC à Tours et en Touraine.",
-      "h1": "VTC 100 % électrique à Tours"
+      "h1": "BYD SEAL, VTC 100 % électrique"
     },
     "rates": {
       "title": "Tarifs VTC à Tours et en Touraine",
       "description": "Course VTC dans Tours dès 15 €, hors de Tours dès 20 €, circuits et longue distance sur devis. Prix annoncé à la réservation, sans surprise.",
-      "h1": "Tarifs VTC à Tours et en Touraine"
+      "h1": "Tarifs VTC à Tours"
     },
     "about": {
       "title": "À propos de votre chauffeur privé à Tours",
@@ -37,7 +37,7 @@
     "contact": {
       "title": "Contact et réservation VTC à Tours · Devis rapide 7j/7",
       "description": "Réservez votre VTC à Tours en 1 minute : départ, arrivée, jour et heure. Envoi par WhatsApp ou e-mail, réponse rapide avec le prix. Disponible 7j/7.",
-      "h1": "Contact et réservation VTC à Tours"
+      "h1": "Réserver votre VTC à Tours"
     }
   },
   "nav": {
@@ -66,7 +66,6 @@
     "contactCta": "Contact & réservation"
   },
   "hero": {
-    "eyebrow": "VTC Tours · Chauffeur privé à Tours et en Touraine",
     "title": "L'art de voyager, en toute sérénité",
     "subtitle": "Élégance, discrétion et ponctualité, de jour comme de nuit, à bord d'une berline 100 % électrique.",
     "trust": [
@@ -74,7 +73,8 @@
       "Prix annoncé à la réservation",
       "Toujours une solution"
     ],
-    "imageAlt": "Chauffeur privé au volant au coucher du soleil, VTC à Tours"
+    "imageAlt": "Chauffeur privé au volant au coucher du soleil, VTC à Tours",
+    "h1": "VTC Tours, votre chauffeur privé"
   },
   "quick": {
     "contact": {
@@ -104,26 +104,7 @@
     "whatsapp": "WhatsApp",
     "pmr": "PMR"
   },
-  "pillars": [
-    {
-      "title": "Ponctualité",
-      "text": "Trajets anticipés, horaires respectés, suivi en temps réel."
-    },
-    {
-      "title": "Confort premium",
-      "text": "Berline électrique silencieuse, intérieur cuir, eau à bord."
-    },
-    {
-      "title": "Discrétion",
-      "text": "Conduite souple et confidentialité absolue de vos échanges."
-    },
-    {
-      "title": "Toujours une solution",
-      "text": "Si je ne suis pas disponible, je vous trouve un chauffeur partenaire."
-    }
-  ],
   "servicesSection": {
-    "eyebrow": "Nos services",
     "title": "Un chauffeur pour chaque moment",
     "intro": "Du rendez-vous d'affaires à l'escapade dans les vignes, chaque trajet est préparé avec le même soin."
   },
@@ -147,7 +128,6 @@
     }
   },
   "tourism": {
-    "eyebrow": "Transport régional",
     "title": "La Touraine, côté banquette arrière",
     "intro": "Laissez le volant et profitez pleinement du Val de Loire, inscrit au patrimoine mondial de l'UNESCO. Je vous conduis de château en domaine viticole, sans contrainte d'horaires ni de stationnement, et je vous attends à chaque étape.",
     "circuitsTitle": "Idées de circuits",
@@ -179,7 +159,6 @@
     "cta": "Demander un devis pour un circuit"
   },
   "pmr": {
-    "eyebrow": "Transport PMR / Handicap",
     "title": "Se déplacer en toute sérénité",
     "intro": "Rendez-vous médicaux, démarches, visites à vos proches ou sorties : j'accompagne les personnes à mobilité réduite et en situation de handicap avec patience et bienveillance, de votre porte jusqu'à destination.",
     "audienceTitle": "Pour qui ?",
@@ -205,7 +184,6 @@
     "cta": "Demander un transport PMR"
   },
   "vehicle": {
-    "eyebrow": "Le véhicule",
     "title": "BYD SEAL",
     "tagline": "Berline 100 % électrique · Silence · Confort grand tourisme",
     "intro": "Pour chaque trajet, une seule exigence : votre confort. La BYD SEAL offre un silence de fonctionnement remarquable, une conduite d'une grande douceur et un habitacle raffiné, pour voyager détendu tout en réduisant votre empreinte carbone.",
@@ -239,7 +217,6 @@
     "cta": "Réserver la BYD SEAL"
   },
   "commitment": {
-    "eyebrow": "Mon engagement",
     "title": "Jamais sans solution",
     "text": "Si je ne suis pas disponible à la date ou à l'heure souhaitée, je m'engage à vous trouver un autre chauffeur partenaire de confiance, aux mêmes standards de qualité. Vous n'avez rien à chercher : je m'occupe de tout.",
     "points": [
@@ -249,8 +226,7 @@
     ]
   },
   "areas": {
-    "eyebrow": "Zones desservies",
-    "title": "Votre VTC à Tours, en Touraine et partout en France",
+    "title": "Tours, la Touraine et toute la France",
     "text": "Basé à Tours, je vous prends en charge dans toute l'Indre-et-Loire, à domicile, à votre hôtel ou en gare de Tours et de Saint-Pierre-des-Corps, pour des trajets locaux, régionaux ou longue distance.",
     "cities": [
       "Tours",
@@ -272,7 +248,6 @@
     ]
   },
   "seoIntro": {
-    "eyebrow": "VTC à Tours",
     "title": "Votre VTC à Tours, de jour comme de nuit",
     "paragraphs": [
       "VTC Tours 37 est un service de chauffeur privé basé à Tours, disponible 7 j/7 et 24 h/24. Je vous prends en charge à domicile, à votre hôtel, à la gare de Tours ou à la gare TGV de Saint-Pierre-des-Corps, pour vos trajets en ville, vos rendez-vous professionnels, vos soirées ou vos voyages longue distance.",
@@ -281,7 +256,6 @@
     ]
   },
   "faq": {
-    "eyebrow": "Questions fréquentes",
     "title": "Bon à savoir",
     "items": [
       {
@@ -315,8 +289,6 @@
     ]
   },
   "rates": {
-    "eyebrow": "Tarifs",
-    "title": "Des prix clairs, annoncés à l'avance",
     "intro": "Le prix de votre trajet vous est communiqué au moment de la réservation. Aucune surprise à l'arrivée.",
     "items": [
       {
@@ -338,8 +310,6 @@
     "note": "Des suppléments peuvent s'appliquer la nuit, les jours fériés ou pour des bagages volumineux."
   },
   "about": {
-    "eyebrow": "À propos",
-    "title": "Votre chauffeur, en toute confiance",
     "intro": "Chauffeur VTC expérimenté installé à Tours, je mets un point d'honneur à offrir un service haut de gamme et personnalisé. Chaque client est accueilli comme un invité : ponctualité, conduite souple, discrétion et attention aux détails.",
     "values": [
       {
@@ -357,8 +327,6 @@
     ]
   },
   "contact": {
-    "eyebrow": "Réservation",
-    "title": "Planifions votre trajet",
     "intro": "Indiquez votre trajet : votre demande est rédigée automatiquement. Envoyez-la par e-mail ou par WhatsApp, je vous confirme rapidement la disponibilité et le prix.",
     "directTitle": "Contact direct",
     "form": {
@@ -426,7 +394,6 @@
       ]
     },
     "faq": {
-      "eyebrow": "Questions fréquentes",
       "title": "Questions sur la réservation",
       "items": [
         {

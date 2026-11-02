@@ -26,22 +26,25 @@ export default async function Rates({ params }: Props) {
       <JsonLd
         data={breadcrumbSchema(lang, dict.nav.home, [{ key: 'rates', name: dict.nav.rates }])}
       />
-      <PageHeader h1={dict.meta.rates.h1} title={rates.title} intro={rates.intro} />
+      <PageHeader title={dict.meta.rates.h1} intro={rates.intro} />
       <section className="py-24 md:py-32">
         <Container>
-          <div className="grid gap-px border border-ink-line bg-ink-line md:grid-cols-3">
+          {/* Liste de prix : intitulé à gauche, prix en grand à droite, sans cases ni filets */}
+          <ul className="space-y-12 md:space-y-16">
             {rates.items.map((item, i) => (
-              <Reveal key={item.title} delay={0.08 * i} className="h-full">
-                <article className="flex h-full flex-col bg-ink p-10">
-                  <h2 className="text-[0.7rem] font-medium uppercase tracking-[0.2em] text-ivory-muted">{item.title}</h2>
-                  <p className="mt-8 font-display text-6xl text-ivory">{item.price}</p>
-                  <p className="mt-6 border-t border-ink-line pt-6 text-sm text-ivory-muted">{item.note}</p>
-                </article>
-              </Reveal>
+              <li key={item.title}>
+                <Reveal delay={0.06 * i} className="grid items-baseline gap-3 md:grid-cols-[1fr_auto] md:gap-12">
+                  <div>
+                    <h2 className="text-balance font-display text-3xl text-ivory md:text-4xl">{item.title}</h2>
+                    <p className="mt-2 text-lg text-ivory-muted">{item.note}</p>
+                  </div>
+                  <p className="font-display text-5xl tabular-nums text-gold md:text-7xl">{item.price}</p>
+                </Reveal>
+              </li>
             ))}
-          </div>
+          </ul>
           <Reveal>
-            <p className="mt-8 text-sm text-ivory-muted">{rates.note}</p>
+            <p className="mt-16 text-[0.95rem] text-ivory-muted">{rates.note}</p>
           </Reveal>
         </Container>
       </section>

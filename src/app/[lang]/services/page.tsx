@@ -26,7 +26,7 @@ export default async function Services({ params }: Props) {
       <JsonLd
         data={[breadcrumbSchema(lang, dict.nav.home, [{ key: 'services', name: dict.nav.services }]), faqSchema(dict.faq.items)]}
       />
-      <PageHeader h1={dict.meta.services.h1} title={dict.servicesSection.title} intro={dict.servicesSection.intro} />
+      <PageHeader title={dict.meta.services.h1} intro={dict.servicesSection.intro} />
       <section className="py-24 md:py-32">
         <Container>
           <ServiceGrid lang={lang} dict={dict} />
